@@ -1,0 +1,245 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml">
+
+
+<!-- Mirrored from johndunning.com/portfolio/brokerage-prototype/brokerage-prototype.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:35:33 GMT -->
+<head>
+
+<title>Brokerage Application Prototype</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script language="JavaScript1.2">
+window.resizeTo(1031, 749);
+</script>
+
+<script language="JavaScript1.2" src="resources/Log.js"></script>
+
+<script language="JavaScript1.2" src="resources/CIDUtilities.js"></script>
+
+<script language="JavaScript1.2" src="resources/Cookies.js"></script>
+
+<script language="JavaScript1.2" src="resources/CIDOrderStatus.js"></script>
+
+<script language="JavaScript1.2" src="resources/CIDResultsArea.js"></script>
+
+<script language="JavaScript1.2" src="resources/CIDInitialize.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resources/prototype-styles.css">
+
+<style>
+	v\:* { behavior: url(#default#VML); }
+</style>
+
+<script language="JavaScript1.2">
+
+function HandleKeyPress(
+	inEvent)
+{
+	switch (inEvent.keyCode) {
+		case 18:	// ctrl-R
+			location.reload();
+			break;
+
+		case 23:	// ctrl-W
+		case 17:	// ctrl-Q
+			window.close();
+			break;
+
+//		case 97:	// a
+		case 45:	// -
+			gResultsArea.SelectPreviousSecurity();
+			break;
+
+		case 38:	// up key
+			if (inEvent.altKey) {
+				gResultsArea.SelectPreviousSecurity();
+			}
+			break;
+
+//		case 122:	// z
+		case 43:	// +
+			gResultsArea.SelectNextSecurity();
+			break;
+
+		case 40:	// down key
+			if (inEvent.altKey) {
+				gResultsArea.SelectNextSecurity();
+			}
+			break;
+
+	}
+}
+
+</script>
+
+</head>
+
+
+<body bgcolor="#FFFFFF" background="resources/images/background.gif" 
+	style="background-repeat: no-repeat; background-position: 0px -20px"
+	scroll="no"
+	onload="this.focus()"
+	onmouseup="document.mouseDownElement = null;"
+	onkeypress="HandleKeyPress(event);"
+	onselectstart="event.returnValue = false; event.cancelBubble = true; return false;">
+
+
+<iframe id="QuoteData" name="QuoteData" width="500" height="200" trusted="yes" application="yes"
+	style="visibility: hidden; position: absolute; left: 300px; top: 470px;">
+</iframe>
+
+<iframe id="SymbolData" name="SymbolData" width="500" height="100" trusted="yes" application="yes"
+	style="visibility: hidden">
+</iframe>
+
+
+<input id="MinChange" name="MinChange" type="text" maxlength="3" value="1"
+	style="position: absolute; left: 448; top: 84px; width: 35" 
+	onkeypress="if (event.keyCode == 13) this.onchange()"
+	onchange="gResultsArea.SetMinChange(this.value)">
+
+
+<img style="position: absolute; left: 202px; top: 121px; width: 114px; height: 22px;" src="resources/images/column-divider-top.gif">
+
+<table id="RowTable" border="0" cellpadding="0" cellspacing="0" nowrap style="position: absolute; left: 59; top: 122px; ">
+	<tr valign="middle">
+		<td nowrap width="9" align="left"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
+		<td nowrap align="left" width="40">Symbol</td> 
+		<td nowrap width="15" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
+
+		<td nowrap width="73" align="center" style="color:  black">Last</td> 
+		<td nowrap width="2" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px; margin-right: 5px" src="resources/images/column-divider-top.gif"></td>
+
+		<td nowrap width="114" align="center" style="color: black">Change</td> 
+		<td nowrap width="2" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
+
+		<td nowrap width="133" align="center" valign="middle">Volume</td> 
+		<td nowrap width="4" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
+
+		<td nowrap width="65" align="right" valign="middle">Day Low</td> 
+		<td nowrap width="10" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
+		<td nowrap width="73" align="right">Day Range&nbsp;</td> 
+		<td nowrap width="2" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
+
+		<td nowrap width="65" align="right" valign="middle">Day High</td> 
+		<td nowrap width="10" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
+
+		<td nowrap width="65" align="right" valign="middle">52-wk Lo</td> 
+		<td nowrap width="10" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
+		<td nowrap width="73" align="right">52-wk Rng&nbsp;</td> 
+		<td nowrap width="2" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
+
+		<td nowrap width="65" align="right" valign="middle">52-wk Hi</td> 
+		<td nowrap width="10" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
+	</tr>
+</table>
+
+<div id="DisconnectNowButton" style="position: absolute; left: 286px; top: 4px; 
+		width: 115px; height: 22px; cursor: default;"
+		onclick="location.reload()"
+	<img width="1" height="1" src="resources/images/dot-clear.gif">
+</div>
+
+<div id="AddSecurityButton" style="position: absolute; left: 989px; top: 73px; 
+		width: 20px; height: 20px; cursor: default; "
+		title="Add a security"
+		onmousedown="this.children[0].style.visibility = 'visible'; document.mouseDownElement = this;"
+		onmouseover="if (document.mouseDownElement == this) this.children[0].style.visibility = 'visible'"
+		onmouseout="this.children[0].style.visibility = 'hidden'; "
+		onmouseup="this.children[0].style.visibility = 'hidden'; document.mouseDownElement = null;"
+		onclick="document.all.AddSecurityLine.scrollIntoView(false); document.all.SymbolEntry.focus();">
+	<img width="20" height="20" src="resources/images/add-security-down.gif" style="visibility: hidden; ">
+</div>
+
+<div id="RemoveSecurityButton" style="position: absolute; left: 989px; top: 95px; 
+		width: 20px; height: 20px; cursor: default; "
+		title="Delete selected security"
+		onmousedown="this.children[0].style.visibility = 'visible'; document.mouseDownElement = this;"
+		onmouseover="if (document.mouseDownElement == this) this.children[0].style.visibility = 'visible'"
+		onmouseout="this.children[0].style.visibility = 'hidden'; "
+		onmouseup="this.children[0].style.visibility = 'hidden'; document.mouseDownElement = null;"
+		onclick="gResultsArea.RemoveSecurity()">
+	<img width="20" height="20" src="resources/images/remove-security-down.gif" style="visibility: hidden; ">
+</div>
+
+<div id="DetailerSummary" style="position: absolute; left: 17px; top: 437px; 
+		width: 180px; height: 50px; cursor: default;"
+		onclick="document.all.AddSecurityLine.scrollIntoView(false); document.all.SymbolEntry.focus();">
+	<table width="100%" border="0">
+		<tr onclick="gResultsArea.selectedSecurity.element.scrollIntoView(); event.returnValue = false; event.cancelBubble = true; return false;" style="cursor: default; ">
+			<td id="DetailerSummarySymbol" width="50%" style="font-size: 20px; font-weight: bold">
+				XYZ
+			</td>
+			<td id="DetailerSummaryPrice" width="50%" align="right" style="font-size: 20px; ">
+				69.15
+			</td>
+		</tr>
+	</table>
+
+	<div id="DetailerSummaryName" style="position: absolute; left: 3px; top: 35px; font-size: 12px; ">
+	</div>
+
+	<div id="DetailerSummaryChartBackground" style="position: absolute; left: -7px; top: 110px; ">
+		<img id="DetailerSummaryChart" src="http://ichart.yahoo.com/t?s=qqq" width="192" height="96" border="0" 
+			style="position: absolute; z-index: 1500;" onload="this.style.visibility = 'visible'">
+		<div style="position: absolute; left: 135px; top: -2px; width: 55px; height: 8px; z-index: 2000; background-color: white">
+			<img src="resources/images/dot-clear.gif" height="1" width="1">
+		</div>
+		<div style="position: absolute; left: 0px; top: -5px; width: 190px; height: 120px; z-index: 1100; background-color: white">
+			<img src="resources/images/dot-clear.gif" height="1" width="1">
+		</div>
+	</div>
+</div>
+
+<div id="DetailerNewOrderLabel" style="position: absolute; left: 440px; top: 442px; width: 116px; text-align: center; font-size: 12px; ">
+	New XYZ Order
+</div>
+
+
+<div id="ResultsArea" style="position: absolute; overflow-x: hidden; overflow-y: scroll; left: 10px; top: 143px; 
+	width: 1003; height: 283; background-color: white">
+	<img width="1" height="1" src="resources/images/dot-clear.gif">
+
+<!--
+	<div id="MatchingBorder"
+		style="position: absolute; left: 0px; top: 0px; width: 987px; height: 1px; z-index: 10000; background-color: rgb(70% 70% 70%)">
+		<img height="1" width="1" src="resources/images/dot-clear.gif">
+	</div>
+-->
+
+<!--
+					onkeypress="if (event.keyCode == ''.charCodeAt(0)) document.all.AddButton.onclick()">
+-->
+
+	<div id="AddSecurityLine" 
+			style="position: absolute; left: 0px; top: 0px; height: 35px; width: 987; background-color: rgb(75% 75% 75%);">
+		<span style="position: relative; left: 50px; top: 4px">
+			<input id="SymbolEntry" type="text" 
+					onkeypress="if (event.keyCode == 13) document.all.AddButton.onclick()">
+			&nbsp;
+			<input id="AddButton" type="button" value="Add" style="background-color: #C4C4D3; "
+					onclick="gResultsArea.AddSecurity(document.all.SymbolEntry.value); 
+					document.all.AddSecurityMessage.innerText = 'Checking symbol: ' + document.all.SymbolEntry.value + '...';
+					document.all.SymbolEntry.value = ''; document.all.SymbolEntry.focus()">
+			&nbsp;
+			&nbsp;
+			&nbsp;
+			<span id="AddSecurityMessage" style="font-style: italic">
+				&nbsp;
+			</span>
+		</span>
+	</div>
+
+</div>
+
+<script language="JavaScript1.2">
+
+Initialize();
+
+</script>
+
+</body>
+
+
+<!-- Mirrored from johndunning.com/portfolio/brokerage-prototype/brokerage-prototype.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:35:49 GMT -->
+</html>

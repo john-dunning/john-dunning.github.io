@@ -1,0 +1,966 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<!-- Mirrored from johndunning.com/fireworks/about/FWConsole by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:13:03 GMT -->
+<head>
+<title>Fireworks Console - Adobe Fireworks Extensions, Commands and Panels - johndunning.com</title>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="description" content="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels. 
+
+This panel will be of interest only to developers of Fireworks extensions.">
+
+<meta property="og:site_name" content="johndunning.com/fireworks">
+<meta property="og:title" content="Fireworks Console">
+<meta property="og:url" content="FWConsole.html">
+<meta property="og:description" content="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels. 
+
+This panel will be of interest only to developers of Fireworks extensions.">
+<meta property="og:image" content="../inc/FWConsole.png">
+
+<meta itemprop="name" content="Fireworks Console" />
+<meta itemprop="description" content="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels. 
+
+This panel will be of interest only to developers of Fireworks extensions." /> 
+<meta itemprop="image" content="../inc/FWConsole.png" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+
+<base >
+
+<!-- <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css"> -->
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+<link rel="alternate" type="application/rss+xml" title="Adobe Fireworks Extensions, Commands and Panels - johndunning.com" href="../feed">
+
+<script type="text/javascript">
+PT = { _trackPageview: function() {} };
+
+function mxpOnClick(inEvent)
+{
+    PT._trackPageview('/fireworks/mxp/FWConsole');
+
+    if (navigator.userAgent.indexOf("Windows NT 6.") > -1) {
+        alert('When you install a Fireworks extension on a Windows Vista or Windows 7 system that has User Account Control enabled, you will need to right-click the "Adobe Extension Manager CS5.exe" application in "C:\\Program Files\\Adobe\\Adobe Extension Manager CS5" and select "Run as Administrator".\n\nStarting the Extension Manager by clicking Commands > Manage Extensions in Fireworks will not work.');
+    }
+}
+
+</script>
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+    rdf:about="http://johndunning.com/fireworks/about/FWConsole"
+    dc:identifier="http://johndunning.com/fireworks/about/FWConsole"
+    dc:title="Fireworks Console - Adobe Fireworks Extensions, Commands and Panels - johndunning.com"
+    trackback:ping="http://js-kit.com/trackback/johndunning.com/fireworks/about/FWConsole" />
+</rdf:RDF>
+-->
+
+</head>
+
+<body>
+
+<div id="doc3" class="yui-t2"> 
+    <div id="bd"> 
+        <div id="yui-main" role="main"> 
+            <div class="yui-b"><div class="yui-g"> 
+                <h1 class="Fireworks"><a href="../index.html">fireworks</a></h1>
+
+                <h2 class="CommandName">Fireworks Console</h2>
+
+                <div class="Links">
+                    <a href="../dl/index9595.html"
+                        onclick="mxpOnClick(event)"
+                    >Download 0.4.6.mxp</a>
+                        <a href="../dl/indexe5ab.html"
+                            class="ZipLink"
+                            onclick="javascript: PT._trackPageview('/fireworks/zip/FWConsole');"
+                            title="This .zip version is available in case the Extension Manager can't install the standard .mxp version of this extension"
+                        >Download .zip</a>
+                    <span class="CommandDate">2013-04-07</span>
+                </div>
+
+                <ul class="SharingLinks">
+                    <li class="CommentsLink"><a href="#disqus_thread"
+                        onclick="javascript: PT._trackPageview('/fireworks/comment/FWConsole');"
+                    >Comment</a></li>
+<!--                    <li>
+                        <script type="text/javascript">
+                            var addthis_pub="fwextensions";
+                            var addthis_header_color = "#ffffff";
+                            var addthis_header_background = "#cc3300";
+                            var addthis_options = 'twitter, facebook, buzz, googlebuzz, delicious, digg, email, favorites, more';
+                        </script>
+                        <a class="AddThis"
+                            href="https://www.addthis.com/bookmark.php?v=20" 
+                            onmouseover="return addthis_open(this, '', '[URL]', 'Fireworks Console - Adobe Fireworks extension from johndunning.com')" 
+                            onmouseout="addthis_close()" 
+                            onclick="return addthis_sendto()"
+                        ><img src="/fireworks/images/add-this.gif" width="16" height="16" alt="Bookmark and Share" style="border:0"></a>
+                    </li> -->
+                    <li>
+                        <a href="https://twitter.com/share" 
+                            class="twitter-share-button" 
+                            data-count="horizontal" 
+                            data-via="fwextensions"
+                            data-text="Fireworks Console - #AdobeFireworks extension"
+                            data-url="FWConsole.html"
+                        ></a>
+                    </li>
+                    <li>
+                        <fb:like 
+                            href="FWConsole.html" 
+                            layout="button_count" 
+                            width="80"
+                        ></fb:like>
+                    </li>
+<!--                    <li>
+                        <g:plusone size="medium" style="vertical-align: middle;"></g:plusone>
+                    </li> -->
+                </ul>
+
+<div class="Include"><img src="../inc/FWConsole.png" width="549" height="432" style="position: absolute;"><div style="height: 432px; visibility: hidden;"></div></div>
+
+<div class="Description Markdown"><p>Fireworks has a dauntingly powerful JavaScript API, and understanding it all can take some time.  To try out a new function, you have to write a little command script that uses it, put the script in the Commands folder, run it, tweak it, run it again, etc.  I used to find myself writing a lot of commands in the form of <code>alert(Files.getDirectory(dom.filePathForSave))</code> just to explore the API calls.</p>
+
+<p>The <em>Fireworks Console</em> simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see their output.  It's a little like having a command line prompt for Fireworks.  You could even ignore the GUI altogether and create your graphics via JavaScript (not that I'd recommend it).  Additionally, the console can help you debug your own <code>.jsf</code> commands and Flash panels.</p>
+
+<h1>Executing JavaScript</h1>
+
+<p>Using the console is straightforward.  Type some JavaScript in the upper field, click the <em>Eval</em> button or press enter, and then the code's result is displayed in the lower field.  Pretty much any JavaScript is valid, including comments, if-then's, for-loops, etc.  If you want to enter a newline rather than execute the statements, press shift-enter.  To execute the code while keepping it visible in the input field, press ctrl-enter.  You can drag the divider to make the entry field larger.</p>
+
+<p>Be careful not to write code that might return a lot of information, such as evaluating just <code>dom</code>.  It may take several seconds to transfer all the data from Fireworks to the Flash panel (if it doesn't hang Fireworks).  And don't do something silly like writing an infinite loop...</p>
+
+<p>The output of your JavaScript statements is maintained across Fireworks sessions, and you can copy the text to paste it somewhere else.  The output is also saved in a <code>Fireworks Console.txt</code> file in the <em>Command Panels</em> directory.  If the output history becomes too long, you can click the <em>Clear</em> button to reset it, which will also delete the log file.  If you ctrl-click the <em>Clear</em> button, then the log file is renamed to a time-stamped file, like <code>Fireworks Console 2013-04-06 14.23.42.txt</code>, which lets you keep the output around for further use.</p>
+
+<p>A history of the recently entered statements is maintained so you can go back and re-execute something.  To access older statements, click the left-pointing arrow button next to the <em>Clear</em> button.  Click the right arrow to display newer statements.  When the keyboard focus is in the code area, you can also press ctrl-up-arrow or ctrl-down-arrow to access the previous statements.</p>
+
+<h2>Predefined variables and functions</h2>
+
+<p>When executing JavaScript, there are several predefined variables that provide quick access to commonly used Fireworks objects:</p>
+
+<dl>
+<dt>dom</dt>
+<dd>The result of calling <code>fw.getDocumentDOM()</code>.</dd>
+
+<dt>sel</dt>
+<dd>A reference to <code>fw.selection</code>.</dd>
+
+<dt>el</dt>
+<dd>A reference to the first selected element, i.e., <code>fw.selection[0]</code>.  This makes it a little easier to do things like inspecting, say, the selected object's width by just entering <code>el.width</code>.</dd>
+
+<dt>global</dt>
+<dd>A reference to the global context in the JavaSCript environment, which would be <code>window</code> in a browser.</dd>
+</dl>
+
+<p>There are also a number of utility functions available:</p>
+
+<blockquote>
+  <table>
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>after</code></td>
+    <td><code>find</code></td>
+    <td><code>isArray</code></td>
+    <td><code>max</code></td>
+    <td><code>some</code></td>
+  </tr>
+  <tr>
+    <td><code>all</code></td>
+    <td><code>first</code></td>
+    <td><code>isBoolean</code></td>
+    <td><code>memoize</code></td>
+    <td><code>sortBy</code></td>
+  </tr>
+  <tr>
+    <td><code>any</code></td>
+    <td><code>flatten</code></td>
+    <td><code>isDate</code></td>
+    <td><code>methods</code></td>
+    <td><code>sortedIndex</code></td>
+  </tr>
+  <tr>
+    <td><code>bind</code></td>
+    <td><code>foldl</code></td>
+    <td><code>isElement</code></td>
+    <td><code>min</code></td>
+    <td><code>tail</code></td>
+  </tr>
+  <tr>
+    <td><code>bindAll</code></td>
+    <td><code>foldr</code></td>
+    <td><code>isEmpty</code></td>
+    <td><code>object</code></td>
+    <td><code>take</code></td>
+  </tr>
+  <tr>
+    <td><code>clone</code></td>
+    <td><code>forEach</code></td>
+    <td><code>isEqual</code></td>
+    <td><code>omit</code></td>
+    <td><code>tap</code></td>
+  </tr>
+  <tr>
+    <td><code>collect</code></td>
+    <td><code>functions</code></td>
+    <td><code>isFinite</code></td>
+    <td><code>once</code></td>
+    <td><code>times</code></td>
+  </tr>
+  <tr>
+    <td><code>compact</code></td>
+    <td><code>groupBy</code></td>
+    <td><code>isFunction</code></td>
+    <td><code>pairs</code></td>
+    <td><code>toArray</code></td>
+  </tr>
+  <tr>
+    <td><code>compose</code></td>
+    <td><code>has</code></td>
+    <td><code>isNaN</code></td>
+    <td><code>pick</code></td>
+    <td><code>union</code></td>
+  </tr>
+  <tr>
+    <td><code>contains</code></td>
+    <td><code>head</code></td>
+    <td><code>isNull</code></td>
+    <td><code>pluck</code></td>
+    <td><code>uniq</code></td>
+  </tr>
+  <tr>
+    <td><code>countBy</code></td>
+    <td><code>identity</code></td>
+    <td><code>isNumber</code></td>
+    <td><code>random</code></td>
+    <td><code>unique</code></td>
+  </tr>
+  <tr>
+    <td><code>defaults</code></td>
+    <td><code>include</code></td>
+    <td><code>isObject</code></td>
+    <td><code>range</code></td>
+    <td><code>values</code></td>
+  </tr>
+  <tr>
+    <td><code>detect</code></td>
+    <td><code>indexOf</code></td>
+    <td><code>isRegExp</code></td>
+    <td><code>reduce</code></td>
+    <td><code>where</code></td>
+  </tr>
+  <tr>
+    <td><code>difference</code></td>
+    <td><code>initial</code></td>
+    <td><code>isString</code></td>
+    <td><code>reduceRight</code></td>
+    <td><code>without</code></td>
+  </tr>
+  <tr>
+    <td><code>drop</code></td>
+    <td><code>inject</code></td>
+    <td><code>isUndefined</code></td>
+    <td><code>reject</code></td>
+    <td><code>wrap</code></td>
+  </tr>
+  <tr>
+    <td><code>each</code></td>
+    <td><code>intersection</code></td>
+    <td><code>keys</code></td>
+    <td><code>rest</code></td>
+    <td><code>zip</code></td>
+  </tr>
+  <tr>
+    <td><code>every</code></td>
+    <td><code>invert</code></td>
+    <td><code>last</code></td>
+    <td><code>select</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><code>extend</code></td>
+    <td><code>invoke</code></td>
+    <td><code>lastIndexOf</code></td>
+    <td><code>shuffle</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><code>filter</code></td>
+    <td><code>isArguments</code></td>
+    <td><code>map</code></td>
+    <td><code>size</code></td>
+    <td></td>
+  </tr>
+  </tbody>
+  </table>
+</blockquote>
+
+<p>These are implemented by a slightly modified version of <a href="http://github.com/documentcloud/underscore/">Underscore.js</a>, a very useful library for functional programming.  See the <a href="http://documentcloud.github.com/underscore/">Underscore documentation</a> for more information about how they work.  Note that these functions can be treated as globals when executing code in the console, so you don't need to call them through the <code>_</code> object, e.g. you can write <code>forEach()</code> instead of <code>_.forEach()</code>.</p>
+
+<p>A few of these functions are worth highlighting.  Calling <code>keys(el)</code> is handy for dumping just the property names of the first selected Fireworks element:</p>
+
+<pre><code>&gt;&gt;&gt; keys(el): ["blendMode", "customData", "effectList", "height", "isLayer", 
+"isSmartShape", "javascriptString", "left", "locked", "mask", "mode", 
+"name", "opacity", "originalSides", "pathAttributes", "pathOperation", 
+"pixelRect", "roundness", "top", "transform", "visible", "width"]
+</code></pre>
+
+<p>By default, <code>keys()</code> will return the keys in sorted order.  You can pass <code>true</code> as the second element to return them in the same order that a <code>for in</code> loop does (this is different behavior than the standard <code>keys()</code> method in Underscore):</p>
+
+<pre><code>&gt;&gt;&gt; keys(el, true): ["pathOperation", "transform", "originalSides", 
+"pathAttributes", "mode", "roundness", "isSmartShape", "customData", 
+"effectList", "locked", "mask", "name", "blendMode", "opacity", "visible", 
+"pixelRect", "height", "left", "width", "top", "isLayer", 
+"javascriptString"]
+</code></pre>
+
+<p>Calling <code>pluck()</code> can pick out the values for one property across an array of objects and return them.  This example returns an array of the names of the selected elements:</p>
+
+<pre><code>&gt;&gt;&gt; pluck(sel, "name"): ["Label", "Background"]
+</code></pre>
+
+<p>Similar to the Underscore functions like <code>isArray()</code>, there are "is" functions for all of the native Fireworks object types.  So <code>isImage(el)</code> returns <code>true</code> if an image is selected, and <code>isSmartShape(el)</code> returns <code>true</code> if an auto shape is selected:</p>
+
+<blockquote>
+  <table>
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>is$</code></td>
+    <td><code>isExportDocClass</code></td>
+    <td><code>isImagemapList</code></td>
+  </tr>
+  <tr>
+    <td><code>isBehavior</code></td>
+    <td><code>isExportOptions</code></td>
+    <td><code>isInstance</code></td>
+  </tr>
+  <tr>
+    <td><code>isBehaviorInfo</code></td>
+    <td><code>isExportSettings</code></td>
+    <td><code>isLayer</code></td>
+  </tr>
+  <tr>
+    <td><code>isBehaviorsList</code></td>
+    <td><code>isFileRef</code></td>
+    <td><code>isPath</code></td>
+  </tr>
+  <tr>
+    <td><code>isBrush</code></td>
+    <td><code>isFilesClass</code></td>
+    <td><code>isPathAttrs</code></td>
+  </tr>
+  <tr>
+    <td><code>isCJsDomObject</code></td>
+    <td><code>isFill</code></td>
+    <td><code>isPattern</code></td>
+  </tr>
+  <tr>
+    <td><code>isCachedList</code></td>
+    <td><code>isFind</code></td>
+    <td><code>isPixelAdjustTable</code></td>
+  </tr>
+  <tr>
+    <td><code>isColumnHelper</code></td>
+    <td><code>isFireworks</code></td>
+    <td><code>isPopupMenuItem</code></td>
+  </tr>
+  <tr>
+    <td><code>isCompoundShape</code></td>
+    <td><code>isFrame</code></td>
+    <td><code>isRectanglePrimitive</code></td>
+  </tr>
+  <tr>
+    <td><code>isContour</code></td>
+    <td><code>isFrameNLayerIntersection</code></td>
+    <td><code>isRegisterMoveParms</code></td>
+  </tr>
+  <tr>
+    <td><code>isContourNode</code></td>
+    <td><code>isFwArray</code></td>
+    <td><code>isSetCurrentPage</code></td>
+  </tr>
+  <tr>
+    <td><code>isContourNodeDynamicInfo</code></td>
+    <td><code>isFwDict</code></td>
+    <td><code>isSliceHotspot</code></td>
+  </tr>
+  <tr>
+    <td><code>isControlPoint</code></td>
+    <td><code>isFwMatrix</code></td>
+    <td><code>isSliceInfo</code></td>
+  </tr>
+  <tr>
+    <td><code>isDialogsClass</code></td>
+    <td><code>isGradient</code></td>
+    <td><code>isSlices</code></td>
+  </tr>
+  <tr>
+    <td><code>isDocumentClass</code></td>
+    <td><code>isGradientNode</code></td>
+    <td><code>isSmartShapeClass</code></td>
+  </tr>
+  <tr>
+    <td><code>isDocumentFw2StaticMethods</code></td>
+    <td><code>isGroup</code></td>
+    <td><code>isStyle</code></td>
+  </tr>
+  <tr>
+    <td><code>isEffect</code></td>
+    <td><code>isGuides</code></td>
+    <td><code>isSystemClass</code></td>
+  </tr>
+  <tr>
+    <td><code>isEffectList</code></td>
+    <td><code>isHistoryPalette</code></td>
+    <td><code>isText</code></td>
+  </tr>
+  <tr>
+    <td><code>isElement</code></td>
+    <td><code>isHotspot</code></td>
+    <td><code>isTexture</code></td>
+  </tr>
+  <tr>
+    <td><code>isElementMask</code></td>
+    <td><code>isImage</code></td>
+    <td><code>isToolsClass</code></td>
+  </tr>
+  <tr>
+    <td><code>isErrorsClass</code></td>
+    <td><code>isImageMap</code></td>
+    <td><code>isWidgetSymbol</code></td>
+  </tr>
+  </tbody>
+  </table>
+</blockquote>
+
+<p>Passing an array or "array-like" object to <code>_()</code> will return that array with all of the Underscore methods on it.  This is particularly useful for <code>fw.selection</code>, which is an <code>FwArray</code> object, not a real <code>Array</code> object, so it doesn't have <code>Array</code> methods like <code>slice()</code>.  Calling <code>_(sel).slice(1)</code> will therefore return everything but the first selected element.  However, trying to modify the selection object itself, like <code>_(sel).pop()</code>, will throw an error.</p>
+
+<h1>Debugging .jsf commands</h1>
+
+<p>Debugging a Fireworks command can be a real pain, since the only way to see what's going on while it executes is to sprinkle your code with <code>alert()</code> calls.  Sort of like web development circa 1998.</p>
+
+<p>The <em>Fireworks Console</em> can make this debugging process much less painful.  The first time it loads, a global <code>console</code> object is added to the Fireworks JS environment, which provides many of the same API methods as the consoles in web browsers, such as <code>console.log()</code>.  So instead of writing something like <code>alert(fw.selection[0].width)</code> to show the selection's current width, you can write <code>console.log(fw.selection[0].width)</code>.</p>
+
+<p>This approach has several advantages: unlike <code>alert()</code>, the <code>console</code> methods don't block the execution of your command; their output is displayed as a scrolling list in the Fireworks Console panel; and you can pass in multiple parameters, which will be separated by spaces.  Better still, insted of seeing <code>[object RectanglePrimitive]</code> as the output of <code>alert(fw.selection[0])</code> (since that's the default string representation of a rectangle primitive), calling <code>console.log(fw.selection[0])</code> will actually print all of the object's attributes in an alphabetized list:</p>
+
+<pre><code>{
+    blendMode: "normal",
+    customData: { },
+    effectList: null,
+    height: 49,
+    isLayer: false,
+    isSmartShape: false,
+    left: 14,
+    mask: null,
+    name: null,
+    opacity: 100,
+    originalSides: { bottom: 135, left: 14, right: 206, top: 86 },
+    pathAttributes: {
+        brush: {
+            alphaRemap: "none",
+...
+</code></pre>
+
+<p>It's not quite as convenient as the browsable tree that Firebug provides, but it's a lot better than what you get with an <code>alert()</code>.  However, make sure you remove any references to <code>console</code> before sharing your extension with other users, as they're unlikely to have the console installed and without it, calling <code>console.log()</code> in your code will throw an exception.</p>
+
+<p>The <code>console</code> object currently supports these methods for printing values to the panel:</p>
+
+<ul>
+<li><code>log()</code></li>
+<li><code>warn()</code></li>
+<li><code>info()</code></li>
+<li><code>debug()</code></li>
+<li><code>error()</code></li>
+</ul>
+
+<p>However, the output of all these methods looks the same in the console and there's no way to display only certain types, so for now, it's probably simplest to use just <code>console.log()</code> (or the global <code>log()</code> convenience function).  Also, the <code>%s</code> string replacement functionality that Firebug provides is not currently supported.</p>
+
+<p>If you call these methods from a function, the function's name is prepended to the output, which can make it easier to keep track of where the log calls are coming from.  If the caller is an anonymous function expression, the name will simply be <code>anonymous()</code>.</p>
+
+<p>These other <code>console</code> methods are also supported:</p>
+
+<dl>
+<dt>count(counterName, [suppressDisplay])</dt>
+<dt>countDisplay(counterName, [resetCount])</dt>
+<dt>countReset(counterName)</dt>
+<dd>
+<p>Each time you call <code>count()</code> with the same counter name, e.g., <code>console.count("found rect")</code>, it will increment that counter and print its current value, e.g. <code>found rect: 1</code>,  <code>found rect: 2</code>, etc.  You can pass <code>true</code> as the second parameter to increment the count but not display it, which can be useful in a loop where you only want to print the final count.  To display the current count without incrementing it, call <code>console.countDisplay("found rect")</code>.  You can also pass <code>true</code> as the second parameter to clear the counter after it's been displayed.</p>
+
+<p>Unlike a webpage, the only way to reset the JavaScript environment in Fireworks is to quit and restart it, so if you want to reset the counter back to zero, call <code>console.countReset("found rect")</code>.</p>
+</dd>
+
+<dt>dir(object, [message], ...)</dt>
+<dd>Displays an array of the object's enumerable properties.  Unlike Firebug, the list is not interactive.  Passing a <code>message</code> parameter will display that string before the array of properties, which can help you identify which call to <code>console.dir()</code> you're seeing in the log.  Any additional arguments after <code>message</code> are displayed after the array of properties.</dd>
+
+<dt>time(timerName)</dt>
+<dt>timeEnd(timerName)</dt>
+<dd>
+<p>You can easily track the time a section of your code takes to execute by calling the <code>time()</code> method at the beginning, and then <code>timeEnd()</code> at the end, using the same name in both calls.  For instance:</p>
+
+<pre><code>console.time("loop");
+for (var i = 0; i &lt; 100; i++) {
+    // do something time-consuming
+}
+console.timeEnd("loop"); // prints "loop: 3.2 sec"
+</code></pre>
+</dd>
+
+<dt>clear([keepLogFile])</dt>
+<dd>
+<p>Clears the current log entries in the console.  It can be helpful to call this at the beginning of your script to clear out the results from the last iteration.  Note that it can take a couple of seconds before the console is cleared, due to the polling that's described below.</p>
+
+<p>You can pass a truthy value to <code>console.clear()</code> to keep the current contents of the console in a new, time-stamped file.  By default, the new filename is <code>Fireworks Console</code> followed by the current time and date, like <code>Fireworks Console 2013-04-06 14.23.42.txt</code>.  If you pass a string to the method, like <code>console.clear("My Command Output")</code>, then the filename will be <code>My Command Output 2013-04-06 14.23.42.txt</code>, which can be useful for keeping logs of the output of a command you're developing.</p>
+</dd>
+
+<dt>line([characters], [length])</dt>
+<dd>
+<p>Displays a line of 60 hyphens, which can help break the console output into sections.  Pass a string in the optional <code>characters</code> parameter to output different characters.  Pass a number in the optional <code>length</code> parameter to change the length of the line.  For instance, <code>console.line("-=")</code> will output this:</p>
+
+<pre><code>&gt;&gt;&gt; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+</code></pre>
+</dd>
+
+<dt>retention</dt>
+<dd>Set this to the number of lines that should be retained in the console between polls from the panel.  By default, only the last 100 messages passed to <code>console.log()</code> are retained, so that if your code starts spewing out lots of long messages, the memory usage doesn't get out of control.</dd>
+</dl>
+
+<h2>Watching object properties</h2>
+
+<p>The Fireworks JavaScript engine provides a <code>watch()</code> method on all objects that will call you back when a given property of that object is assigned a value.  Although you can't watch the properties of native Fireworks objects, <code>watch()</code> can still be useful for debugging the pure JS aspects of your extension.</p>
+
+<p>Mozilla has <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/watch">documentation</a> on using <code>watch()</code> directly, but the <em>Fireworks Console</em> provides some convenience methods to make tracking property changes a little easier:</p>
+
+<dl>
+<dt>watch(object, properties, [objectName])</dt>
+<dd>
+<p>Displays the old and new value of the object properties in the console whenever they change, along with the name of the function where the change happened.  The <code>properties</code> parameter can be a single string or an array of strings, to watch multiple properties on the same object.  To watch all of an object's properties, pass <code>"*"</code> as the <code>properties</code> parameter, or leave out the parameter altogether.</p>
+
+<p>You can pass an optional <code>objectName</code> string, which will be displayed before the name of the property, which can be helpful in distinguishing which object's <code>width</code> property changed.</p>
+
+<p>This code watches for changes to any properties on <code>foo</code>:</p>
+
+<pre><code>var foo = { 
+    bar: 0,
+    baz: 42
+};
+
+console.watch(foo, "*", "foo");
+
+function f()
+{
+    foo.bar++;
+}
+
+f();
+</code></pre>
+
+<p>Calling <code>f()</code> will display:</p>
+
+<pre><code>&gt;&gt;&gt; f(): foo.bar: 0 =&gt; 1
+</code></pre>
+
+<p>Note that only the properties on the object at the time you called <code>console.watch(myObject, "*")</code> will be tracked.  If you subsequently add a new property to <code>myObject</code>, you will need to call <code>console.watch()</code> on that new property to track its changes.</p>
+</dd>
+
+<dt>unwatch(object, properties)</dt>
+<dd>Turns off change-tracking for the properties specified in the <code>properties</code> parameter, which can be a single string or an array of strings.  To unwatch all of an object's properties, pass <code>"*"</code> as the <code>properties</code> parameter, or leave out the parameter altogether.</dd>
+
+<dt>unwatchAll()</dt>
+<dd>Turns off change-tracking for all objects that have been passed to <code>console.watch()</code>.  Since watching properties can slow things down a bit, it's a good idea to call <code>console.unwatchAll()</code> at the end of your command, to avoid leaving any watched globals behind.</dd>
+</dl>
+
+<p>Note that you can watch only object properties, not local variables.</p>
+
+<h2>Showing the stack trace</h2>
+
+<p>Since Fireworks doesn't have a JavaScript debugger, the console provides a couple of methods to display the current call stack, giving you a glimpse into how your code is executing.</p>
+
+<dl>
+<dt>showStackPrefix(enabled)</dt>
+<dd>
+<p>Pass <code>true</code> to display the current call stack before each <code>console.log()</code> call, and <code>false</code> to turn off the display.  Up to 5 levels of calls will be shown.  As an example, this code:</p>
+
+<pre><code>(function() {
+    function f(a)
+    {
+        a *= 2;
+        g(a);
+    }
+
+    function g(x)
+    {
+        console.log(x);
+    }
+
+    f(42);
+})();
+</code></pre>
+
+<p>will show:</p>
+
+<pre><code>&gt;&gt;&gt; . &gt; f &gt; g(): 42
+</code></pre>
+
+<p>A <code>.</code> in the stack prefix represents an anonymous function.</p>
+</dd>
+
+<dt>showStack([message])</dt>
+<dd>
+<p>Displays the current call stack along with the values of each function call's parameters.  An optional message can be displayed with the call stack.  For example, this code:</p>
+
+<pre><code>(function() {
+    var o = { 
+        g: function(x) { console.showStack("in o.g()"); }
+    };
+
+    function f(a)
+    {
+        a *= 2;
+        o.g(a);
+    }
+
+    f(42);
+})();
+</code></pre>
+
+<p>will show:</p>
+
+<pre><code>&gt;&gt;&gt; Call stack [in o.g()]:
+  anonymous()
+    f(a: 84)
+      anonymous(x: 84)
+</code></pre>
+
+<p>The values of the function parameters are shown as they are at the time of the <code>showStack()</code> call, which may be different than the values that were initially passed to the function.  Since <code>f()</code> in the example above multiplies its <code>a</code> parameter by two, the call stack shows <code>84</code> as the value for <code>a</code>, rather than the <code>42</code> that was initially passed in.  The console isn't able to access the original parameter values.  To avoid dumping too much text to the console, a simple string representation of the value is shown.  So you'll see <code>FwArray</code> if you pass <code>fw.selection</code> to a function.</p>
+</dd>
+</dl>
+
+<p>Note that the stack display won't be correct inside a recursive function, since the call chain that JavaScript provides in that situation is a loop.</p>
+
+<h2>Showing assertions</h2>
+
+<p>To reduce noise in the console, it's often useful to display a message only when something is wrong.  By calling <code>console.assert()</code>, you can log a message when an expression evaluates to false.</p>
+
+<dl>
+<dt>assert(expression, message, [objects])</dt>
+<dd>
+<p>If the <code>expression</code> parameter evaluates to a falsy value, the <code>message</code> string is shown, along with an "ASSERTION FAILED" label.  To make it clear which assertion failed, it's often simplest to duplicate the expression as a string value in the <code>message</code> parameter:</p>
+
+<pre><code>(function() {
+    console.assert(fw.selection.length &gt; 0, "fw.selection.length &gt; 0");
+})();
+</code></pre>
+
+<p>If nothing is selected, this will display:</p>
+
+<pre><code>&gt;&gt;&gt; anonymous(): ASSERTION FAILED: fw.selection.length &gt; 0
+</code></pre>
+
+<p>Any parameters that are passed after <code>message</code> will be logged to the console.  This can be useful to display the current state of variables whose values are being asserted.</p>
+</dd>
+</dl>
+
+<h2>Tracing function execution</h2>
+
+<p>When you're trying to track down a bug, adding lots of <code>console.log()</code> calls to your code can be tedious, especially since you'll need to go back and remove them.  In addition to the <code>console</code> global object, the <em>Fireworks Console</em> also loads a global <code>trace()</code> function that can help you understand how each line in a function is executed.</p>
+
+<p>Imagine you've written the following (not very useful) script:</p>
+
+<pre><code>function myBuggyFunc(count)
+{
+    var dom = fw.getDocumentDOM();
+    dom.selectAll();
+    dom.clipCopy();
+    dom.deleteSelection();
+
+    for (var i = 0; i &lt; count; i++) {
+        dom.clipPaste();
+        dom.moveSelectionTo({ x: i * 10, y: i * 10 });
+    }
+}
+
+myBuggyFunc();
+</code></pre>
+
+<p>It's supposed to select everything on the current state, copy it, delete it, then paste it multiple times, each time positioning the copy 10px away from the previous copy (like I said, not terribly useful).  When you run the code, Fireworks just says "Could not run the script. A parameter was incorrect".  But which API call is wrong?</p>
+
+<p>Instead of manually adding <code>log()</code> calls to the code to try to figure out where it fails, you can use the trace library to do it for you.  Just add <code>return trace(this);</code> at the top of the function you want to trace.  In the example above, it would look like this:</p>
+
+<pre><code>function myBuggyFunc(count)
+{
+    return trace(this);
+
+    var dom = fw.getDocumentDOM();
+    dom.selectAll();
+    dom.clipCopy();
+    dom.deleteSelection();
+
+    for (var i = 0; i &lt; count; i++) {
+        dom.clipPaste();
+        dom.moveSelectionTo({ x: i * 10, y: i * 10 });
+    }
+}
+
+myBuggyFunc();
+</code></pre>
+
+<p>When you run the script, you should see the following lines in the <em>Fireworks Console</em> panel:</p>
+
+<pre><code>&gt;&gt;&gt; myBuggyFunc: ( count: undefined )
+&gt;&gt;&gt; myBuggyFunc:     var dom = fw.getDocumentDOM();
+&gt;&gt;&gt; myBuggyFunc:     dom.selectAll();
+&gt;&gt;&gt; myBuggyFunc:     dom.clipCopy();
+&gt;&gt;&gt; myBuggyFunc:     dom.deleteSelection();
+</code></pre>
+
+<p>Each line of the trace is prefixed with the name of the function you're tracing, along with any leading whitespace on the line.  The first line shows the function's parameters and the values that were passed in.  After the parameter list, each line in the console displays one line of code from the function.  You can see that the last line that executed was <code>dom.deleteSelection()</code>, which means that it likely contains a bug.  The <a href="http://help.adobe.com/en_US/fireworks/cs/extend/WS5b3ccc516d4fbf351e63e3d1183c94856c-7e3f.html">Extending Fireworks</a> docs say that <code>deleteSelection()</code> has a <code>bFillDeletedArea</code> parameter which is ignored if Fireworks is not in bitmap editing mode.  Unfortunately, it's still required, even if it's being ignored.  (A lot of Fireworks API calls are like that.)  When you're finished tracing the function, just delete the <code>return trace(this);</code> line.</p>
+
+<p>See the <code>trace()</code> library's <a href="https://github.com/fwextensions/trace/blob/master/README.md">readme file</a> for information on additional trace functionality and a detailed explanation of how it works.</p>
+
+<h2>Polling for console updates</h2>
+
+<p>You'll notice that after calling <code>console.log()</code>, it will take a couple of seconds for the output to appear in the panel.  This is due to a limitation in Fireworks that makes it impossible for JavaScript to call into a Flash panel's ActionScript.  The <em>Fireworks Console</em> panel must therefore poll the JS every couple of seconds to see if something new has been logged.</p>
+
+<p>If you're impatient (and quick), you can click the <em>Print .jsf Logs</em> button to immediately print whatever your JS code has logged.  If you want to temporarily disable the polling, you can uncheck the <em>Auto</em> checkbox; this setting will be remembered across sessions.</p>
+
+<p>Note that because calls from Flash to JavaScript will interfere with the text, crop, scale, skew, distort and 9-slice tools, polling is automatically stopped if one those tools is selected.  To print the logs in that situation, either switch to a different tool or click the <em>Print .jsf Logs</em> button.  Polling is also suspended while Fireworks is in the background.</p>
+
+<p>Unfortunately, Fireworks sometimes does not deliver the necessary events that the panel uses to disable polling.  If you notice that a scaling operation, say, seems to get canceled in the middle of dragging a control point, try collapsing the <em>Fireworks Console</em> panel by double-clicking its tab and then expanding it by single-clicking the tab again.  If that doesn't work, you'll need to uncheck the <em>Auto</em> checkbox to disable polling while using those tools.</p>
+
+<h1>Debugging Flash panels</h1>
+
+<p>Since not being able to see the output of <code>trace()</code> calls makes developing Flash panels a pain, the console provides a way to display messages from your ActionScript code.  To enable your panel to talk to the console, add the <code>console.swc</code> file to your Flex or Flash library path; you can find the file in the <em>Command Panels</em> folder after installing the extension.  Then add <code>import com.johndunning.fw.console;</code> to the top of your ActionScript code.</p>
+
+<p>Once that's done, you can print strings to the console by calling <code>console.log()</code> from your code, e.g., <code>console.log("the current time is", (new Date()).toString())</code>.  You can pass as many string, number or boolean parameters as you like; they'll be separated by spaces in the console output.  It's pretty basic functionality, but it can be extremely helpful when debugging ActionScript.  Note that passing an object to <code>console.log()</code> will print the string representation of that object, not its pretty-printed attributes.  Also, if you use some of my other Fireworks panels, like <a href="AdjPanel.html"><em>Adjustments</em></a> or <a href="QuickFire.html"><em>QuickFire</em></a>, debugging messages from them may appear in the console, since they may still contain some console.log() calls.</p>
+
+<h1>Release history</h1>
+
+<dl>
+<dt>0.4.6</dt>
+<dd>2013-04-07: Save the evaluated code to the log file.</dd>
+
+<dt>0.4.5</dt>
+<dd>2013-04-06: The console output is now saved to a <code>Fireworks Console.txt</code> file.</dd>
+
+<dt>0.4.4</dt>
+<dd>2013-01-08: Updated underscore.js to 1.4.3.  Added <code>is()</code> functions for all of the native Fireworks types.  Added ctrl-enter to execute the code but keep it in the input field.</dd>
+
+<dt>0.4.3</dt>
+<dd>2012-06-18: Fixed a bug with <code>console.log()</code>.</dd>
+
+<dt>0.4.2</dt>
+<dd>2012-06-17: Added <code>console.line()</code> method.  Console now works when no documents are open.  Included latest trace library, which now handles if/else branches correctly.</dd>
+
+<dt>0.4.1</dt>
+<dd>2012-05-19: Added new trace library, which now correctly handles <code>arguments</code> and <code>this</code> in the traced function.  Calling <code>console.log(arguments)</code> now works.  Additional arguments can be passed to <code>console.dir()</code>.</dd>
+
+<dt>0.4.0</dt>
+<dd>2012-05-11: Added clear, dir, watch, unwatch, unwatchAll, assert, showStack, showStackPrefix methods to <code>console</code>.  Added lots of utility functions to the scope in which entered JS is executed.  Added trace library.  Updated UI skin.</dd>
+
+<dt>0.3.1</dt>
+<dd>2010-05-11: Fixed bug where polling wasn't suspended for some tools.  Added sticky polling setting.</dd>
+
+<dt>0.3.0</dt>
+<dd>2010-05-03: Added <code>console</code> API functions.</dd>
+
+<dt>0.2.0</dt>
+<dd>2010-03-26: Completely rewrote the console in Flex 3.  Added .swc library for easily adding logging to Flash panels.</dd>
+
+<dt>0.1.0</dt>
+<dd>2002-06-17: Initial release.</dd>
+</dl>
+</div>
+                <div class="PackageContents">
+                    <h1>Package contents</h1>
+                    <ul>
+                        <li>Fireworks Console</li>
+                    </ul>
+                </div>
+                
+                <div class="BottomNav">
+                    <div class="Links">
+                        <a href="../dl/index9595.html"
+                            onclick="javascript: PT._trackPageview('/fireworks/mxp/FWConsole');"
+                        >Download 0.4.6.mxp</a>
+                            <a href="../dl/indexe5ab.html"
+                                class="ZipLink"
+                                onclick="javascript: PT._trackPageview('/fireworks/zip/FWConsole');"
+                                title="This .zip version is available in case the Extension Manager can't install the standard .mxp version of this extension"
+                            >Download .zip</a>
+                        <span class="CommandDate">2013-04-07</span>
+                    </div>
+
+                <ul class="SharingLinks">
+                    <li class="CommentsLink"><a href="#disqus_thread"
+                        onclick="javascript: PT._trackPageview('/fireworks/comment/FWConsole');"
+                    >Comment</a></li>
+<!--                    <li>
+                        <script type="text/javascript">
+                            var addthis_pub="fwextensions";
+                            var addthis_header_color = "#ffffff";
+                            var addthis_header_background = "#cc3300";
+                            var addthis_options = 'twitter, facebook, buzz, googlebuzz, delicious, digg, email, favorites, more';
+                        </script>
+                        <a class="AddThis"
+                            href="https://www.addthis.com/bookmark.php?v=20" 
+                            onmouseover="return addthis_open(this, '', '[URL]', 'Fireworks Console - Adobe Fireworks extension from johndunning.com')" 
+                            onmouseout="addthis_close()" 
+                            onclick="return addthis_sendto()"
+                        ><img src="/fireworks/images/add-this.gif" width="16" height="16" alt="Bookmark and Share" style="border:0"></a>
+                    </li> -->
+                    <li>
+                        <a href="https://twitter.com/share" 
+                            class="twitter-share-button" 
+                            data-count="horizontal" 
+                            data-via="fwextensions"
+                            data-text="Fireworks Console - #AdobeFireworks extension"
+                            data-url="FWConsole.html"
+                        ></a>
+                    </li>
+                    <li>
+                        <fb:like 
+                            href="FWConsole.html" 
+                            layout="button_count" 
+                            width="80"
+                        ></fb:like>
+                    </li>
+<!--                    <li>
+                        <g:plusone size="medium" style="vertical-align: middle;"></g:plusone>
+                    </li> -->
+                </ul>
+
+                    <p><a href="../index.html">See all the Adobe Fireworks extensions, commands and panels</a></p>
+                </div>
+
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    var disqus_shortname = 'johndunning',
+                        disqus_url = "FWConsole.html",
+                        disqus_identifier = "/fireworks/about/FWConsole",
+                        disqus_title = "Fireworks Console";
+
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+            </div></div> 
+        </div> 
+        <div class="yui-b">
+            <h1 class="SiteName"><a href="../../index.html">john<b>dunning</b>.com/</a></h1>
+
+            <div id="ExtNavLinks" class="LinkList">
+                <ul>
+<li><a href="Adjust9Slice.html" title="Tweaking the 9-slice guides in a symbol can be a pain, since you have to keep going into symbol editing mode to make a change, and then back out to the canvas to see the effect on the symbol instances.  The Adjust 9-Slice panel lets you move the guides while seeing the effects in realtime.">Adjust 9-Slice</a></li>
+<li><a href="AdjPanel.html" title="If you want to make the fill color of an element darker, you can select it, open the Color Mixer panel, switch to HSB mode, and then drag the brightness slider.  But what if you have two differently colored elements and want to make them both slightly darker?  You can't use the Color Mixer panel because it will set both elements to the same color.  The Adjustments panel makes this and other tasks easier.">Adjustments Panel</a></li>
+<li><a href="Bookmarks.html" title="The Bookmarks extension lets you set a bookmark on different pages and states in your document and then quickly jump between them.  This can be handy for exploring the flow through a website or quickly toggling between variations of a design.">Bookmarks</a></li>
+<li><a href="ChangeTextSize.html" title="This package consists of two commands for increasing or decreasing the font size of the selected text block(s).">Change Text Size</a></li>
+<li><a href="Commands.html" title="The Commands panel provides quick access to your favorite Fireworks commands, panels, symbols, auto shapes, textures and patterns.  While keyboard shortcuts are useful, you may not want to create a shortcut for every command you use frequently, and the Common Library and Shapes panels don't provide any shortcuts at all.  With the Commands panel, you can create a set of toolbar buttons for your frequently used commands and assets so that they're always right at hand.">Commands</a></li>
+<li><a href="CopyMerged.html" title="With just one step, the Copy Merged command copies onto the clipboard the entire document as a flattened image.  It even copies the objects on locked layers, without affecting their locked state.  Copy Merged into New Document does the same thing but pastes the flattened image into a new document.  Copy Merged into Selection copies the merged pixels into the selected objects while respecting their alpha channels, which is a quick way to copy a row of icons out of a screenshot and into individual bitmap elements.">Copy Merged</a></li>
+<li><a href="CopyPasteWHXY.html" title="The Paste Attributes command is handy for quickly giving the same appearance to a bunch of objects.  But it would also be helpful to give objects the same size or position.  You can use the Properties panel to do that, but then you have to type in the size or position values each time you want to apply them, and you have to select each element one at a time.  The commands in this extension make that process much more convenient.">Copy Paste WHXY</a></li>
+<li><a href="StateSymbol.html" title="Rich symbols are a powerful feature of Fireworks, but creating them is a fairly complicated process.  The Create Symbol From States command lets you create basic rich symbols containing multiple states in just one step with no scripting.">Create Symbol From States</a></li>
+<li><a href="CustomNudge.html" title="These commands let you nudge the selection by custom amounts, rather than just 1 or 10 pixels.  You can even nudge elements by less than a whole pixel, like .25, in order to tweak an element's anti-aliasing.">Custom Nudge</a></li>
+<li><a href="DocCommands.html" title="These commands make it a little easier to manage your Fireworks documents.">Document Commands</a></li>
+<li><a href="DocTemplates.html" title="This command lets you quickly turn an existing document into a template, which then serves as a starting point for new, untitled documents.  Run &#34;Document Templates - New&#34; and enter a name for the template.  A copy of the current file will be saved out and will then be available in the Commands &gt; Document Templates menu.  You can then make as many copies as you like.">Document Templates</a></li>
+<li><a href="DynamicSymbols.html" title="Creating the JavaScript code for a rich symbol is a tedious process, even if you're familiar with JS.  Each time you make a change, you need to refresh the Common Library panel, reopen the folder that contains the symbol, drag another instance of the symbol into your document and then test it.  You also end up with a lot of repetitive code to set the default symbol properties and to respond to changes to them.  The Dynamic Symbols panel makes creating rich symbols much simpler and more efficient.">Dynamic Symbols</a></li>
+<li><a href="EdgeAnimate.html" title="Fireworks is a great tool for building and laying out the elements of an Edge Animate project, but until now you've had to manually export individual images and then recreate your layout in Edge.  The Export to Edge command will do this for you, exporting your Fireworks document as a collection of HTML and JS files that can be opened by Edge Animate.  All of the elements on the first state of the first page of the current document will appear in Edge with the same size, location, color, etc. that they have in Fireworks.">Edge Animate</a></li>
+<li><a href="EdgeReflow.html" title="The Edge Reflow extension lets you export a Fireworks layout to Edge Reflow, where you can test the responsiveness of the design.  All of the elements on the first state of the current page will appear in Reflow with more or less the same size, position, color, etc. that they have in Fireworks.">Edge Reflow</a></li>
+<li><a href="ExportSelection.html" title="If you have a complicated document and want to export individual elements from it, using slices often doesn't work.  The elements you want to export may overlap, or you may want to prevent the background pixels from appearing in the exported images.  Your only choice is to either hide every other element and then export the document, or else copy each element to its own document, and then export that.  The Export Selection commands make this process much more convenient.">Export Selection</a></li>
+<li><a href="FWXHR.html" title="Since Fireworks is used so heavily for web graphics production, it's quite likely that there'll be times when you developers out there would like your JSF commands to interact with a web service.  Unlike a browser's JS environment, unfortunately, Fireworks doesn't offer any XmlHttpRequest functionality.  Flash panels can make HTTP calls, but there hasn't been easy way to integrate Flash with JSF commands.  Until now.
+
+This extension will be of interest only to developers of Fireworks extensions. ">FWXHR</a></li>
+<li><a href="FakeUnderline.html" title="The commands in this extension help make it a little easier to create styled underlines like those available in web browsers.  The standard underline style in Fireworks always draws the line in the same color as the text, which may not always be what you want.  The Fake Underline commands will automatically draw an underline for you, creating a line that can be styled like any other.">Fake Underline</a></li>
+<li><a href="ExportAsFavicon.html" title="The &#34;Export as Favicon&#34; command creates a favicon file from the current document, which must be 16px by 16px.  Using multiple pages, the favicon can also include a 32px or 64px version of the icon.  From Fireworks CS5 onwards, the command now works on both Windows and Mac.">Favicon</a></li>
+<li><a href="FillWithBackground.html" title="When creating mockups, you may need to take a screenshot of an existing dialog or webpage and then modify it for a new design.  You'll probably also have to paint over an existing element in the screenshot, like a button label, to replace it with new text.  So you select a portion of the background pixels in the screenshot, copy them, paste them, stretch them over the element you want to replace, and then flatten the pixels with the original image.  The Fill With Background command does all of this in just one step.">Fill With Background</a></li>
+<li><a href="FillAndStroke.html" title="Have you ever wanted to select several objects, each with a different stroke color, and change all of their stroke widths to a new value? If you try this with the Properties panel, you'll find that all of the selected objects get the same stroke width, but also that their other stroke properties are changed to identical values as well. The commands in this extension help you avoid this problem.">Fill and Stroke</a></li>
+<li><strong>Fireworks Console</strong></li>
+<li><a href="FixRoundRect.html" title="After you create a rectangle, adjust the Roundness value to set the corners to the desired pixel radius.  Then use the Scale tool to freely resize the rectangle, or use the Info panel to change the size numerically.  Finally, run the Fix Rounded Rect Corners command to fix the corner distortion introduced by the Scale tool.">Fix Rounded Rect Corners</a></li>
+<li><a href="FlickrFire.html" title="FlickrFire lets you easily upload the image you're currently working on to Flickr, without ever leaving Fireworks.  Just enter a title and description, click Upload, and a flattened copy of your image will be posted to Flickr.">FlickrFire</a></li>
+<li><a href="FrameLayerUtils.html" title="Working with lots of frames and layers can be tedious, because many frame and layer menu commands that you perform over and over again don't have keyboard shortcuts.  And other actions, like hiding a layer on every frame, aren't supported at all by Fireworks' built-in tools. The scripts in this extension are intended to remedy this situation. ">Frame and Layer Utilities</a></li>
+<li><a href="GenerateWebAssets.html" title="While you can easily export slices from a mockup, it's a pain to create an individual slice for each element that you want to export.  And if the elements overlap, the slices won't output cleanly.  The Generate Web Assets command makes exporting different parts of your document a breeze. ">Generate Web Assets</a></li>
+<li><a href="GreekedText.html" title="When creating wireframes, it's often useful to suggest the presence of text without using actual words, which can distract the viewer from the overall layout.  Even &#34;lorem ipsum&#34; dummy text requires the selection of a typeface and size, which may be too much detail for the mockup.  In hand-drawn mockups (does anyone still draw by hand?) you could use a marker to draw lines of different lengths to suggest text, but this effect has always been a pain to create with software.  The Greeked Text auto shape makes it easy.">Greeked Text</a></li>
+<li><a href="Grids.html" title="The Insert Grids commmand makes it easy to create modular grids for laying out web content.  Select the desired number of columns, their widths, gutters, and so on, then click OK to insert a visual grid to help lay out your page elements.">Grids</a></li>
+<li><a href="GroupCommands.html" title="The commands in this extension make it a little easier to manipulate groups, including the ability to paste elements into a group or ungroup and regroup it without losing any effects that had been applied to it. The &#34;Group Attributes - Copy/Paste&#34; commands let you copy the styles of all the sub-elements of one group to another.">Group Commands</a></li>
+<li><a href="InsertCopies.html" title="The &#34;Insert Copies Between Selection&#34; command takes 2 selected, identical objects and inserts evenly-spaced copies between them.  This can be quite handy when you need to insert a row or column of repeating elements without having to create each one manually.">Insert Copies Between Selection</a></li>
+<li><a href="JSMLLibrary.html" title="For you Fireworks developers out there who like to sling JavaScript but aren't down with Flash, or just don't want to deal with the overhead of building a whole SWF for a simple panel or dialog, the JSML Panel and Dialog Library can help.  JavaScript Markup Language (JSML) is a combination of JS and Flex 3 that lets you create a Flash panel or dialog using just JavaScript, so you can build a fully functional Fireworks UI for your commands with nothing more than a text editor.  For non-developers, this extension won't be very useful.">JSML Library</a></li>
+<li><a href="KeyboardResize.html" title="This extension makes it easy to resize selected elements in any direction using just the keyboard, which can be much more convenient than dragging the Scale tool with the mouse.  And unlike the Scale tool, text blocks are resized without being distorted.">Keyboard Resize</a></li>
+<li><a href="LevelHorizon.html" title="The &#34;Level Horizon&#34; command helps you, um, level the horizon in crooked photos.  Simply open the photo, draw a straight line along a part of the image that should be perfectly horizontal, and run the command.  The photo will be rotated so that the line is horizontal and the now crooked corners of the image will be cropped to keep it rectangular.">Level Horizon</a></li>
+<li><a href="LinkedImages.html" title="When you import an image into a Fireworks document, Fireworks doesn't maintain any link between the source file and the bitmap element in the document.  If the source file changes, you'll need to find it, re-import it and then delete the previous image in the document.  The Linked Images extension makes this process a little easier, providing a sort of poor-man's smart object for Fireworks.">Linked Images</a></li>
+<li><a href="LoremIpsum.html" title="When designers want to display actual formatted text before the final content is decided upon, they often use some form of &#34;lorem ipsum&#34; as a placeholder.  The Lorem Ipsum auto shape makes inserting any amount of dummy text a breeze.">Lorem Ipsum</a></li>
+<li><a href="MultiBorderRect.html" title="CSS allows a different width and color to be applied to the border on each side of an HTML element, but Fireworks' rectangles are limited to a single border color and thickness.  The Multi-Border Rectangle auto shape addresses this limitation, making it easy to mock up CSS-style borders.">Multi-Border Rectangle</a></li>
+<li><a href="PageCommands.html" title="The commands in this extension make working with pages in Fireworks more efficient and convenient.  The &#34;New Page&#34; dialog makes it easy to create a new page while simultaneously changing its size or background color and giving it a name.  The &#34;Adjust Page Size&#34; command lets you make relative adjustments to the size of multiple pages at once, such as moving the left and right sides in by 10px on each page.  The &#34;Distribute Layers to Pages&#34; command does the same for top-level layers. The &#34;Import Files into Pages&#34; command is useful for combining several existing files as pages in a new document. The &#34;Apply Export Settings to All Pages&#34; command takes the export settings on the current page and applies them to all pages in the document.">Page Commands</a></li>
+<li><a href="PasteInPlace.html" title="&#34;Paste In Place&#34; is an update to a classic Kleanthis Economou command.  It lets you quickly replace a bunch of existing elements with a different element, without having to carefully position each one.  Simply copy the replacement to the clipboard, select the elements you want to replace, and run this command.  The clipboard contents will be inserted at the same XY position, layer, and group level as the selected elements.">Paste In Place</a></li>
+<li><a href="Placeholder.html" title="When creating sketches and early mockups, it's often useful to draw image placeholders instead of including actual photos, icons, ads, etc. in the layout.  The Placeholder auto shape makes this a snap.">Placeholder</a></li>
+<li><a href="QuickClips.html" title="The QuickClips extension makes it easy to quickly insert frequently used elements into your document, such as icons, background graphics, blocks of text, etc.  When you save a new clip, it will become available from the Commands &gt; QuickClips submenu.  Selecting a saved clip will insert it into the current layer of the current document.">QuickClips</a></li>
+<li><a href="QuickFire.html" title="QuickFire is essentially Quicksilver for Fireworks.  While it's easy to add a keyboard shortcut for your most-used commands, accessing the others still requires clicking through the Commands menu.  QuickFire makes accessing these commands much easier: just launch QuickFire (with a keyboard shortcut, of course), start typing part of the command's name, then hit enter to run the matched command.  Quick 'n' easy.  And QuickFire handles more than just commands: you can also quickly access symbols, auto shapes, textures, patterns, panels, layers, states, pages, templates, and recently-opened files.">QuickFire</a></li>
+<li><a href="ResizeObjects.html" title="This panel ships with Fireworks MX, so you should already have it. If I create new versions, though, I'll make them available here. Resize Selected Objects lets you make precise, single-pixel adjustments to the size of a selected object without using the Scale tool. It resizes each selected object independently, which the Scale tool cannot do.">Resize Selected Objects</a></li>
+<li><a href="SVG.html" title="With increasing support for &lt;canvas&gt; and SVG across browsers, many people have been creating vector images in the SVG format.  The SVG extension makes it possible to use these images in your Fireworks documents by parsing the XML and recreating the vectors using Fireworks elements.">SVG</a></li>
+<li><a href="ScriptRunner.html" title="When writing Fireworks extensions, I often find myself writing little snippets of JavaScript code to inspect attributes or run commands on whatever elements are selected.  I usually enter these snippets in the Fireworks Console panel, but having to constantly reload and rerun the code each time the selection changes is awkward.  The Script Runner panel makes it easy to automatically run JavaScript whenever the selection changes.">Script Runner</a></li>
+<li><a href="SelectNextElement.html" title="The Select Next Element commmand makes it easy to naviagate your document via the keyboard.  Each time you run the command, the next element below the currently selected one is selected.  This can be particularly helpful for cycling among the elements underneath the selection, which are otherwise hard to access without going to the Layers panel or using the Select Behind tool.">Select Next Element</a></li>
+<li><a href="SelectPoints.html" title="To manipulate vectors with a high degree of control it's often necessary to subselect individual points on the path.  But selecting lots of individual points on a complicated path can be awkward, especially if it's hard to use a rectangular marquee to select them.  The commands in this extension can reduce the amount of clicking required to select those points.">Select Points</a></li>
+<li><a href="SmartKnife.html" title="The Smart Knife command lets you split one or more shapes in half using an open path.  The built-in knife tool lets you split a path, but only in a straight line, and it doesn't work with text, auto shapes or bitmaps.  Smart Knife lets you cut across multiple paths, bitmaps, auto shapes and text blocks with an arbitrarily complex open path.">Smart Knife</a></li>
+<li><a href="SmartPunch.html" title="The &#34;Smart Punch&#34; command goes far beyond Fireworks' basic punch functionality, letting you punch vector or bitmap objects out of another vector or bitmap. Even text blocks can be used as the &#34;puncher&#34; or the &#34;punchee&#34;.  The possibilities for punching mayhem are endless. ">Smart Punch</a></li>
+<li><a href="SmartResize.html" title="The Smart Resize auto shape helps you automatically adjust the layout of grouped elements to a new size without distorting the elements in the process.  This makes it easy to quickly resize a mock up of a dialog box, for instance.  Just drag the shape's yellow handles to move the grouped elements around to match the shape's size.  See the screencast for an example of how the auto shape works.">Smart Resize</a></li>
+<li><a href="SoloCommand.html" title="The &#34;Solo Selection&#34; command hides everything except the currently selected elements. If all of the visible elements are selected, running the command displays everything. This lets you quickly toggle the solo effect on and off: select one or more elements, run the command, look at the elements by themselves, then run it again to make everything visible.">Solo Command</a></li>
+<li><a href="Spacer.html" title="The Spacer panel makes it easy to arrange rows or columns of elements by adjusting the spacing between them.  When you select some elements, the panel figures out if they're mostly horizontal or mostly vertical.  It then displays the horizontal or vertical space between each element in a series of text fields, which you can edit to easily adjust the spacing.">Spacer</a></li>
+<li><a href="Tables.html" title="The Tables panel enables you to quickly mock up HTML-style tables without having to laboriously position each cell or border.  Although it's relatively straightforward to arrange elements in a grid using Fireworks' alignment and distribution commands, as soon as the table contents change you'll need to reposition everything manually.  The Tables panel automates this tedious process, and will create border and background elements for you.">Tables</a></li>
+<li><a href="TextVariables.html" title="The Text Variables extension enables you to include variables in text elements that can then be automatically updated.  This makes it possible to easily update a text label that displays, say, the current name of the page it's on, or the name of a product you're designing.  The extension can update just the selected elements or every text variable in the document. ">Text Variables</a></li>
+<li><a href="ToggleOpacity.html" title="The &#34;Toggle Opacity&#34; commands simply toggle the selected objects between 50% and 100% opacity, or between 0% and 100%.  If you assign a keyboard shortcut to the commands, you'll have a handy way of quickly seeing behind the selected objects.">Toggle Opacity</a></li>
+<li><a href="EditSymbol.html" title="Annoyingly, Fireworks has never offered a keyboard shortcut for editing a symbol or exiting edit mode once you were in it.  This command does just that: it enters edit mode if you've selected a symbol or exits exit mode if you're already editing a symbol.  Assign a keyboard shortcut to quickly jump in and out of symbol edit mode.">Toggle Symbol Edit Mode</a></li>
+<li><a href="TweetFire.html" title="TweetFire lets you easily tweet the image you're currently working on, without ever leaving Fireworks.  Just enter a short message, click Tweet, and a flattened copy of your image will be posted to Twitter.  The URL to the image is automatically added to your tweet.">TweetFire</a></li>
+<li><a href="UpdateSymbols.html" title="Importing symbols from another file is one of Fireworks' most powerful functions. But if you have a lot of files that use imported symbols, it can be a hassle to update them in every file. The Update Symbols extension lets you batch-update the imported symbols in multiple files with just one step.">Update Symbols</a></li>
+<li><a href="Wedgie.html" title="The (perhaps unfortunately named) Wedgie command breaks the selected object into 2 or more wedges.">Wedgie</a></li>
+</ul>
+            </div>
+        </div>
+    </div>
+    <div id="ft"></div> 
+</div> 
+
+<script type="text/javascript" src="../../../www.google-analytics.com/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+    PT = _gat._getTracker("UA-3380390-1");
+    PT._trackPageview();
+} catch (gaError) {}
+</script>
+
+<script src="../../../platform.twitter.com/widgets.js"></script>
+<script src="../../../connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script src="../../../apis.google.com/js/plusone.js"></script>
+<script src="../../../s7.addthis.com/js/200/addthis_widget.js"></script>
+
+<script> 
+        // work around FB's annoying bug: http://bugs.developers.facebook.net/show_bug.cgi?id=9777
+    try { document.getElementsByTagName('html')[0].style.display = 'block'; } catch(e) {};
+</script> 
+
+</body>
+
+
+<!-- Mirrored from johndunning.com/fireworks/about/FWConsole by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:13:08 GMT -->
+</html>

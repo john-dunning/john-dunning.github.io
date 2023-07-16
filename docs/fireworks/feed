@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Adobe Fireworks Extensions from johndunning.com/fireworks</title>
+		<link>http://johndunning.com/fireworks</link>
+		<description>These Adobe Fireworks extensions are mainly productivity enhancement tools. They won't help you make better-looking pictures; rather, they'll help you use Fireworks more efficiently. And if you're an extension developer yourself, some of them will help you build your own commands and Flash panels. Download them all for free!</description>
+		<copyright>Copyright 2010 John Dunning</copyright>
+		<docs>http://www.rssboard.org/rss-specification</docs>
+		<atom:link href="http://johndunning.com/fireworks/rss.xml" rel="self" type="application/rss+xml" />
+		<generator>php</generator>
+		<image>
+			<link>http://johndunning.com/fireworks</link>
+			<title>Adobe Fireworks Extensions from johndunning.com/fireworks</title>
+			<url>http://johndunning.com/fireworks/images/fire-icon.gif</url>
+			<description>Get the latest Adobe Fireworks extensions</description>
+			<height>155</height>
+			<width>107</width>
+		</image>
+		<lastBuildDate>Sun, 09 Jul 2023 01:07:12 -0700</lastBuildDate>
+
+		<item>
+			<title>Page Commands</title>
+			<link>http://johndunning.com/fireworks/about/PageCommands</link>
+			<description><![CDATA[
+				<p>The commands in this extension make working with pages in Fireworks more efficient and convenient.  The "New Page" dialog makes it easy to create a new page while simultaneously changing its size or background color and giving it a name.  The "Adjust Page Size" command lets you make relative adjustments to the size of multiple pages at once, such as moving the left and right sides in by 10px on each page.  The "Distribute Layers to Pages" command does the same for top-level layers. The "Import Files into Pages" command is useful for combining several existing files as pages in a new document. The "Apply Export Settings to All Pages" command takes the export settings on the current page and applies them to all pages in the document. 
+				<a href="http://johndunning.com/fireworks/about/PageCommands">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/PageCommands">Download 0.4.1</a></p>
+			]]></description>
+			<pubDate>Sun, 22 Sep 2013 19:24:06 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/PageCommands/0.4.1</guid>
+		</item>
+
+		<item>
+			<title>TweetFire</title>
+			<link>http://johndunning.com/fireworks/about/TweetFire</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/TweetFire.png" style="display: block; margin-bottom: 1em;">
+				<p>TweetFire lets you easily tweet the image you're currently working on, without ever leaving Fireworks.  Just enter a short message, click Tweet, and a flattened copy of your image will be posted to Twitter.  The URL to the image is automatically added to your tweet. 
+				<a href="http://johndunning.com/fireworks/about/TweetFire">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/TweetFire">Download 0.2.1</a></p>
+			]]></description>
+			<pubDate>Sat, 17 Aug 2013 19:01:48 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/TweetFire/0.2.1</guid>
+		</item>
+
+		<item>
+			<title>Edge Reflow</title>
+			<link>http://johndunning.com/fireworks/about/EdgeReflow</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/EdgeReflow.png" style="display: block; margin-bottom: 1em;">
+				<p>The Edge Reflow extension lets you export a Fireworks layout to Edge Reflow, where you can test the responsiveness of the design.  All of the elements on the first state of the current page will appear in Reflow with more or less the same size, position, color, etc. that they have in Fireworks. 
+				<a href="http://johndunning.com/fireworks/about/EdgeReflow">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/EdgeReflow">Download 0.0.3</a></p>
+			]]></description>
+			<pubDate>Thu, 15 Aug 2013 09:41:20 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/EdgeReflow/0.0.3</guid>
+		</item>
+
+		<item>
+			<title>Dynamic Symbols</title>
+			<link>http://johndunning.com/fireworks/about/DynamicSymbols</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/DynamicSymbols.png" style="display: block; margin-bottom: 1em;">
+				<p>Creating the JavaScript code for a rich symbol is a tedious process, even if you're familiar with JS.  Each time you make a change, you need to refresh the Common Library panel, reopen the folder that contains the symbol, drag another instance of the symbol into your document and then test it.  You also end up with a lot of repetitive code to set the default symbol properties and to respond to changes to them.  The Dynamic Symbols panel makes creating rich symbols much simpler and more efficient. 
+				<a href="http://johndunning.com/fireworks/about/DynamicSymbols">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/DynamicSymbols">Download 0.1.2</a></p>
+			]]></description>
+			<pubDate>Sat, 01 Jun 2013 18:20:32 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/DynamicSymbols/0.1.2</guid>
+		</item>
+
+		<item>
+			<title>Generate Web Assets</title>
+			<link>http://johndunning.com/fireworks/about/GenerateWebAssets</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/GenerateWebAssets.png" style="display: block; margin-bottom: 1em;">
+				<p>While you can easily export slices from a mockup, it's a pain to create an individual slice for each element that you want to export.  And if the elements overlap, the slices won't output cleanly.  The Generate Web Assets command makes exporting different parts of your document a breeze.  
+				<a href="http://johndunning.com/fireworks/about/GenerateWebAssets">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/GenerateWebAssets">Download 0.1.2</a></p>
+			]]></description>
+			<pubDate>Thu, 30 May 2013 09:42:46 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/GenerateWebAssets/0.1.2</guid>
+		</item>
+
+		<item>
+			<title>Text Variables</title>
+			<link>http://johndunning.com/fireworks/about/TextVariables</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/TextVariables.png" style="display: block; margin-bottom: 1em;">
+				<p>The Text Variables extension enables you to include variables in text elements that can then be automatically updated.  This makes it possible to easily update a text label that displays, say, the current name of the page it's on, or the name of a product you're designing.  The extension can update just the selected elements or every text variable in the document.  
+				<a href="http://johndunning.com/fireworks/about/TextVariables">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/TextVariables">Download 0.1.2</a></p>
+			]]></description>
+			<pubDate>Wed, 15 May 2013 23:31:47 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/TextVariables/0.1.2</guid>
+		</item>
+
+		<item>
+			<title>SVG</title>
+			<link>http://johndunning.com/fireworks/about/SVG</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/SVG.png" style="display: block; margin-bottom: 1em;">
+				<p>With increasing support for &lt;canvas&gt; and SVG across browsers, many people have been creating vector images in the SVG format.  The SVG extension makes it possible to use these images in your Fireworks documents by parsing the XML and recreating the vectors using Fireworks elements. 
+				<a href="http://johndunning.com/fireworks/about/SVG">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/SVG">Download 0.1.0</a></p>
+			]]></description>
+			<pubDate>Fri, 03 May 2013 12:15:57 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/SVG/0.1.0</guid>
+		</item>
+
+		<item>
+			<title>Spacer</title>
+			<link>http://johndunning.com/fireworks/about/Spacer</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/Spacer.png" style="display: block; margin-bottom: 1em;">
+				<p>The Spacer panel makes it easy to arrange rows or columns of elements by adjusting the spacing between them.  When you select some elements, the panel figures out if they're mostly horizontal or mostly vertical.  It then displays the horizontal or vertical space between each element in a series of text fields, which you can edit to easily adjust the spacing. 
+				<a href="http://johndunning.com/fireworks/about/Spacer">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/Spacer">Download 0.1.4</a></p>
+			]]></description>
+			<pubDate>Mon, 08 Apr 2013 09:34:01 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/Spacer/0.1.4</guid>
+		</item>
+
+		<item>
+			<title>Fireworks Console</title>
+			<link>http://johndunning.com/fireworks/about/FWConsole</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/FWConsole.png" style="display: block; margin-bottom: 1em;">
+				<p>The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels. <br>
+<br>
+This panel will be of interest only to developers of Fireworks extensions. 
+				<a href="http://johndunning.com/fireworks/about/FWConsole">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/FWConsole">Download 0.4.6</a></p>
+			]]></description>
+			<pubDate>Sun, 07 Apr 2013 18:39:11 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/FWConsole/0.4.6</guid>
+		</item>
+
+		<item>
+			<title>Create Symbol From States</title>
+			<link>http://johndunning.com/fireworks/about/StateSymbol</link>
+			<description><![CDATA[
+				<p>Rich symbols are a powerful feature of Fireworks, but creating them is a fairly complicated process.  The Create Symbol From States command lets you create basic rich symbols containing multiple states in just one step with no scripting. 
+				<a href="http://johndunning.com/fireworks/about/StateSymbol">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/StateSymbol">Download 0.2.2</a></p>
+			]]></description>
+			<pubDate>Sun, 24 Mar 2013 19:43:17 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/StateSymbol/0.2.2</guid>
+		</item>
+
+		<item>
+			<title>Lorem Ipsum</title>
+			<link>http://johndunning.com/fireworks/about/LoremIpsum</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/LoremIpsum.png" style="display: block; margin-bottom: 1em;">
+				<p>When designers want to display actual formatted text before the final content is decided upon, they often use some form of "lorem ipsum" as a placeholder.  The Lorem Ipsum auto shape makes inserting any amount of dummy text a breeze. 
+				<a href="http://johndunning.com/fireworks/about/LoremIpsum">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/LoremIpsum">Download 0.2.0</a></p>
+			]]></description>
+			<pubDate>Wed, 20 Mar 2013 11:26:53 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/LoremIpsum/0.2.0</guid>
+		</item>
+
+		<item>
+			<title>Greeked Text</title>
+			<link>http://johndunning.com/fireworks/about/GreekedText</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/GreekedText.png" style="display: block; margin-bottom: 1em;">
+				<p>When creating wireframes, it's often useful to suggest the presence of text without using actual words, which can distract the viewer from the overall layout.  Even "lorem ipsum" dummy text requires the selection of a typeface and size, which may be too much detail for the mockup.  In hand-drawn mockups (does anyone still draw by hand?) you could use a marker to draw lines of different lengths to suggest text, but this effect has always been a pain to create with software.  The Greeked Text auto shape makes it easy. 
+				<a href="http://johndunning.com/fireworks/about/GreekedText">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/GreekedText">Download 1.2.1</a></p>
+			]]></description>
+			<pubDate>Mon, 11 Mar 2013 11:04:21 -0700</pubDate>
+			<guid>http://johndunning.com/fireworks/about/GreekedText/1.2.1</guid>
+		</item>
+
+		<item>
+			<title>Select Next Element</title>
+			<link>http://johndunning.com/fireworks/about/SelectNextElement</link>
+			<description><![CDATA[
+				<p>The Select Next Element commmand makes it easy to naviagate your document via the keyboard.  Each time you run the command, the next element below the currently selected one is selected.  This can be particularly helpful for cycling among the elements underneath the selection, which are otherwise hard to access without going to the Layers panel or using the Select Behind tool. 
+				<a href="http://johndunning.com/fireworks/about/SelectNextElement">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/SelectNextElement">Download 0.1.1</a></p>
+			]]></description>
+			<pubDate>Tue, 26 Feb 2013 19:19:55 -0800</pubDate>
+			<guid>http://johndunning.com/fireworks/about/SelectNextElement/0.1.1</guid>
+		</item>
+
+		<item>
+			<title>Placeholder</title>
+			<link>http://johndunning.com/fireworks/about/Placeholder</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/Placeholder.png" style="display: block; margin-bottom: 1em;">
+				<p>When creating sketches and early mockups, it's often useful to draw image placeholders instead of including actual photos, icons, ads, etc. in the layout.  The Placeholder auto shape makes this a snap. 
+				<a href="http://johndunning.com/fireworks/about/Placeholder">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/Placeholder">Download 0.4.1</a></p>
+			]]></description>
+			<pubDate>Wed, 06 Feb 2013 12:30:57 -0800</pubDate>
+			<guid>http://johndunning.com/fireworks/about/Placeholder/0.4.1</guid>
+		</item>
+
+		<item>
+			<title>Grids</title>
+			<link>http://johndunning.com/fireworks/about/Grids</link>
+			<description><![CDATA[
+				<img src="http://johndunning.com/fireworks/inc/Grids.png" style="display: block; margin-bottom: 1em;">
+				<p>The Insert Grids commmand makes it easy to create modular grids for laying out web content.  Select the desired number of columns, their widths, gutters, and so on, then click OK to insert a visual grid to help lay out your page elements. 
+				<a href="http://johndunning.com/fireworks/about/Grids">more...</a></p>
+				<p><a href="http://johndunning.com/fireworks/mxp/Grids">Download 0.2.0</a></p>
+			]]></description>
+			<pubDate>Sun, 20 Jan 2013 18:02:42 -0800</pubDate>
+			<guid>http://johndunning.com/fireworks/about/Grids/0.2.0</guid>
+		</item>
+
+
+	</channel>
+</rss>

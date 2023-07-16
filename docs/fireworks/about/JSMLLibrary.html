@@ -1,0 +1,2177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<!-- Mirrored from johndunning.com/fireworks/about/JSMLLibrary by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:16:13 GMT -->
+<head>
+<title>JSML Library - Adobe Fireworks Extensions, Commands and Panels - johndunning.com</title>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="description" content="For you Fireworks developers out there who like to sling JavaScript but aren't down with Flash, or just don't want to deal with the overhead of building a whole SWF for a simple panel or dialog, the JSML Panel and Dialog Library can help.  JavaScript Markup Language (JSML) is a combination of JS and Flex 3 that lets you create a Flash panel or dialog using just JavaScript, so you can build a fully functional Fireworks UI for your commands with nothing more than a text editor.  For non-developers, this extension won't be very useful.">
+
+<meta property="og:site_name" content="johndunning.com/fireworks">
+<meta property="og:title" content="JSML Library">
+<meta property="og:url" content="JSMLLibrary.html">
+<meta property="og:description" content="For you Fireworks developers out there who like to sling JavaScript but aren't down with Flash, or just don't want to deal with the overhead of building a whole SWF for a simple panel or dialog, the JSML Panel and Dialog Library can help.  JavaScript Markup Language (JSML) is a combination of JS and Flex 3 that lets you create a Flash panel or dialog using just JavaScript, so you can build a fully functional Fireworks UI for your commands with nothing more than a text editor.  For non-developers, this extension won't be very useful.">
+<meta property="og:image" content="../inc/JSMLLibrary.png">
+
+<meta itemprop="name" content="JSML Library" />
+<meta itemprop="description" content="For you Fireworks developers out there who like to sling JavaScript but aren't down with Flash, or just don't want to deal with the overhead of building a whole SWF for a simple panel or dialog, the JSML Panel and Dialog Library can help.  JavaScript Markup Language (JSML) is a combination of JS and Flex 3 that lets you create a Flash panel or dialog using just JavaScript, so you can build a fully functional Fireworks UI for your commands with nothing more than a text editor.  For non-developers, this extension won't be very useful." /> 
+<meta itemprop="image" content="../inc/JSMLLibrary.png" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+
+<base >
+
+<!-- <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css"> -->
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+<link rel="alternate" type="application/rss+xml" title="Adobe Fireworks Extensions, Commands and Panels - johndunning.com" href="../feed">
+
+<script type="text/javascript">
+PT = { _trackPageview: function() {} };
+
+function mxpOnClick(inEvent)
+{
+    PT._trackPageview('/fireworks/mxp/JSMLLibrary');
+
+    if (navigator.userAgent.indexOf("Windows NT 6.") > -1) {
+        alert('When you install a Fireworks extension on a Windows Vista or Windows 7 system that has User Account Control enabled, you will need to right-click the "Adobe Extension Manager CS5.exe" application in "C:\\Program Files\\Adobe\\Adobe Extension Manager CS5" and select "Run as Administrator".\n\nStarting the Extension Manager by clicking Commands > Manage Extensions in Fireworks will not work.');
+    }
+}
+
+</script>
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+    rdf:about="http://johndunning.com/fireworks/about/JSMLLibrary"
+    dc:identifier="http://johndunning.com/fireworks/about/JSMLLibrary"
+    dc:title="JSML Library - Adobe Fireworks Extensions, Commands and Panels - johndunning.com"
+    trackback:ping="http://js-kit.com/trackback/johndunning.com/fireworks/about/JSMLLibrary" />
+</rdf:RDF>
+-->
+
+</head>
+
+<body>
+
+<div id="doc3" class="yui-t2"> 
+    <div id="bd"> 
+        <div id="yui-main" role="main"> 
+            <div class="yui-b"><div class="yui-g"> 
+                <h1 class="Fireworks"><a href="../index.html">fireworks</a></h1>
+
+                <h2 class="CommandName">JSML Library</h2>
+
+                <div class="Links">
+                    <a href="../dl/index5afc.html"
+                        onclick="mxpOnClick(event)"
+                    >Download 1.0.1.mxp</a>
+                        <a href="../dl/indexc36d.html"
+                            class="ZipLink"
+                            onclick="javascript: PT._trackPageview('/fireworks/zip/JSMLLibrary');"
+                            title="This .zip version is available in case the Extension Manager can't install the standard .mxp version of this extension"
+                        >Download .zip</a>
+                    <span class="CommandDate">2013-01-06</span>
+                </div>
+
+                <ul class="SharingLinks">
+                    <li class="CommentsLink"><a href="#disqus_thread"
+                        onclick="javascript: PT._trackPageview('/fireworks/comment/JSMLLibrary');"
+                    >Comment</a></li>
+<!--                    <li>
+                        <script type="text/javascript">
+                            var addthis_pub="fwextensions";
+                            var addthis_header_color = "#ffffff";
+                            var addthis_header_background = "#cc3300";
+                            var addthis_options = 'twitter, facebook, buzz, googlebuzz, delicious, digg, email, favorites, more';
+                        </script>
+                        <a class="AddThis"
+                            href="https://www.addthis.com/bookmark.php?v=20" 
+                            onmouseover="return addthis_open(this, '', '[URL]', 'JSML Library - Adobe Fireworks extension from johndunning.com')" 
+                            onmouseout="addthis_close()" 
+                            onclick="return addthis_sendto()"
+                        ><img src="/fireworks/images/add-this.gif" width="16" height="16" alt="Bookmark and Share" style="border:0"></a>
+                    </li> -->
+                    <li>
+                        <a href="https://twitter.com/share" 
+                            class="twitter-share-button" 
+                            data-count="horizontal" 
+                            data-via="fwextensions"
+                            data-text="JSML Library - #AdobeFireworks extension"
+                            data-url="JSMLLibrary.html"
+                        ></a>
+                    </li>
+                    <li>
+                        <fb:like 
+                            href="JSMLLibrary.html" 
+                            layout="button_count" 
+                            width="80"
+                        ></fb:like>
+                    </li>
+<!--                    <li>
+                        <g:plusone size="medium" style="vertical-align: middle;"></g:plusone>
+                    </li> -->
+                </ul>
+
+<div class="Include"><img src="../inc/JSMLLibrary.png" width="251" height="106" style="position: absolute;"><div style="height: 106px; visibility: hidden;"></div></div>
+
+<div class="Description Markdown"><p>For you Fireworks developers out there who like to sling JavaScript but aren't down with Flash, or just don't want to deal with the overhead of building a whole SWF for a simple panel or dialog, the <em>JSML Panel and Dialog Library</em> can help.  <em>JavaScript Markup Language</em> (JSML) is a combination of JS and Flex 3 that lets you create a Flash panel or dialog using just JavaScript, so you can build a fully functional Fireworks UI for your commands with nothing more than a text editor.</p>
+
+<p>The JSML library was actually used to implement some of the panels and dialogs offered on this site:</p>
+
+<ul>
+<li><a href="AdjPanel.html">Adjustment Panel</a></li>
+<li><a href="Adjust9Slice.html">Adjust 9-Slice</a></li>
+<li><a href="ScriptRunner.html">Script Runner</a></li>
+<li><a href="Tables.html">Tables</a></li>
+<li><a href="Grids.html">Grids</a></li>
+<li><a href="FlickrFire.html">FlickrFire</a></li>
+</ul>
+
+<p>You can install these extensions to see some more complex real-world examples.  The <em>Tables</em> panel, in particular, uses the library to its full extent.  To see the code, just open the extension's .js file from the <em>Commands Panel</em> folder, e.g. <code>Tables.js</code>.</p>
+
+<h1>Contents</h1>
+
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#register">Registering a panel</a></li>
+<li><a href="#open">Opening a dialog</a></li>
+<li><a href="#create">Creating the panel UI</a></li>
+<li><a href="#hierarchy">Creating an element hierarchy</a></li>
+<li><a href="#styling">Styling elements</a></li>
+<li><a href="#dialogs">Styling dialogs</a>
+
+<ul>
+<li><a href="#sizing">Sizing dialogs</a></li>
+<li><a href="#buttons">Customizing dialog buttons</a></li>
+<li><a href="#root">Customizing the root element in a dialog</a></li>
+<li><a href="#style-panel">Styling the dialog's Panel element</a></li>
+</ul></li>
+<li><a href="#images">Using external images</a>
+
+<ul>
+<li><a href="#panel-images">Local images in a panel</a></li>
+<li><a href="#dialog-images">Local images in a dialog</a></li>
+<li><a href="#button-images">Button element styles</a></li>
+</ul></li>
+<li><a href="#return">Returning values from dialogs</a></li>
+<li><a href="#simple-dialogs">Creating simple dialogs</a>
+
+<ul>
+<li><a href="#confirm">Confirm dialog</a></li>
+<li><a href="#prompt">Prompt dialog</a></li>
+<li><a href="#form">Form dialog</a></li>
+</ul></li>
+<li><a href="#data-providers">Using data providers</a>
+
+<ul>
+<li><a href="#icons">Using icons in data providers</a></li>
+</ul></li>
+<li><a href="#events">Handling events</a>
+
+<ul>
+<li><a href="#event">The event object</a></li>
+<li><a href="#current-values">Accessing the current state of the Flex controls</a></li>
+<li><a href="#responding">Responding to events</a></li>
+<li><a href="#bubbling">Handling bubbled events</a></li>
+<li><a href="#dialog-events">Handling events in dialogs</a></li>
+</ul></li>
+<li><a href="#updating">Updating the panel UI</a>
+
+<ul>
+<li><a href="#methods">JSML-specific methods</a></li>
+</ul></li>
+<li><a href="#fw-events">Handling Fireworks events</a></li>
+<li><a href="#complex">Building up more complex user interfaces</a></li>
+<li><a href="#details">Technical details</a></li>
+</ul>
+
+<h1 id="installation">Installation</h1>
+
+<p>After installing the <em>JSML Library</em> extension, you should have two files in the <em>Adobe Fireworks/Configuration/Command Panels</em> folder: <code>JSML Panel.swf</code> and <code>JSML Panel.js</code>.  You'll need to restart Fireworks to get the new panel to appear in the <em>Window</em> menu.  There will also be a <code>JSML Panel</code> folder, which contains two images used by the example code.  It's not necessary to include these images in your panels.</p>
+
+<p>The <code>JSML Panel.js</code> file is thoroughly documented and shows how a basic panel can be quickly specified using JavaScript.  You can jump in and play around with that, or read on for more details.  For any of the examples below, you can copy and paste the code into the <code>JSML Panel.js</code> file, click the panel and then press F5 to refresh it with the changed code.</p>
+
+<p>In addition to the panel library, the extension will also install a number of files in <em>Adobe Fireworks/Configuration/Commands/JSML Dialog</em>.  There are example files showing how to create dialogs using JSML, as well as the .js files that need to be included with any extension using the library.</p>
+
+<p>Many of the examples below show JSML being used in panels, but almost exactly the same code can be used in a dialog.</p>
+
+<h1 id="register">Registering a panel</h1>
+
+<p>To build a new panel with the library, make a copy of the <code>JSML Panel.swf</code> and <code>JSML Panel.js</code> files in the <em>Command Panels</em> folder, and give the copies the same base name.  For example, if you want to create a panel called <em>My Panel</em>, the folder hierarchy should look like:</p>
+
+<pre><code>Adobe Fireworks/
+    Configuration/
+        Command Panels/
+            My Panel.swf
+            My Panel.js
+</code></pre>
+
+<p>After creating the copies, you'll need to restart Fireworks for the panel to appear in the <em>Window</em> menu.</p>
+
+<p>The SWF file contains all the logic for rendering the panel.  You won't modify this file, but each panel you create needs its own copy of it, since Fireworks scans the <em>Command Panels</em> folder for SWFs and displays a menu item for each one it finds.</p>
+
+<p>When the SWF is first opened, it will look in its folder for a .js file with the same name.  If it doesn't find the file, the panel will be blank.</p>
+
+<p>To specify the structure of the panel, your .js file needs to call <code>fwlib.panel.register()</code> with a single object containing the panel's properties:</p>
+
+<pre><code>fwlib.panel.register({});
+</code></pre>
+
+<p>This example doesn't display anything, but it's the bare minimum code for building a panel.  You don't need to specify the name of the SWF when calling <code>register</code> since the SWF executes your .js file and it knows its own filename.  Also note that the <code>fwlib.panel</code> API is automatically loaded by the SWF; your JavaScript code doesn't need to do anything to make the API available.</p>
+
+<h1 id="open">Opening a dialog</h1>
+
+<p>Opening a JSML dialog works somewhat differently than registering a panel.  Since the panel SWF will load before your .js code, it can instantiate the libraries needed for creating the panel.  In a dialog, on the other hand, your .jsf code runs before the SWF loads, so you're responsible for loading the dialog library.</p>
+
+<p>First, set up your command directory like this:</p>
+
+<pre><code>Adobe Fireworks/
+    Configuration/
+        Commands/
+            My Commands/
+                lib/
+                    dojo/
+                        has.js
+                        json.js
+                    fwlib/
+                        dialog-swfs/
+                            Dialog [250x250].swf
+                            ...
+                            JSMLDialog.swf
+                        dialog.js
+                        simple-dialog.js
+                    fwrequire.js
+                    require.js
+                My Command 1.jsf
+                My Command 2.jsf
+</code></pre>
+
+<p>As you can see, there are a number of library files needed to create a dialog.  You should include all of them when distributing your extension.</p>
+
+<p>In your .jsf file, you must include this boilerplate code at the top:</p>
+
+<pre><code>if (typeof require != "function" || !require.version) {
+    fw.runScript(fw.currentScriptDir + "/lib/fwrequire.js"); }
+</code></pre>
+
+<p>This ensures that the <a href="https://github.com/fwextensions/fwrequirejs">FWRequireJS</a> module loader has been instantiated, which you will then use to load the JSML dialog library.  To do so, call <code>require()</code>, a global function that is created by FWRequireJS:</p>
+
+<pre><code>require([
+    "fwlib/dialog"
+], function(
+    dialog)
+{
+    ...
+});
+</code></pre>
+
+<p>The initial array parameter lists the modules that must be loaded before your function runs.  In this case, we just need the <code>dialog</code> module, which is located in the <code>fwlib</code> sub-directory of the <code>lib/</code> directory.  See the <a href="https://github.com/fwextensions/fwrequirejs">FWRequireJS documentation</a> for other ways to define and require modules.</p>
+
+<p>Once the module is loaded, it is passed to the callback function that is the second parameter to <code>require()</code>.  This function should have one parameter for each module that is required in the array of module names and in exactly the same order.  You can give the module any name you like, but it's called <code>dialog</code> in the examples for clarity.</p>
+
+<p>To open a dialog, simply call <code>dialog.open()</code> with an object containing the JSML description of your interface:</p>
+
+<pre><code>require([
+    "fwlib/dialog"
+], function(
+    dialog)
+{
+    var result = dialog.open({});
+});
+</code></pre>
+
+<p>This will open a large, empty dialog with <em>OK</em> and <em>Cancel</em> buttons.  The return value from <code>dialog.open()</code> is null if the user canceled the dialog, or else an object containing the current values of the elements if the user clicked <em>OK</em>.  See the <a href="#return">Returning values from dialogs</a> section for more details.</p>
+
+<p>Note that in most of the following examples, the boilerplate code and the call to <code>require()</code> are not shown, but they are still necessary for your dialog to work.</p>
+
+<h1 id="create">Creating the UI</h1>
+
+<p>Empty panels and dialogs aren't very interesting, of course, so here's an example that includes an actual clickable Flex control:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { Button: {
+            label: "Do It"
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/button-doit.png" alt="Do It button" /></p>
+</blockquote>
+
+<p>When you change the .js file, the panel won't automatically update.  You will need to close and reopen the panel or just click inside it and then press F5, which immediately reloads the JavaScript.  This makes working on a panel as iterative as refreshing a webpage in a browser.</p>
+
+<p>Here is the same example in a dialog:</p>
+
+<pre><code>if (typeof require != "function" || !require.version) {
+    fw.runScript(fw.currentScriptDir + "/lib/fwrequire.js"); }
+
+require([
+    "fwlib/dialog"
+], function(
+    dialog)
+{
+    dialog.open({
+        children: [
+            { Button: {
+                label: "Do It"
+            } }
+        ]
+    });
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/button-doit-dialog.png" alt="Do It button in a dialog" /></p>
+</blockquote>
+
+<p>The interface's child elements are included in its <code>children</code> array.  Currently, the following Flex 3 classes are supported:</p>
+
+<blockquote>
+  <table>
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/Box.html">Box</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/DateChooser.html">DataGrid</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/HDividedBox.html">HDividedBox</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/PopUpButton.html">PopUpButton</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/TileList.html">TileList</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/Button.html">Button</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/DateChooser.html">DateChooser</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/HRule.html">HRule</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/PopUpMenuButton.html">PopUpMenuButton</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/ToggleButtonBar.html">ToggleButtonBar</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/ButtonBar.html">ButtonBar</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/DateField.html">DateField</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/HSlider.html">HSlider</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/RadioButton.html">RadioButton</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/VBox.html">VBox</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/Canvas.html">Canvas</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/DividedBox.html">DividedBox</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/Image.html">Image</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/Spacer.html">Spacer</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/VDividedBox.html">VDividedBox</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/CheckBox.html">CheckBox</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/Form.html">Form</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/Label.html">Label</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/TabNavigator.html">TabNavigator</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/VRule.html">VRule</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/ColorPicker.html">ColorPicker</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/FormHeading.html">FormHeading</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/List.html">List</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/Text.html">Text</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/VSlider.html">VSlider</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/ComboBox.html">ComboBox</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/FormItem.html">FormItem</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/NumericStepper.html">NumericStepper</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/TextArea.html">TextArea</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/ControlBar.html">ControlBar</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/HBox.html">HBox</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/containers/Panel.html">Panel</a></td>
+    <td><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/controls/TextInput.html">TextInput</a></td>
+    <td></td>
+  </tr>
+  </tbody>
+  </table>
+</blockquote>
+
+<p>Each element is specified with an object that has a single attribute, the name of which identifies the Flex element class, such as <code>Button</code>.  The value of this attribute is another object, which contains the element's properties.  For instance, <code>{ Button: {} }</code> would create a button with no label -- not very useful, but it highlights the inner and outer object structure.  You'd specify the button's label as an attribute on the inner object: <code>{ Button: { label: "My Button" } }</code>.  When closing an element object, don't forget the double braces.  Your script won't run at all if you miss one.</p>
+
+<p>A more complicated example using a <code>NumericStepper</code> control looks like:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { NumericStepper: {
+            name: "XValue",
+            value: 10,
+            stepSize: 1,
+            maximum: 100000,
+            minimum: -100000,
+            toolTip: "Pixels to move horizontally"
+        } },
+        { Button: {
+            label: "Move"
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/numeric-stepper.png" alt="NumericStepper example" /></p>
+</blockquote>
+
+<p>Although you don't need to know ActionScript to use the <code>fwlib.panel</code> library, you will need to reference the Flex 3 docs for details on the properties and styles that each element supports: <a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/">http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/</a></p>
+
+<p>In this documentation, ignore the MXML syntax and refer instead to the <em>Public Properties</em> section for each class.  In MXML, all the property values are specified with strings, but with the JSML library, you'll need to set the properties to values of the appropriate type.  In the example above, for instance, you'd say <code>stepSize="1"</code> in MXML, but since that property requires a number, you'd use <code>stepSize: 1</code> when specifying it with JavaScript.</p>
+
+<p>Note that not every property will necessarily be useful in a panel or dialog, since you can't script the elements using ActionScript and features like data binding aren't supported.  But most of the basic properties and styles should behave as described in the documentation.</p>
+
+<p>To size an element as a percentage of its container, use the <code>percentWidth</code> and <code>percentHeight</code> properties rather than <code>width</code> and <code>height</code>.  Setting <code>width</code> to a string like <code>"100%"</code> won't work.</p>
+
+<p>Also note that you can ignore the documentation for the newer Flex 4 "spark" components.  The JSML Panel library was built with Flex 3 "mx" components.</p>
+
+<h1 id="hierarchy">Creating an element hierarchy</h1>
+
+<p>For container types, like <code>HBox</code> and <code>Form</code>, you add child elements via their <code>children</code> array:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { HBox: {
+            children: [
+                { Label: {
+                    text: "X:"
+                } },
+                { NumericStepper: {
+                    name: "XValue",
+                    value: 10,
+                    stepSize: 1,
+                    maximum: 100000,
+                    minimum: -100000,
+                    toolTip: "Pixels to move horizontally"
+                } }
+            ]
+        } },
+        { HBox: {
+            children: [
+                { Label: {
+                    text: "Y:"
+                } },
+                { NumericStepper: {
+                    name: "YValue",
+                    value: 10,
+                    stepSize: 1,
+                    maximum: 100000,
+                    minimum: -100000,
+                    toolTip: "Pixels to move vertically"
+                } }
+            ]
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/hbox-containers.png" alt="HBox hierarchy" /></p>
+</blockquote>
+
+<p>In this example, the <code>HBox</code> arranges its children, a <code>Label</code> and a <code>NumericStepper</code>, in a horizontal layout.  The two <code>HBox</code> elements are still stacked vertically.</p>
+
+<p>Of course, these child elements can have their own children, and so on.  Remember that even if a container has only one child, the child still needs to be contained within an array.</p>
+
+<h1 id="styling">Styling elements</h1>
+
+<p>Most Flex elements also support various styles, like <code>fontSize</code>.  These need to be specified on a <code>style: {...}</code> property, rather than directly on the inner properties object.</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { Label: {
+            text: "This is really big, red text.",
+            style: {
+                fontWeight: "bold",
+                fontStyle: "italic",
+                fontSize: 18,
+                color: "0xff0000"
+            }
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/red-text.png" alt="Red text" /></p>
+</blockquote>
+
+<p>Unlike the pseudo-CSS markup supported in MXML files, in JSML, you must use the camelCase names for the style properties.  <code>color</code> values are also not specified with CSS color strings but rather with hex values, either as a string, like <code>"0xff0000"</code>, or a number, like <code>0xff0000</code>.</p>
+
+<p>In addition to tweaking the styles on individual elements, you can also specify global styles on a <code>css</code> property on the panel object.</p>
+
+<pre><code>fwlib.panel.register({
+    css: {
+        "Label": {
+            fontWeight: "bold",
+            fontStyle: "italic",
+            fontSize: 18,
+            color: "0xff0000"
+        }
+    },
+    children: [
+        { Label: {
+            text: "This is really big, red text."
+        } },
+        { Label: {
+            text: "And here's some more!"
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/red-text-more.png" alt="More red text" /></p>
+</blockquote>
+
+<p>In the example above, the default style for <code>Label</code> elements is specified with the <code>Label</code> selector in the <code>css</code> property.  This changes the appearance of all <code>Label</code> elements in the panel.</p>
+
+<p>See the <code>JSML Panel.js</code> file for more examples of using styles.</p>
+
+<h1 id="dialogs">Styling dialogs</h1>
+
+<p>In addition to the <code>css</code> and <code>style</code> properties described above, there are a number of properties that can be set on the top-level JSML object to control how dialogs look and behave:</p>
+
+<dl>
+<dt>size</dt>
+<dd>A string specifying the size of the dialog, in pixels.  See the <a href="#sizing">next section</a> for details.</dd>
+
+<dt>title</dt>
+<dd>
+<p>A string that's shown at the top part of the Flex <code>Panel</code>, below the dialog title bar.  Unfortunately, there's no way to change the actual title bar at runtime, so it'll always show the name of the SWF file that's loaded, such as "Dialog [300x250]".</p>
+
+<p>However, it is possible to rename the SWF to the name of your command.  For instance, if you wanted a 300x250 dialog, you could rename the <code>Dialog [300x250].swf</code> file inside <code>lib/fwlib/dialog-swfs</code> to <code>My Dialog.swf</code>.  Then pass <code>"My Dialog"</code> as the title string.  In that case, "My Dialog" would appear as the actual title of the dialog, and that would also appear as the title of the Flex panel.  The next option can change the Flex panel's string in that scenario.</p>
+</dd>
+
+<dt>subtitle</dt>
+<dd>A string that is shown at the top of the Flex <code>Panel</code> element when the <code>title</code> string matches the name of the SWF.  In the example above, you might specify <code>"Choose an option below"</code> as the <code>subtitle</code> string.</dd>
+
+<dt>showTitle</dt>
+<dd>A Boolean that controls whether the title area is shown.  Set this to <code>false</code> to hide the title completely.  You can also set the <code>title</code> property to <code>""</code> to hide the title area.</dd>
+
+<dt>confirmButton</dt>
+<dd>A string containing the <code>name</code> of the button element that plays the role of the <em>OK</em> button.  If you use the default <em>OK</em> and <em>Cancel</em> buttons, this property does not need to be set.</dd>
+
+<dt>dismissButton</dt>
+<dd>A string containing the <code>name</code> of the button element that plays the role of the <em>Cancel</em> button.  If you use the default <em>OK</em> and <em>Cancel</em> buttons, this property does not need to be set.</dd>
+
+<dt>buttons</dt>
+<dd>An array containing custom names for the default <em>OK</em> and <em>Cancel</em> buttons.  See the <a href="#buttons">Customizing dialog buttons</a> section for details.</dd>
+
+<dt>defaultButtons</dt>
+<dd>A Boolean indicating whether default <em>OK</em> and <em>Cancel</em> buttons should be created at the bottom of the dialog.  Set this to <code>false</code> if you want to create the buttons yourself.</dd>
+
+<dt>root</dt>
+<dd>A JSML element that replaces the <code>Panel</code> as the root of your dialog hierarchy.  See the <a href="#root">Customizing the root element in a dialog</a> section for details.</dd>
+</dl>
+
+<h2 id="sizing">Sizing dialogs</h2>
+
+<p>To specify a size for the dialog, set the <code>size</code> property of the dialog object to one of the following strings:</p>
+
+<blockquote>
+  <table>
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>225x125</td>
+    <td>250x200</td>
+    <td>300x250</td>
+    <td>350x350</td>
+    <td>400x300</td>
+  </tr>
+  <tr>
+    <td>225x150</td>
+    <td>250x250</td>
+    <td>300x300</td>
+    <td>350x375</td>
+    <td>400x350</td>
+  </tr>
+  <tr>
+    <td>225x175</td>
+    <td>275x175</td>
+    <td>300x325</td>
+    <td>375x250</td>
+    <td>400x375</td>
+  </tr>
+  <tr>
+    <td>225x200</td>
+    <td>275x200</td>
+    <td>300x350</td>
+    <td>375x300</td>
+    <td>450x275</td>
+  </tr>
+  <tr>
+    <td>225x225</td>
+    <td>275x250</td>
+    <td>300x375</td>
+    <td>375x325</td>
+    <td>450x300</td>
+  </tr>
+  <tr>
+    <td>250x125</td>
+    <td>275x275</td>
+    <td>350x250</td>
+    <td>375x350</td>
+    <td>450x350</td>
+  </tr>
+  <tr>
+    <td>250x150</td>
+    <td>300x175</td>
+    <td>350x300</td>
+    <td>375x375</td>
+    <td>450x375</td>
+  </tr>
+  <tr>
+    <td>250x175</td>
+    <td>300x200</td>
+    <td>350x325</td>
+    <td>400x275</td>
+    <td>500x375</td>
+  </tr>
+  </tbody>
+  </table>
+</blockquote>
+
+<p>For example:</p>
+
+<pre><code>dialog.open({
+    title: "My First Dialog",
+    size: "300x200"
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/my-first-dialog.png" alt="My First Dialog" /></p>
+</blockquote>
+
+<p>This opens an empty dialog that's 300px wide and 200px tall.  Due to a limitation in how Fireworks opens Flash dialogs, it's not possible to support arbitrary sizes.  But it's easy to add new fixed sizes to this list, so let me know which other sizes would be useful.  The maximum size of a Flash dialog in Fireworks is 500x375.  <em>dialog.open()</em> will default to 500x375 if you don't specify a size.</p>
+
+<p>Each specific size corresponds to a SWF file in <code>lib/fwlib/dialog-swfs</code>.  The SWFs are just shells that specify the size of the dialog and then load the <code>JSMLDialog.swf</code> file, which contains the actual logic for creating Flex elements out of JSML.  When you distribute your extension, you only need to include the SWF files for the dialog sizes that you actually use.  So if you have just one 300x200 dialog, you would need to include the <code>Dialog [300x200].swf</code> and <code>JSMLDialog.swf</code> files in the <code>dialog-swfs</code> directory.</p>
+
+<h2 id="buttons">Customizing dialog buttons</h2>
+
+<p>By default, 75px-wide <em>OK</em> and <em>Cancel</em> buttons are automatically created if you don't include a <code>ControlBar</code> element at the bottom of the <code>Panel</code>.  The order of the buttons is reversed when the dialog is shown on a Mac.</p>
+
+<p>To change the labels of these two buttons, you can set the <code>buttons</code> property to an array of strings.  The first item is the label for the equivalent of the <em>OK</em> button, the second is for the <em>Cancel</em> button:</p>
+
+<pre><code>dialog.open({
+    buttons: ["Do It", "Don't Do It", 90],
+    size: "250x125"
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/custom-button-labels.png" alt="Custom button labels" /></p>
+</blockquote>
+
+<p>The optional third item in the array is a number that specifies the width of both buttons.  If you want the buttons to automatically resize based on the widths of their labels, set the third item to <code>0</code>.</p>
+
+<p>If you want even more control over the buttons, you can create your own <code>ControlBar</code> element, which will dock at the bottom of the <code>Panel</code> element that contains the dialog's other controls.  It should be the last element of the dialog's <code>children</code> array:</p>
+
+<pre><code>dialog.open({
+    title: "Yoda says:",
+    size: "225x125",
+    confirmButton: "DoBtn",
+    dismissButton: "DoNotBtn",
+    children: [
+        { Label: { text: "There is no try." } },
+        { ControlBar: {
+            children: [
+                { Button: {
+                    name: "DoBtn",
+                    label: "Do",
+                    width: 75
+                } },
+                { Button: {
+                    name: "DoNotBtn",
+                    label: "Do Not",
+                    width: 75
+                } }
+            ]
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/yoda-says.png" alt="Do, or do not" /></p>
+</blockquote>
+
+<p>Note the <code>confirmButton</code> and <code>dismissButton</code> properties in the JSML above.  If those were not set to the button names, clicking them would have no effect.</p>
+
+<p>By default, the buttons will be right-aligned in the <code>ControlBar</code>, but you can set the <code>horizontalAlign</code> style to override that.  If you want the left-to-right order of the buttons to be different on Mac vs. Windows, you will need to make that change in your code.</p>
+
+<p>If you don't any <code>ControlBar</code> at all (perhaps you want the <em>OK</em> and <em>Cancel</em> buttons aligned vertically on the right), then you must set the <code>defaultButtons</code> property to false.  If the dialog library doesn't see a <code>ControlBar</code> element, it will add one automatically unless you tell it not to.</p>
+
+<h2 id="root">Customizing the root element in a dialog</h2>
+
+<p>By default, the elements in the <code>children</code> array on the JSML object are added as children of a <code>Panel</code> element that takes up the entire area of the dialog.  This is generally useful, as it provides a place for showing a title and an easy way of showing buttons at the bottom of the dialog.  However, if you want to take full control of the dialog's layout, you can specify a different root element in the <code>root</code> property of the JSML:</p>
+
+<pre><code>dialog.open({
+    size: "225x150",
+    confirmButton: "FWBtn",
+    root: { HBox: {
+        style: {
+            paddingTop: 10,
+            paddingLeft: 10,
+            paddingRight: 10,
+            paddingBottom: 10
+        },
+        children: [
+            { Image: { 
+                source: "http://blogs.adobe.com/fireworks/files/fireworks/fwicon.jpg",
+                width: 100,
+                height: 100
+            } },
+            { Button: {
+                name: "FWBtn",
+                label: "Fireworks!"
+            } }
+        ]
+    } }
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/custom-root.png" alt="Custom root element" /></p>
+</blockquote>
+
+<p>When using the <code>root</code> property, you must put all of the dialog controls in the root element's <code>children</code> array, as the <code>children</code> property on the top-level of the JSML will be ignored.</p>
+
+<h2 id="style-panel">Styling the dialog's Panel element</h2>
+
+<p>The <code>Panel</code> that contains all the elements in a dialog has some default styles applied to it, which you can override by defining <code>.DialogPanel</code> and <code>.DialogTitle</code> styles:</p>
+
+<pre><code>dialog.open({
+    title: "This is red",
+    size: "225x125",
+    css: {
+        ".DialogTitle": {
+            color: 0xff0000
+        }
+    },
+    children: [
+        { Label: { text: "This is not." } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/style-dialog-title.png" alt="Style the dialog title" /></p>
+</blockquote>
+
+<h1 id="images">Using external images</h1>
+
+<p>At some point, you'll likely want to include an icon or image in your panel or dialog.  The <code>Image</code> element can be used to display an image from either the local file system or anywhere on the internet.  For instance, this code will display a Fireworks logo in the panel:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { Image: { 
+            source: "http://blogs.adobe.com/fireworks/fwicon.jpg"
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/remote-image.png" alt="Loading a remote image" /></p>
+</blockquote>
+
+<h2 id="panel-images">Local images in a panel</h2>
+
+<p>More commonly, the images will be installed with your panel on the user's machine.  To reference these images, use a path relative to your panel's JavaScript file.  For example, let's say you have the following file structure in the Fireworks folder:</p>
+
+<pre><code>Adobe Fireworks/
+    Configuration/
+        Command Panels/
+            JSML Panel.swf
+            JSML Panel.js
+            JSML Panel/
+                add-icon.png
+                delete-icon.png
+</code></pre>
+
+<p>These local images can then be displayed on some button controls by setting their <code>icon</code> style:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { HBox: {
+            children: [
+                { Button: {
+                    label: "Add",
+                    style: {
+                        icon: "JSML Panel/add-icon.png"
+                    }
+                } },
+                { Button: {
+                    label: "Delete",
+                    style: {
+                        icon: "JSML Panel/delete-icon.png"
+                    }
+                } }
+            ]
+        } },        
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/button-icon.png" alt="Button Icons" /></p>
+</blockquote>
+
+<p>Note that the folder you use to store the image files doesn't have to have the same name as the panel.  It can have any name you like.</p>
+
+<h2 id="dialog-images">Local images in a dialog</h2>
+
+<p>Paths to local images in dialogs are also relative to the SWF file, but since that file is several directories deep, you will probably want to go up a couple of directories.  Imagine you have this directory structure:</p>
+
+<pre><code>Adobe Fireworks/
+    Configuration/
+        Commands/
+            My Commands/
+                lib/
+                    dojo/
+                        has.js
+                        json.js
+                    fwlib/
+                        dialog-swfs/
+                            Dialog [225x125].swf
+                            ...
+                            JSMLDialog.swf
+                        dialog.js
+                    img/
+                        add-icon.png
+                        delete-icon.png
+                    fwrequire.js
+                    require.js
+                My Command 1.jsf
+                My Command 2.jsf
+</code></pre>
+
+<p>The relative paths to the images will be up two directories and back down into the <code>img/</code> directory:</p>
+
+<pre><code>dialog.open({
+    size: "225x125",
+    children: [
+        { HBox: {
+            children: [
+                { Button: {
+                    label: "Add",
+                    style: {
+                        icon: "../../img/add-icon.png"
+                    }
+                } },
+                { Button: {
+                    label: "Delete",
+                    style: {
+                        icon: "../../img/delete-icon.png"
+                    }
+                } }
+            ]
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/button-icon-dialog.png" alt="Button icons in a dialog" /></p>
+</blockquote>
+
+<h2 id="button-images">Button element styles</h2>
+
+<p><code>Button</code> elements also support a number of other icon styles:</p>
+
+<ul>
+<li>disabledIcon</li>
+<li>downIcon </li>
+<li>icon </li>
+<li>overIcon </li>
+<li>selectedDisabledIcon </li>
+<li>selectedDownIcon </li>
+<li>selectedOverIcon </li>
+<li>selectedUpIcon </li>
+<li>upIcon </li>
+</ul>
+
+<p>Note that when you use external icons with controls in a <code>TabNavigator</code> container, you'll need to set the container's <code>creationPolicy</code> property to <code>"all"</code>.  This will force all of the child elements on each tab to be created as soon as the panel loads.  Without this setting, the external images will not be loaded for controls that appear on tabs other than the front-most one.</p>
+
+<h1 id="return">Returning values from dialogs</h1>
+
+<p>Of course, all of these pretty styles would be pointless if your JavaScript can't see what the user entered in the Flex dialog.  <code>dialog.open()</code> returns an object if the user clicks the confirm button or presses enter and it returns <code>null</code> if the user clicks the dismiss button or presses escape.  You can use it much like the built-in Fireworks <em>prompt()</em> function:</p>
+
+<pre><code>var result = dialog.open({
+    title: "My First Dialog",
+    size: "300x200",
+    children: [
+        { NumericStepper: {
+            name: "XValue",
+            value: 10,
+            ...
+</code></pre>
+
+<p>If the user clicks OK in this example, <code>result</code> will be an object containing a property for each named element in the dialog (regardless of where it appears in the object hierarchy).  So <code>result.XValue</code> (the name of the <code>NumericStepper</code> element) will contain the number that the user had entered.  Make sure all of your element names are unique within the dialog.  Static elements like <code>HRule</code> or <code>VBox</code> don't need names.</p>
+
+<p>See the <a href="#current-values">Accessing the current state of the Flex controls</a> section for how the values of different elements are represented in the <code>result</code> object.</p>
+
+<h1 id="simple-dialogs">Creating simple dialogs</h1>
+
+<p>In addition to the full dialog API, the JSML library includes a simpler dialog API that doesn't require any JSML.  To access this API, you need to require the <code>simple-dialog</code> module:</p>
+
+<pre><code>require([
+    "fwlib/simple-dialog"
+], function(
+    simple)
+{
+    ...
+}
+</code></pre>
+
+<p>The methods in this API can be used to quickly create a dialog without learning all about JSML.</p>
+
+<h2 id="confirm">Confirm dialog</h2>
+
+<p>The Fireworks API includes <code>confirm()</code> and <code>fw.yesNoDialog()</code> calls that open a simple dialog where the user can press <em>OK</em> or <em>Cancel</em>, or <em>Yes</em> or <em>No</em>.  But the dialogs are limited to plain text and you have no control over the button labels or icons.  The <code>simple.confirm()</code> method lets you use basic HTML tags in the dialog text and provides control over the buttons and icons.</p>
+
+<p>To open a confirmation dialog, call <code>simple.confirm()</code> with a single object containing some or all of these properties:</p>
+
+<dl>
+<dt>message</dt>
+<dd>A required string containing the text that is shown in the dialog.  The text can contain basic HTML formatting tags, like <code>&lt;b&gt;...&lt;/b&gt;</code> or <code>&lt;img src="..."&gt;</code>.</dd>
+
+<dt>buttons</dt>
+<dd>
+<p>An optional array of two strings to customize the button labels.  The default labels are <em>OK</em> and <em>Cancel</em>.  The confirmation button's label should be listed first.</p>
+
+<p>The optional third item in the array is a number that specifies the width of both buttons.  If you want the buttons to automatically resize based on the widths of their labels, set the third item to <code>0</code>.</p>
+</dd>
+
+<dt>icon</dt>
+<dd>An optional string providing a path to an image.  The image will be displayed in the top-left of the dialog, pushing the message text to the right.</dd>
+
+<dt>size</dt>
+<dd>An optional string specifying the size of the dialog.  The default is <code>"225x150"</code>.  See the <a href="#sizing">Sizing dialogs</a> section for the list of available sizes.</dd>
+</dl>
+
+<p><code>confirm()</code> will return <code>true</code> if the user presses the confirm button, <code>false</code> otherwise:</p>
+
+<pre><code>var result = simple.confirm({
+    message: 'Are you &lt;b&gt;in&lt;/b&gt; or are you &lt;i&gt;out&lt;/i&gt;?',
+    icon: "../../img/alert-icon-32.png",
+    buttons: ["In", "Out", 60]
+});
+
+if (result) {
+    alert("You're in!");
+}
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/confirm-dialog.png" alt="Confirmation dialog" /></p>
+</blockquote>
+
+<h2 id="prompt">Prompt dialog</h2>
+
+<p>The Fireworks API offers a global <code>prompt()</code> function that lets the user enter some text.  But the text input area is just a single line.  The <code>simple.prompt()</code> method offers a multi-line text input area.</p>
+
+<p>In addition to the properties listed above for <a href="#confirm"><code>confirm()</code></a>, you can pass in a <code>text</code> string that sets the default text in the input area.</p>
+
+<p><code>prompt()</code> will return the entered string if the user presses the confirm button or presses return; otherwise, it returns <code>null</code>.</p>
+
+<pre><code>var result = simple.prompt({
+    message: 'Enter &lt;b&gt;something&lt;/b&gt;!',
+    text: "change me"
+});
+
+if (result) {
+    alert("You entered: " + result);
+}
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/prompt-dialog.png" alt="Prompt dialog" /></p>
+</blockquote>
+
+<h2 id="form">Form dialog</h2>
+
+<p>When you need to get just a few pieces of basic information from the user in a dialog, using the full power of JSML may be overkill.  The <code>simple.form()</code> call lets you specify a UI using a simpler syntax.</p>
+
+<p>In addition to the <code>buttons</code> and <code>size</code> properties described above, the object parameter to <code>form()</code> can contain these properties:</p>
+
+<dl>
+<dt>title</dt>
+<dd>An optional string that appears in bold at the top of the dialog.</dd>
+
+<dt>items</dt>
+<dd>A required array of arrays, each of which defines a control in the form.  The list of available controls is below.</dd>
+</dl>
+
+<p>Each control in the form is defined by an array, such as <code>["TextInput", "name", "Username"]</code>.  The first item in the array is always the type of the control, like <code>"TextInput"</code> or <code>"ComboBox"</code>.  The next item is the control's <code>name</code> property, which you can use to access its value in the result object that's returned when the user clicks <em>OK</em>.  The third item is the label for the control, which appears to its left in the dialog.  Most controls have an optional fourth item that specifies the default value for the control.  The last item in the array is an optional object containing Flex properties that are added to the control.  This can be used to further customize the control, though you'll need to look at the Flex documentation to see the list of available properties.</p>
+
+<p>The following controls are supported.  The array after each type name lists the pieces of data that should be included in the array for that type:</p>
+
+<dl>
+<dt>Button [type, name, label, selected, config]</dt>
+<dd>Buttons in a form dialog are always treated as toggle buttons, so the <code>selected</code> item in the array should be set to <code>true</code> or <code>false</code>.</dd>
+
+<dt>CheckBox [type, name, label, selected, config]</dt>
+<dd>The <code>selected</code> item should be <code>true</code> or <code>false</code> to indicate whether the checkbox is checked.  The checkbox label appears to the left of the box, in the same column as the other form label.</dd>
+
+<dt>ColorPicker [type, name, label, color, config]</dt>
+<dd>The default color specified in the <code>color</code> item should be a CSS hex value, like <code>"#ff0000"</code>.</dd>
+
+<dt>ComboBox [type, name, label, dataProvider, config]</dt>
+<dd>The <code>dataProvider</code> item is an array of strings that specify the items in the <code>ComboBox</code> menu.  The last item in the array can be a number, which specifies which menu item is selected.  Otherwise, it defaults to the first item.</dd>
+
+<dt>DateField [type, name, label, date, config]</dt>
+<dd>The <code>date</code> item should be the number of milliseconds representing the date.</dd>
+
+<dt>FormHeading [type, name, label, config]</dt>
+<dd>The <code>label</code> text appears bolded on a line by itself in the form.</dd>
+
+<dt>Image [type, name, label, source, config]</dt>
+<dd>The <code>source</code> item specifies either a local path to the image or a URL.</dd>
+
+<dt>List [type, name, label, dataProvider, config]</dt>
+<dd>The <code>dataProvider</code> item works the same as in the <code>ComboBox</code> control.  The list will have 4 rows by default.</dd>
+
+<dt>NumericStepper [type, name, label, value, config]</dt>
+<dd>By default, the <code>stepSize</code> for the <code>NumericStepper</code> is 1.</dd>
+
+<dt>PasswordInput [type, name, label, text, config]</dt>
+<dd>This is just a <code>TextInput</code> control with the <code>displayAsPassword</code> property set to true, but having it available as a separate type makes it more convenient.</dd>
+
+<dt>RadioButtonGroup [type, name, label, radioButtons, config]</dt>
+<dd>The <code>radioButtons</code> item is an array of strings that specify the labels of the radio buttons in the group.  The last item in the array can be a number, which specifies which menu item is selected.  Otherwise, it defaults to the first item.</dd>
+
+<dt>Slider [type, name, label, values, config]</dt>
+<dd>The <code>values</code> item is an array of numbers that specify the minimum, default, and maximum values for the slider.  For instance, passing <code>[-10, 0, 10]</code> would create a slider that can go from -10 to 10, with the initial value set at 0.</dd>
+
+<dt>Spacer [type, height, config]</dt>
+<dd>The <code>height</code> item specifies the number of pixels of blank space that the <code>Spacer</code> takes up in the dialog.</dd>
+
+<dt>Text [type, name, label, text, config]</dt>
+<dd>The <code>text</code> item specifies the string to show in the multiline, non-editable text field.</dd>
+
+<dt>TextInput [type, name, label, text, config]</dt>
+<dd>The <code>text</code> item specifies a default string to show in the input field.</dd>
+
+<dt>TextArea [type, name, label, text, config]</dt>
+<dd>The <code>text</code> item specifies a default string to show in the input field.</dd>
+
+<dt>TileList [type, name, label, dataProvider, config]</dt>
+<dd>The <code>dataProvider</code> item works the same as in the <code>ComboBox</code> control.</dd>
+
+<dt>ToggleButtonBar [type, name, label, dataProvider, config]</dt>
+<dd>The <code>dataProvider</code> item works the same as in the <code>ComboBox</code> control.</dd>
+</dl>
+
+<p>The return value of <code>simple.form()</code> is an object containing the current values of the controls, or null if the user clicked <em>Cancel</em>.  The control values can be accessed via their names.  For instance, in the following example, <code>result.pass</code> returns the string the user entered in the <em>Password</em> field.</p>
+
+<pre><code>var result = simple.form({
+    title: "Sign in to chat",
+    buttons: ["Sign In", "Cancel"],
+    items: [
+        ["TextInput", "name", "Username"],
+        ["PasswordInput", "pass", "Password"],
+        ["ComboBox", "visibility", "Appearance", ["Visible", "Invisible", 1]]
+    ]
+});
+
+if (result) {
+    alert("Your password is " + result.pass);
+}
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/form-dialog.png" alt="Form dialog" /></p>
+</blockquote>
+
+<h1 id="data-providers">Using data providers</h1>
+
+<p>Many Flex components use a <a href="http://livedocs.adobe.com/flex/3/html/help.html?content=about_dataproviders_2.html">data provider</a> to supply the attributes needed to render a set of controls.  For instance, the <code>ComboBox</code> element uses a data provider to specify the items in the drop-down menu.  This can be as simple as an array of strings, one for each item:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { ComboBox: {
+            dataProvider: [
+                "Fireworks", 
+                "Edge", 
+                "Illustrator", 
+                "Photoshop"
+            ]
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/simple-menu.png" alt="Simple ComboBox" /></p>
+</blockquote>
+
+<p>Typically, though, data provider arrays will include objects with multiple properties on each item:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { ComboBox: {
+            dataProvider: [
+                { label: "Fireworks", data: "Fw" },
+                { label: "Edge", data: "Eg" }, 
+                { label: "Illustrator", data: "Ai" }, 
+                { label: "Photoshop", data: "Ps" }
+            ]
+        } }
+    ]
+});
+</code></pre>
+
+<p>The <code>label</code> attribute is used for the menu item's text, while the <code>data</code> attribute can be accessed when handling the <code>change</code> event for a <code>ComboBox</code>.</p>
+
+<p>The <code>List</code> is another common element that uses a data provider to specify the list of items:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { List: {
+            dataProvider: [
+                { label: "Fireworks", data: "Fw" },
+                { label: "Edge", data: "Eg" }, 
+                { label: "Illustrator", data: "Ai" }, 
+                { label: "Photoshop", data: "Ps" }
+            ],
+            rowCount: 3,
+            allowMultipleSelection: true,
+            percentWidth: 100
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/list-selection.png" alt="Simple List" /></p>
+</blockquote>
+
+<p>The <code>dataProvider</code> attribute of a control can be set at runtime to dynamically change the list of menu items.  See the <a href="#updating">Updating the panel UI</a> section for more details.</p>
+
+<h2 id="icons">Using icons in data providers</h2>
+
+<p>While <code>Button</code> elements get their icons from a style, controls like <code>ButtonBar</code> and <code>ToggleButtonBar</code> are built from a data provider array.  The array contains one object per button, and each object should have a <code>label</code> and an <code>icon</code> property.  You can put the relative path to the image in the <code>icon</code> property.  For example:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { ButtonBar: {
+            dataProvider: [
+                {
+                    label: "Add",
+                    icon: "JSML Panel/add-icon.png"
+                },
+                {
+                    label: "Delete",
+                    icon: "JSML Panel/delete-icon.png"
+                },
+                {
+                    label: "Info",
+                    icon: "JSML Panel/info-icon.png"
+                }
+            ]
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/buttonbar-icons.png" alt="ButtonBar" /></p>
+</blockquote>
+
+<p>Another handy control that uses <code>dataProviders</code> to generate its contents is the <code>TileList</code>.  It can display images in a scrolling table of rows and columns.  While you may sometimes have a pre-defined set of images to show, more often you'll need to generate the list of images dynamically at runtime.</p>
+
+<p>In the example below, the script scans the auto shapes folder for GIF and PNG images.  When it finds one, it pushes a new item onto the <code>dataProvider</code> array containing the path to the image and its filename as a label.  This array is then used as the <code>dataProvider</code> for the <code>TileList</code>, which will cause it to display each auto shape icon and label in a tile:</p>
+
+<pre><code>var autoShapeFiles = Files.enumFiles(fw.appSmartShapesDir);
+var autoShapeDP = [];
+
+for (var i = 0, len = autoShapeFiles.length; i &lt; len; i++) {
+    var file = autoShapeFiles[i];
+    var extension = Files.getExtension(file);
+
+    if (extension == ".gif" || extension == ".png") {
+        autoShapeDP.push({
+            label: Files.getFilename(file).match(/(.+)\.[^.]+/)[1],
+            icon: file
+        });
+    }
+}
+
+fwlib.panel.register({
+    children: [
+        { TileList: {
+            name: "AutoShapes",
+            columnWidth: 70,
+            rowHeight: 100,
+            rowCount: 2,
+            percentWidth: 100,
+            wordWrap: true,
+            dataProvider: autoShapeDP
+        } }
+    ]
+});
+</code></pre>
+
+<p>This produces an interface that looks very much like the Auto Shapes panel that ships with Fireworks:</p>
+
+<blockquote>
+  <p><img src="../inc/jsml/auto-shapes-tilelist.png" alt="Auto shapes TileList" /></p>
+</blockquote>
+
+<p>Note that the <code>TileList</code> element is created before the images are loaded, so Flex can't automatically size the tiles.  Instead, you'll need to specify a <code>columnWidth</code> and <code>rowHeight</code> that will set the size of each tile.  If that size is smaller than the image, the image will automatically be resized to fit.</p>
+
+<h1 id="events">Handling events</h1>
+
+<p>In a normal Flex application, you'd write event handlers in ActionScript.  With the JSML library, however, you can write them in JavaScript.  To create an event handler for an element, add an <code>events: {...}</code> property to it and add a function to <code>events</code> with the same name as the Flex event you want to handle.  You can add as many event handlers as you like.  For example:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { Button: {
+            label: "Click Me",
+            events: {
+                click: function(event)
+                {
+                    alert("I've been clicked!");
+                }
+            }
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/click-event.png" alt="Handling the click event" /></p>
+</blockquote>
+
+<p>This displays an alert dialog every time you click the button.  Note that the event handling function doesn't have to be written inline in the JSML object.  You can also use a reference to a function defined somewhere else:</p>
+
+<pre><code>function onClick(event)
+{
+    alert("I've been clicked!");
+}
+
+fwlib.panel.register({
+    children: [
+        { Button: {
+            label: "Click Me",
+            events: {
+                click: onClick
+            }
+        } }
+    ]
+});
+</code></pre>
+
+<p>See the Flex 3 documentation for a list of the events that each element supports.  You'll want to look at the list of inherited events to see the full set that each element supports.  The <code>click</code> event for the <code>Button</code> control, for instance, is inherited from the base <code>InteractiveObject</code> class.</p>
+
+<h2 id="event">The event object</h2>
+
+<p>Each event handler is called with a single object that has the following common properties:</p>
+
+<dl>
+<dt>type</dt>
+<dd>The name of the event that triggered the handler.  In the example above, <code>event.type</code> would be <code>"change"</code>.  Knowing the event type can be useful if you're using the same handler to handle several different events.</dd>
+
+<dt>targetName</dt>
+<dd>The name of the element that is handling the event.  In the example above, <code>event.targetName</code> would be <code>"Foo"</code>.</dd>
+
+<dt>originalTargetName</dt>
+<dd>The name of the element that fired the event.  Normally, this is the same as <code>targetName</code>, but if you are handling an event that has bubbled up to the top of the dialog, <code>originalTargetName</code> lets you know where the event came from.</dd>
+
+<dt>currentValues</dt>
+<dd>An object containing the current values of all the named elements in the panel.  In the example above, <code>event.currentValues.Foo</code> would be whatever the user had typed up to that point.  Remember that if you want to be able to access an element's value in your event handler, you must give it a unique name.  See the next section for more details.</dd>
+</dl>
+
+<p><code>itemClick</code> events that are fired on controls derived from <code>NavBar</code> or <code>Menu</code> have these additional attributes:</p>
+
+<dl>
+<dt>item</dt>
+<dd>The data provider object corresponding to the item that was clicked.</dd>
+
+<dt>index</dt>
+<dd>The index of the item that was clicked.</dd>
+
+<dt>label</dt>
+<dd>The label of the item that was clicked.</dd>
+
+<dt>result</dt>
+<dd>An empty array, which is used to update the Flex UI in response to an event.  See <a href="#updating">Updating the panel UI</a> for more details.</dd>
+</dl>
+
+<p><code>itemClick</code> events that are fired on <code>List</code>, <code>TileList</code> or <code>DataGrid</code> controls include these attributes instead:</p>
+
+<dl>
+<dt>columnIndex</dt>
+<dd>The zero-based index of the column associated with the event.</dd>
+
+<dt>rowIndex</dt>
+<dd>The zero-based index of the row associated with the event.</dd>
+</dl>
+
+<p><code>itemEditEnd</code> events that are fired on <code>DataGrid</code> controls include these attributes:</p>
+
+<dl>
+<dt>dataField</dt>
+<dd>The name of the field that is associated with the column in which the item editing has finished.</dd>
+
+<dt>itemData</dt>
+<dd>The data for the row in the <code>DataGrid</code> that contains the cell that has been edited.  This contains the new value that has been entered by the user.</dd>
+
+<dt>reason</dt>
+<dd>A string containing the reason the edit session of the grid item was ended.  It can be one of the following strings: <code>"canceled"</code>, <code>"newColumn"</code>, <code>"newRow"</code>, or <code>"other"</code>.</dd>
+</dl>
+
+<p>Keyboard events include these attributes:</p>
+
+<dl>
+<dt>altKey</dt>
+<dd>A Boolean representing the state of the alt key when the event was triggered.</dd>
+
+<dt>ctrlKey</dt>
+<dd>A Boolean representing the state of the ctrl key when the event was triggered.</dd>
+
+<dt>shiftKey</dt>
+<dd>A Boolean representing the state of the shift key when the event was triggered.</dd>
+
+<dt>charCode</dt>
+<dd>The ASCII character code of the key that was pressed or released.</dd>
+
+<dt>keyCode</dt>
+<dd>The numeric key code value of the physical key that was pressed or released.</dd>
+</dl>
+
+<p>Mouse events include these attributes:</p>
+
+<dl>
+<dt>buttonDown</dt>
+<dd>A Boolean indicating whether the primary mouse button is pressed.</dd>
+
+<dt>localX</dt>
+<dd>The horizontal coordinate at which the event occurred relative to the element's container.</dd>
+
+<dt>localY</dt>
+<dd>The vertical coordinate at which the event occurred relative to the element's container.</dd>
+
+<dt>stageX</dt>
+<dd>The horizontal coordinate at which the event occurred in global coordinates.</dd>
+
+<dt>stageY</dt>
+<dd>The vertical coordinate at which the event occurred in global coordinates.</dd>
+</dl>
+
+<h2 id="current-values">Accessing the current state of the Flex controls</h2>
+
+<p>When handling an event, you'll likely want to check the values of other elements in the panel or dialog interface.  For instance, in the click handler for a button labeled <em>Insert Text</em>, you might want to access the value of a text field and then use that string to insert a block of text.  You can do this by looking up an element's value in the <code>currentValues</code> object by its ID.</p>
+
+<p>Note that the <code>value</code> property of most controls will be a string, number or Boolean, but some classes have other value types:</p>
+
+<dl>
+<dt>Button</dt>
+<dd><code>value</code> is a Boolean indicating whether the button is toggled on or not.  This applies only to buttons whose <code>toggle</code> property is <code>true</code>.</dd>
+
+<dt>ColorPicker</dt>
+<dd><code>value</code> is a string containing a CSS color, like <code>"#ff0000"</code>.</dd>
+
+<dt>ComboBox</dt>
+<dd>
+<p><code>value</code> is an object containing the following properties:</p>
+
+<dl>
+<dt>selectedIndex</dt>
+<dd>The index of the first selected item.</dd>
+
+<dt>selectedItem</dt>
+<dd>The <code>dataProvider</code> object corresponding to the selected item.</dd>
+</dl>
+</dd>
+
+<dt>DateField, DateChooser</dt>
+<dd><code>value</code> is a JavaScript <code>Date</code> object or <code>null</code> if the user hasn't entered anything.  Note that to specify the initial date via the element's <code>selectedDate</code> property, you must use milliseconds rather than a <code>Date</code> object.  To set it to the current day, for instance, you could use <code>selectedDate: new Date().getTime()</code> to get the current time and date in milliseconds.</dd>
+
+<dt>List, TileList</dt>
+<dd>
+<p><code>value</code> is an object containing the following properties:</p>
+
+<dl>
+<dt>selectedIndex</dt>
+<dd>The index of the first selected item.</dd>
+
+<dt>selectedIndices</dt>
+<dd>An array of indices, if the list's <code>allowMultipleSelection</code> property is true.</dd>
+
+<dt>selectedItems</dt>
+<dd>An array of the <code>dataProvider</code> objects corresponding to the selected items.</dd>
+</dl>
+</dd>
+</dl>
+
+<h2 id="responding">Responding to events</h2>
+
+<p>Typically, you'll want to change the state of the Fireworks document when the user interacts with your panel, such as by clicking a button.  In your event handler, you have the full Fireworks API at your disposal.  One of the major advantages of the JSML library over creating a panel or dialog in Flash is that instead of concatenating a long string of JavaScript code in ActionScript to pass to the <code>MMExecute()</code> function, you don't have to worry about escaping your code at all, since you're writing regular JS, not AS.  Just write it as you would any other Fireworks command.</p>
+
+<p>In the following example, clicking the Move button moves the current selection by the amount specified in the <code>NumericStepper</code> fields:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { HBox: {
+            children: [
+                { Label: {
+                    text: "X:"
+                } },
+                { NumericStepper: {
+                    name: "XValue",
+                    value: 10,
+                    stepSize: 1,
+                    maximum: 100000,
+                    minimum: -100000,
+                    toolTip: "Pixels to move horizontally"
+                } }
+            ]
+        } },
+        { HBox: {
+            children: [
+                { Label: {
+                    text: "Y:"
+                } },
+                { NumericStepper: {
+                    name: "YValue",
+                    value: 10,
+                    stepSize: 1,
+                    maximum: 100000,
+                    minimum: -100000,
+                    toolTip: "Pixels to move vertically"
+                } }
+            ]
+        } },
+        { Button: {
+            label: "Move",
+            events: {
+                click: function(event)
+                {
+                    fw.getDocumentDOM().moveSelectionBy(
+                        { x: event.currentValues.XValue,
+                          y: event.currentValues.YValue },
+                        false,
+                        false
+                    );
+                }
+            }
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/numeric-move.png" alt="Move panel" /></p>
+</blockquote>
+
+<h2 id="bubbling">Handling bubbled events</h2>
+
+<p>Events in Flex typically bubble up from the element that generated the event to its parents in the UI hierarchy, and all the way to the top of the application.  It's possible to add handlers to the JSML's <code>events</code> object to catch these bubbled events:</p>
+
+<pre><code>fwlib.panel.register({
+    events: {
+        keyDown: function(event)
+        {
+            alert("You pressed '" + 
+                String.fromCharCode(event.charCode) + "'");
+        }
+    },
+    children: [
+        { TextInput: {
+            name: "Input",
+            restrict: "0-9"
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/bubbling-events.png" alt="Handling bubbled events" /></p>
+</blockquote>
+
+<p>In the example above, clicking in the text field and then pressing a key will display the key's character code in an alert dialog.  Note that the <code>TextInput</code> element is restricted to showing numbers only, but pressing a letter key will still display that letter.  The <code>keyDown</code> event bubbles up to the panel's handler, even though the text field doesn't show the letter.</p>
+
+<p>Global event handlers can be useful for responding to events in the same way no matter which element in the interface triggered them.  For instance, you might have a <code>keyDown</code> handler that checks for the return key being pressed, and then execute some default action.  That code can be in just one place instead of being added to each control.</p>
+
+<h2 id="dialog-events">Handling events in dialogs</h2>
+
+<p>Due to an obscure but highly annoying bug in versions of Fireworks before CS6, handling events in a dialog is more limited than it is in a panel.  If the event handler uses a loop statement or calls a JavaScript function that returns a value (not returning anything seems to be okay), a modal "Processing command script" dialog will appear on top of the dialog.  You're basically hosed at this point, since clicking Cancel in the dialog does nothing.  You just have to kill Fireworks.  (This bug is why you have to set the <code>result</code> property on the event object to specify the statements, rather than just returning them from the event handler.)</p>
+
+<p>To reduce the annoyance of this bug in pre-CS6 versions, the dialog API starts a timer when an event is handled by your code.  If the dialog doesn't receive any UI events (<code>mouseMove</code>, <code>keyDown</code>, <code>click</code>, etc.) within 15 seconds of calling the event handler, then it will automatically close the dialog.  That way, you and the users of your extension don't lose any work.</p>
+
+<p>However, some users may be surprised if the dialog closes by itself.  So if you're confident your event handlers won't trigger the processing dialog bug, you can set <code>useDeadManSwitch</code> to <code>false</code> in the JSML.  This will cause the timer not to start when an event is handled.  You should probably also set this value if your extension is limited to Fireworks CS6 and newer, since the bug has been fixed in those versions.</p>
+
+<p>Another result of this bug is that including objects in the <code>event.result</code> property, as <a href="#updating">described below</a>, will fail in pre-CS6 versions of Fireworks.  For instance, you might want to set the <code>dataProvider</code> of a <code>ComboBox</code> or <code>List</code> element to an array of objects, each with a <code>label</code> property.  In CS6, the JSML dialog library will convert the result array to a string using a JSON library, which will quote the property names of each object.  The JSON string is then converted back to an object on the ActionScript side.  In Fireworks pre-CS6, however, calling the JSON library would trigger the processing dialog bug, so the event result is converted to a string using the built-in <code>toSource()</code> method.  Unfortunately, that method doesn't quote object properties, so the JSON decoder in the Flex dialog will reject the string as syntactically incorrect.</p>
+
+<h1 id="updating">Updating the UI</h1>
+
+<p>Getting the Flex panel or dialog to update in response to one of these events is tricky, since the Flash player doesn't include an ActionScript compiler and therefore has no way to run an arbitrary block of AS at runtime.  But the JSML library does provide a poor-man's form of scripting: by pushing "statements" onto the <code>event.result</code> array, you can modify elements in the UI.</p>
+
+<p>Each statement is an array of at least two strings.  The first is the name of the element to affect.  The second is the name of the element's property to set or its method to call.  The third item, if any, is the value to set the property to or the first parameter of the method call.  Any remaining items in the array will also be passed as parameters, but will be ignored if the second parameter is a property.</p>
+
+<p>An example will hopefully make all this a little clearer.  The following code echoes the text from the <code>Foo</code> input field to the <code>FooEcho</code> field whenever <code>Foo</code> changes:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { TextInput: {
+            name: "Foo",
+            events: {
+                change: function(event)
+                {
+                    event.result.push(["FooEcho", "text", 
+                        event.currentValues.Foo]);
+                }
+            }
+        } },
+        { TextInput: {
+            name: "FooEcho",
+            editable: false
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/echo-text.png" alt="Echo TextInput" /></p>
+</blockquote>
+
+<p>The array <code>["FooEcho", "text", event.currentValues.Foo]</code> is equivalent to the ActionScript statement <code>FooEcho.text = event.currentValues.Foo</code>.</p>
+
+<p>You can also push multiple arrays onto the event's <code>result</code> property, in order to execute a series of statements.</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { TextInput: {
+            name: "Equation",
+            _focused: true,
+            events: {
+                change: function(event)
+                {
+                    var equation = event.currentValues.Equation;
+
+                    try {
+                        event.result.push(
+                            ["Result", "text", equation ? 
+                                eval(equation) : ""],
+                            ["Equation", "setStyle", 
+                                "backgroundColor", 0xffffff]
+                        );
+                    } catch (e) {
+                        event.result.push(
+                            ["Result", "text", ""],
+                            ["Equation", "setStyle", 
+                                "backgroundColor", 0xffaaaa]
+                        );
+                    }
+                }
+            }
+        } },
+        { TextInput: {
+            name: "Result",
+            editable: false
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/eval-text.png" alt="Eval TextInput" /></p>
+</blockquote>
+
+<p>In the example above, every time the <code>Equation</code> element changes, its <code>text</code> value is evaluated.  If the string throws an exception when eval'd, the <code>Result</code> element is cleared and the background color of the <code>Equation</code> field is set to red.  Otherwise, the result of the eval is displayed in <code>Result</code> and the <code>Equation</code> background is set to white.  Note that <code>setStyle</code> is a method, so the equivalent ActionScript looks like <code>Equation.setStyle("backgroundColor", 0xffaaaa)</code>.</p>
+
+<p>Although the syntax is a little awkward, using these statement arrays in an event handler does give you a fair degree of control over the state of the panel elements.  For example, you can use the statements to enable or disable certain controls when the user clicks a radio button, change the color of an element when they move a slider, and so on.  Remember that any element you want to be able to manipulate with these statements must have a unique <code>name</code> value.  Static elements like <code>HRule</code> or <code>VBox</code> generally don't need to be named.</p>
+
+<p>Rather than doing all the event handling in the function specified in the <code>events</code> object, you may want to call other functions, which in turn may need to update the Flex UI.  Just pass the <code>event</code> object received by the handler to the other functions so that they can push their statements onto the <code>result</code> array:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { Button: {
+            name: "SaveButton",
+            label: "Save",
+            events: {
+                click: function(event)
+                {
+                    updateItemList(event);
+                    updateButtonState(event);
+                }
+            }
+        } }
+    ]
+});
+</code></pre>
+
+<h2 id="methods">JSML-specific methods</h2>
+
+<p>In addition to the methods defined in the Flex docs, some elements have JSML-specific methods to make it possible to use them without having access to ActionScript.</p>
+
+<dl>
+<dt>setButtonEnabled(buttonIndex, enabled)</dt>
+<dd>Enables or disables individual buttons in <code>ButtonBar</code> and <code>ToggleButtonBar</code> elements.  To disable the third button on a <code>ButtonBar</code> called <code>toolbar</code>, you could set the result to a statement like <code>["toolbar", "setButtonEnabled", 2, false]</code>.</dd>
+
+<dt>setSelectedIndex(index)</dt>
+<dd>Sets the selected menu item in <code>PopUpMenuButton</code> elements.</dd>
+
+<dt>preventDefault</dt>
+<dd>
+<p>Flex events have a <code>preventDefault()</code> method that you can call to stop the event's default action from happening.  For instance, the following code would prevent newlines from being entered in a <code>TextArea</code> element unless shift-enter was pressed:</p>
+
+<pre><code>{ TextArea: {
+    name: "Input",
+    events: {
+        keyDown: function(inEvent)
+        {
+            if (inEvent.keyCode == 13 &amp;&amp; !inEvent.shiftKey) {
+                inEvent.result.push(["preventDefault"]);
+            }
+        }
+    }
+} }
+</code></pre>
+
+<p>This is the only single-word statement.</p>
+</dd>
+
+<dt>close(ok)</dt>
+<dd>In a JSML dialog, setting the result to <code>["close", "true"]</code> would make the dialog close as if the <em>OK</em> button was pressed.  Passing <code>"false"</code> instead emulates clicking the <em>Cancel</em> button.  Setting this result in a panel has no effect.</dd>
+</dl>
+
+<h1 id="fw-events">Handling Fireworks events</h1>
+
+<p>In addition to the events generated when the user interacts with the Flex controls, Fireworks itself fires events to panels when the state of the application changes.  For instance, it generates an event when the selection changes, when the current document changes, when the zoom level changes, and so on.  These events are emitted only to panels, not dialogs.</p>
+
+<p>The following Fireworks events are supported:</p>
+
+<blockquote>
+  <table>
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>onFwActiveDocumentChange</td>
+    <td>onFwDocumentClosed</td>
+    <td>onFwPixelSelectionChange</td>
+  </tr>
+  <tr>
+    <td>onFwActiveSelectionChange</td>
+    <td>onFwDocumentNameChange</td>
+    <td>onFwPreferencesChange</td>
+  </tr>
+  <tr>
+    <td>onFwActiveToolChange</td>
+    <td>onFwDocumentOpen</td>
+    <td>onFwStartMovie</td>
+  </tr>
+  <tr>
+    <td>onFwActiveToolParamsChange</td>
+    <td>onFwDocumentSave</td>
+    <td>onFwStopMovie</td>
+  </tr>
+  <tr>
+    <td>onFwActiveViewChange</td>
+    <td>onFwDocumentSizeChange</td>
+    <td>onFwSymbolLibraryChange</td>
+  </tr>
+  <tr>
+    <td>onFwApplicationActivate</td>
+    <td>onFwFavoritesChange</td>
+    <td>onFwUnitsChange</td>
+  </tr>
+  <tr>
+    <td>onFwApplicationDeactivate</td>
+    <td>onFwHistoryChange</td>
+    <td>onFwURLListChange</td>
+  </tr>
+  <tr>
+    <td>onFwCurrentFrameChange</td>
+    <td>onFwObjectSettingChange</td>
+    <td>onFwZoomChange</td>
+  </tr>
+  <tr>
+    <td>onFwCurrentLayerChange</td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tbody>
+  </table>
+</blockquote>
+
+<p>The <em>Cross Products Extensions > Flash Panels > Events</em> section of the <a href="../../../help.adobe.com/archive/en_US/fireworks/cs5/fireworks_cs5_extending.pdf">Extending Adobe Fireworks CS5</a> documentation describes the trigger for each of these events.</p>
+
+<p>To handle one of these Fireworks events, add an <code>events: {...}</code> property to the top level of the panel object.  For each event you want to handle, add a function to <code>events</code> with the same name as the event.  You can add as many event handlers as you like.</p>
+
+<p>In this example, the panel updates a label every time the user switches to a different tool in the toolbox:</p>
+
+<pre><code>fwlib.panel.register({
+    events: {
+        onFwActiveToolChange: function(event)
+        {
+            event.result = ["ToolName", "text", fw.activeTool];
+        }
+    },
+    children: [
+        { Label: {
+            name: "ToolName",
+            text: fw.activeTool
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/current-tool.png" alt="Displaying the current tool name" /></p>
+</blockquote>
+
+<p>Your event handler is called with a single object that has the following properties:</p>
+
+<dl>
+<dt>type</dt>
+<dd>The name of the event that triggered the handler.  In the example above, <code>event.type</code> would be "onFwActiveToolChange".</dd>
+
+<dt>currentValues</dt>
+<dd>An object containing the current values of all the named elements in the panel.</dd>
+</dl>
+
+<p>Unlike Flex events, there is no <code>targetName</code> property in this object, since Fireworks is generating the event, not a Flex element.</p>
+
+<p>One of the challenges with writing panels in Fireworks is that it often generates a large number of events, which can slow the application down.  When the user edits text, for instance, Fireworks generates <code>onFwActiveToolChange</code> events constantly.  For that reason, your panel will not receive any events while the text tool is selected in the toolbox (even if the user is not currently editing text).  So in the example above, you won't see the panel display "Text" as the current tool.</p>
+
+<p>An event you'll often want to handle is <code>onFwStartMovie</code>, which is called when the panel is first loaded.  You can handle this event to initialize the state of the panel's controls by returning statements in the event's <code>result</code> property.</p>
+
+<p>Another common event is <code>onFwActiveSelectionChange</code>, which fires when the selection changes.  You can use this to update the panel to show information about the selection, such as its position or size.  Unfortunately, this event isn't generated every time you might need to update your panel.  For instance, it doesn't fire when the user switches to a different document, even though the current selection they're working with has changed.  Nor does it fire when the user uses the arrow keys to move the selection around, even though its position has changed.</p>
+
+<p>To work around this, you may want to handle multiple events using the same function.  In the following example, one function is used to handle 4 events by specifying the same function multiple times in the panel's <code>events</code> property.  The <code>onSelectionChange</code> function displays the selection's current position in a <code>Label</code> element:</p>
+
+<pre><code>function onSelectionChange(event)
+{
+    var dom = fw.getDocumentDOM();
+
+    if (dom &amp;&amp; fw.selection.length) {
+        var bounds = dom.getSelectionBounds();
+        event.result = ["Position", "text", 
+            "Position: " + bounds.left + ", " + bounds.top];
+    } else {
+        event.result = ["Position", "text", 
+            "Nothing is selected"];
+    }
+}
+
+fwlib.panel.register({
+    events: {
+        onFwStartMovie: onSelectionChange,
+        onFwActiveSelectionChange: onSelectionChange,
+        onFwObjectSettingChange: onSelectionChange,
+        onFwActiveDocumentChange: onSelectionChange
+    },
+    children: [
+        { Label: {
+            name: "Position"
+        } }
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/position-display.png" alt="Displaying the selection's position" /></p>
+</blockquote>
+
+<p>When the panel is opened and it receives <code>onFwStartMovie</code>, it immediately calls <code>onSelectionChange</code> to update the panel with the position of the current selection, if any.  It also updates the panel when the selection changes (<code>onFwActiveSelectionChange</code>), when it's moved via the keyboard (<code>onFwObjectSettingChange</code>) or when it changes because the user's switched to a different document (<code>onFwActiveDocumentChange</code>).</p>
+
+<h1 id="complex">Building up more complex user interfaces</h1>
+
+<p>Just like in HTML, the elements in your panel or dialog will get nested deeper and deeper as the interface grows in complexity, which can make managing the markup difficult.  Unlike HTML, however, JSML is pure JavaScript, so you can easily use variables and loops to build up parts of the UI independently, and then combine them in a larger object.  You can also write functions to programmatically create JSML objects.</p>
+
+<p>For example, if you use a <code>TabNavigator</code> element to create an interface with 3 tabs, the JSML might look something like this:</p>
+
+<pre><code>fwlib.panel.register({
+    children: [
+        { TabNavigator: {
+            children: [
+                { VBox: {
+                    children: [
+                        ...
+                    ]
+                } },
+                { VBox: {
+                    children: [
+                        ...
+                    ]
+                } },
+                { VBox: {
+                    children: [
+                        ...
+                    ]
+                } }
+            ]
+        } }
+    ]
+});
+</code></pre>
+
+<p>Each of the <code>VBox</code> elements will have its own children as well, so the hierarchy can get quite deep.  An alternative would be to build up the tabs individually by assigning them to variables and then later combining them:</p>
+
+<pre><code>var tab1 = { VBox: {
+    children: [
+        ...
+    ]
+} };
+var tab2 = { VBox: {
+    children: [
+        ...
+    ]
+} };
+var tab3 = { VBox: {
+    children: [
+        ...
+    ]
+} };
+
+fwlib.panel.register({
+    children: [
+        { TabNavigator: {
+            children: [
+                tab1,
+                tab2,
+                tab3
+            ]
+        } }
+    ]
+});
+</code></pre>
+
+<p>This approach makes it easier to manage deeply nested hierarchies of components.</p>
+
+<p>Another handy technique is to generate the component objects using functions.  In the example below, the <code>labeledStepper()</code> function returns an object that specifies an <code>HBox</code> containing a <code>Label</code> and a <code>NumericStepper</code>.  The stepper control's name and default value are passed in as parameters.  The function uses the <code>inName</code> string parameter to create the label and to set the control's <code>name</code> and <code>toolTip</code> properties.  Then all you have to do to create one of these units is make a call to the function, like <code>labeledStepper("X", 10)</code>:</p>
+
+<pre><code>function labeledStepper(
+    inName,
+    inValue)
+{
+    return { HBox: {
+        children: [
+            { Label: {
+                text: inName + ":"
+            } },
+            { NumericStepper: {
+                name: inName + "Value",
+                value: inValue,
+                stepSize: 1,
+                maximum: 1000,
+                minimum: -1000,
+                toolTip: "Pixels to move in " + inName
+            } }
+        ]
+    } };
+}
+
+fwlib.panel.register({
+    children: [
+        labeledStepper("X", 10),
+        labeledStepper("Y", 20),
+        labeledStepper("Z", 30)
+    ]
+});
+</code></pre>
+
+<blockquote>
+  <p><img src="../inc/jsml/stepper-creator.png" alt="Eval TextInput" /></p>
+</blockquote>
+
+<p>In addition to making the code more compact, centralizing the creation of components in functions makes it easier to change a bunch of elements at once.  If you wanted to change the step size of the <code>NumericStepper</code> elements in the example above, you could edit the function in just one place, rather than changing three separate instances of the control.</p>
+
+<h1 id="details">Technical details</h1>
+
+<p>It's not important to know the technical details of how all this works in order to use the JSML library, but for the curious, here's a basic outline.  The panel and dialog versions of the JSML library both use the same syntax, but the handoff of control between JavaScript and ActionScript is reversed, as you'll see below.</p>
+
+<p>When your copy of the <code>JSML Panel.swf</code> file is started, it loads the <code>fwlib.panel</code> API into the global JavaScript environment.  It then looks for a .js file with the same name as the SWF (<code>JSML Panel.js</code>, in this case) and calls <code>fw.runScript()</code> on it.</p>
+
+<p>When you pass a JavaScript object to <code>fwlib.panel.register()</code> in your .js file, it associates that object with the SWF file.  The SWF calls back to get the object you specified as a JSON string, which it then uses to render the panel (the JS event handlers are stripped out and stored before the object is converted to JSON).  The process is basically similar to what the Flex compiler does: a source document (MXML in the normal Flex case, JSML here) is parsed, and then a tree of <code>UIComponentDescriptor</code> objects corresponding to the source document is generated.  Normally the code to instantiate <code>UIComponentDescriptor</code> objects is generated automatically by the Flex compiler, but they can also be created programmatically at runtime.  Once they are, <code>createComponentFromDescriptor()</code> is called on the <code>Application</code> object to instantiate each Flex UI object (<code>Button</code>, <code>NumericStepper</code>, etc.), and then <code>validateNow()</code> is called to display the elements onscreen.</p>
+
+<p>While the panel is open, Flex handles the user interaction.  If you had created any event handlers for your panel, the JS functions are stripped out of the JSML, since they can't run in the Flash player.  Instead, when an event is supposed to be handled, the AS3 code calls back to <code>fwlib.panel</code> and the JS code dispatches the event to your handler.  If the handler adds to the <code>result</code> array on the <code>event</code> object, that result is converted to JSON and returned to the AS3 code.  The "statements" in the result array are then interpreted and applied to the Flex elements in the panel.</p>
+
+<p>In the case of a dialog, the control goes in the opposite direction.  Your JS code first makes sure the <code>require()</code> call is available.  Then it calls <code>require()</code> to load the <code>dialog</code> module and finally calls <code>dialog.open()</code> with a JSML object.  The dialog API converts your object to JSON and then calls <code>runScript()</code> on the SWF that corresponds to the requested size, e.g. <code>Dialog [250x150].swf</code>.  These SWFs are just barebones classes that load another file, <code>JSMLDialog.swf</code>, which contains all the AS3 code.  They also specify the size of the dialog in their metadata.  This way, each "Dialog" SWF is just 875 bytes, instead of the full 411K of <code>JSMLDialog.swf</code>.</p>
+
+<p>Once it's loaded, the dialog works similarly to the panel, in that event handling is done on the JS side and changes to the dialog UI are passed back via the <code>event.result</code> array.</p>
+
+<p>Enabling images to be dynamically loaded was a huge pain, since Flex tends to want to build image assets into the SWF and create a separate class for each one.  Getting the <code>TileListItemRenderer</code> and <code>ListItemRenderer</code> classes to support dynamic images required some monkey-patching of the Flex source.</p>
+
+<h1>Release history</h1>
+
+<dl>
+<dt>1.0.1</dt>
+<dd>2013-01-06: Minor improvements to the <code>simple.form()</code> call.  Some additional properties are passed in with Flex events.</dd>
+
+<dt>1.0.0</dt>
+<dd>2012-07-08: Brought all the capabilities of JSML panels to dialogs, and combined them into a single extension.  Moved to using FWRequireJS to load the dialog library files.  Added a simple dialog API.  Added support for PopUpButton and PopUpMenuButton.</dd>
+
+<dt>0.2.1</dt>
+<dd>2012-05-10: Minor fix to remove the log() call.</dd>
+
+<dt>0.2.0</dt>
+<dd>2012-03-22: Added support for dynamically loaded images and DataGrids.  Numerous small improvements.  Thoroughly updated documentation.</dd>
+
+<dt>0.1.1</dt>
+<dd>Added support for Canvas elements.  Added error handling for JS files.  Added example panel that demonstrates some advanced approaches to building panels.</dd>
+
+<dt>0.1.0</dt>
+<dd>2009-09-14: Initial release.</dd>
+</dl>
+</div>
+                <div class="PackageContents">
+                    <h1>Package contents</h1>
+                    <ul>
+                        <li>JSML Panel</li>
+                        <li>Complex Example</li>
+                        <li>Confirm Example</li>
+                        <li>Form Example</li>
+                        <li>Move Selection</li>
+                        <li>Prompt Example</li>
+                        <li>Simple Example</li>
+                        <li>Dialog [225x125]</li>
+                        <li>Dialog [225x150]</li>
+                        <li>Dialog [225x175]</li>
+                        <li>Dialog [225x200]</li>
+                        <li>Dialog [225x225]</li>
+                        <li>Dialog [250x125]</li>
+                        <li>Dialog [250x150]</li>
+                        <li>Dialog [250x175]</li>
+                        <li>Dialog [250x200]</li>
+                        <li>Dialog [250x250]</li>
+                        <li>Dialog [275x175]</li>
+                        <li>Dialog [275x200]</li>
+                        <li>Dialog [275x250]</li>
+                        <li>Dialog [275x275]</li>
+                        <li>Dialog [300x175]</li>
+                        <li>Dialog [300x200]</li>
+                        <li>Dialog [300x250]</li>
+                        <li>Dialog [300x275]</li>
+                        <li>Dialog [300x300]</li>
+                        <li>Dialog [300x325]</li>
+                        <li>Dialog [300x350]</li>
+                        <li>Dialog [300x375]</li>
+                        <li>Dialog [350x250]</li>
+                        <li>Dialog [350x300]</li>
+                        <li>Dialog [350x325]</li>
+                        <li>Dialog [350x350]</li>
+                        <li>Dialog [350x375]</li>
+                        <li>Dialog [375x250]</li>
+                        <li>Dialog [375x300]</li>
+                        <li>Dialog [375x325]</li>
+                        <li>Dialog [375x350]</li>
+                        <li>Dialog [375x375]</li>
+                        <li>Dialog [400x275]</li>
+                        <li>Dialog [400x300]</li>
+                        <li>Dialog [400x350]</li>
+                        <li>Dialog [400x375]</li>
+                        <li>Dialog [450x275]</li>
+                        <li>Dialog [450x300]</li>
+                        <li>Dialog [450x350]</li>
+                        <li>Dialog [450x375]</li>
+                        <li>Dialog [500x375]</li>
+                        <li>JSMLDialog</li>
+                    </ul>
+                </div>
+                
+                <div class="BottomNav">
+                    <div class="Links">
+                        <a href="../dl/index5afc.html"
+                            onclick="javascript: PT._trackPageview('/fireworks/mxp/JSMLLibrary');"
+                        >Download 1.0.1.mxp</a>
+                            <a href="../dl/indexc36d.html"
+                                class="ZipLink"
+                                onclick="javascript: PT._trackPageview('/fireworks/zip/JSMLLibrary');"
+                                title="This .zip version is available in case the Extension Manager can't install the standard .mxp version of this extension"
+                            >Download .zip</a>
+                        <span class="CommandDate">2013-01-06</span>
+                    </div>
+
+                <ul class="SharingLinks">
+                    <li class="CommentsLink"><a href="#disqus_thread"
+                        onclick="javascript: PT._trackPageview('/fireworks/comment/JSMLLibrary');"
+                    >Comment</a></li>
+<!--                    <li>
+                        <script type="text/javascript">
+                            var addthis_pub="fwextensions";
+                            var addthis_header_color = "#ffffff";
+                            var addthis_header_background = "#cc3300";
+                            var addthis_options = 'twitter, facebook, buzz, googlebuzz, delicious, digg, email, favorites, more';
+                        </script>
+                        <a class="AddThis"
+                            href="https://www.addthis.com/bookmark.php?v=20" 
+                            onmouseover="return addthis_open(this, '', '[URL]', 'JSML Library - Adobe Fireworks extension from johndunning.com')" 
+                            onmouseout="addthis_close()" 
+                            onclick="return addthis_sendto()"
+                        ><img src="/fireworks/images/add-this.gif" width="16" height="16" alt="Bookmark and Share" style="border:0"></a>
+                    </li> -->
+                    <li>
+                        <a href="https://twitter.com/share" 
+                            class="twitter-share-button" 
+                            data-count="horizontal" 
+                            data-via="fwextensions"
+                            data-text="JSML Library - #AdobeFireworks extension"
+                            data-url="JSMLLibrary.html"
+                        ></a>
+                    </li>
+                    <li>
+                        <fb:like 
+                            href="JSMLLibrary.html" 
+                            layout="button_count" 
+                            width="80"
+                        ></fb:like>
+                    </li>
+<!--                    <li>
+                        <g:plusone size="medium" style="vertical-align: middle;"></g:plusone>
+                    </li> -->
+                </ul>
+
+                    <p><a href="../index.html">See all the Adobe Fireworks extensions, commands and panels</a></p>
+                </div>
+
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    var disqus_shortname = 'johndunning',
+                        disqus_url = "JSMLLibrary.html",
+                        disqus_identifier = "/fireworks/about/JSMLLibrary",
+                        disqus_title = "JSML Library";
+
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+            </div></div> 
+        </div> 
+        <div class="yui-b">
+            <h1 class="SiteName"><a href="../../index.html">john<b>dunning</b>.com/</a></h1>
+
+            <div id="ExtNavLinks" class="LinkList">
+                <ul>
+<li><a href="Adjust9Slice.html" title="Tweaking the 9-slice guides in a symbol can be a pain, since you have to keep going into symbol editing mode to make a change, and then back out to the canvas to see the effect on the symbol instances.  The Adjust 9-Slice panel lets you move the guides while seeing the effects in realtime.">Adjust 9-Slice</a></li>
+<li><a href="AdjPanel.html" title="If you want to make the fill color of an element darker, you can select it, open the Color Mixer panel, switch to HSB mode, and then drag the brightness slider.  But what if you have two differently colored elements and want to make them both slightly darker?  You can't use the Color Mixer panel because it will set both elements to the same color.  The Adjustments panel makes this and other tasks easier.">Adjustments Panel</a></li>
+<li><a href="Bookmarks.html" title="The Bookmarks extension lets you set a bookmark on different pages and states in your document and then quickly jump between them.  This can be handy for exploring the flow through a website or quickly toggling between variations of a design.">Bookmarks</a></li>
+<li><a href="ChangeTextSize.html" title="This package consists of two commands for increasing or decreasing the font size of the selected text block(s).">Change Text Size</a></li>
+<li><a href="Commands.html" title="The Commands panel provides quick access to your favorite Fireworks commands, panels, symbols, auto shapes, textures and patterns.  While keyboard shortcuts are useful, you may not want to create a shortcut for every command you use frequently, and the Common Library and Shapes panels don't provide any shortcuts at all.  With the Commands panel, you can create a set of toolbar buttons for your frequently used commands and assets so that they're always right at hand.">Commands</a></li>
+<li><a href="CopyMerged.html" title="With just one step, the Copy Merged command copies onto the clipboard the entire document as a flattened image.  It even copies the objects on locked layers, without affecting their locked state.  Copy Merged into New Document does the same thing but pastes the flattened image into a new document.  Copy Merged into Selection copies the merged pixels into the selected objects while respecting their alpha channels, which is a quick way to copy a row of icons out of a screenshot and into individual bitmap elements.">Copy Merged</a></li>
+<li><a href="CopyPasteWHXY.html" title="The Paste Attributes command is handy for quickly giving the same appearance to a bunch of objects.  But it would also be helpful to give objects the same size or position.  You can use the Properties panel to do that, but then you have to type in the size or position values each time you want to apply them, and you have to select each element one at a time.  The commands in this extension make that process much more convenient.">Copy Paste WHXY</a></li>
+<li><a href="StateSymbol.html" title="Rich symbols are a powerful feature of Fireworks, but creating them is a fairly complicated process.  The Create Symbol From States command lets you create basic rich symbols containing multiple states in just one step with no scripting.">Create Symbol From States</a></li>
+<li><a href="CustomNudge.html" title="These commands let you nudge the selection by custom amounts, rather than just 1 or 10 pixels.  You can even nudge elements by less than a whole pixel, like .25, in order to tweak an element's anti-aliasing.">Custom Nudge</a></li>
+<li><a href="DocCommands.html" title="These commands make it a little easier to manage your Fireworks documents.">Document Commands</a></li>
+<li><a href="DocTemplates.html" title="This command lets you quickly turn an existing document into a template, which then serves as a starting point for new, untitled documents.  Run &#34;Document Templates - New&#34; and enter a name for the template.  A copy of the current file will be saved out and will then be available in the Commands &gt; Document Templates menu.  You can then make as many copies as you like.">Document Templates</a></li>
+<li><a href="DynamicSymbols.html" title="Creating the JavaScript code for a rich symbol is a tedious process, even if you're familiar with JS.  Each time you make a change, you need to refresh the Common Library panel, reopen the folder that contains the symbol, drag another instance of the symbol into your document and then test it.  You also end up with a lot of repetitive code to set the default symbol properties and to respond to changes to them.  The Dynamic Symbols panel makes creating rich symbols much simpler and more efficient.">Dynamic Symbols</a></li>
+<li><a href="EdgeAnimate.html" title="Fireworks is a great tool for building and laying out the elements of an Edge Animate project, but until now you've had to manually export individual images and then recreate your layout in Edge.  The Export to Edge command will do this for you, exporting your Fireworks document as a collection of HTML and JS files that can be opened by Edge Animate.  All of the elements on the first state of the first page of the current document will appear in Edge with the same size, location, color, etc. that they have in Fireworks.">Edge Animate</a></li>
+<li><a href="EdgeReflow.html" title="The Edge Reflow extension lets you export a Fireworks layout to Edge Reflow, where you can test the responsiveness of the design.  All of the elements on the first state of the current page will appear in Reflow with more or less the same size, position, color, etc. that they have in Fireworks.">Edge Reflow</a></li>
+<li><a href="ExportSelection.html" title="If you have a complicated document and want to export individual elements from it, using slices often doesn't work.  The elements you want to export may overlap, or you may want to prevent the background pixels from appearing in the exported images.  Your only choice is to either hide every other element and then export the document, or else copy each element to its own document, and then export that.  The Export Selection commands make this process much more convenient.">Export Selection</a></li>
+<li><a href="FWXHR.html" title="Since Fireworks is used so heavily for web graphics production, it's quite likely that there'll be times when you developers out there would like your JSF commands to interact with a web service.  Unlike a browser's JS environment, unfortunately, Fireworks doesn't offer any XmlHttpRequest functionality.  Flash panels can make HTTP calls, but there hasn't been easy way to integrate Flash with JSF commands.  Until now.
+
+This extension will be of interest only to developers of Fireworks extensions. ">FWXHR</a></li>
+<li><a href="FakeUnderline.html" title="The commands in this extension help make it a little easier to create styled underlines like those available in web browsers.  The standard underline style in Fireworks always draws the line in the same color as the text, which may not always be what you want.  The Fake Underline commands will automatically draw an underline for you, creating a line that can be styled like any other.">Fake Underline</a></li>
+<li><a href="ExportAsFavicon.html" title="The &#34;Export as Favicon&#34; command creates a favicon file from the current document, which must be 16px by 16px.  Using multiple pages, the favicon can also include a 32px or 64px version of the icon.  From Fireworks CS5 onwards, the command now works on both Windows and Mac.">Favicon</a></li>
+<li><a href="FillWithBackground.html" title="When creating mockups, you may need to take a screenshot of an existing dialog or webpage and then modify it for a new design.  You'll probably also have to paint over an existing element in the screenshot, like a button label, to replace it with new text.  So you select a portion of the background pixels in the screenshot, copy them, paste them, stretch them over the element you want to replace, and then flatten the pixels with the original image.  The Fill With Background command does all of this in just one step.">Fill With Background</a></li>
+<li><a href="FillAndStroke.html" title="Have you ever wanted to select several objects, each with a different stroke color, and change all of their stroke widths to a new value? If you try this with the Properties panel, you'll find that all of the selected objects get the same stroke width, but also that their other stroke properties are changed to identical values as well. The commands in this extension help you avoid this problem.">Fill and Stroke</a></li>
+<li><a href="FWConsole.html" title="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels. 
+
+This panel will be of interest only to developers of Fireworks extensions.">Fireworks Console</a></li>
+<li><a href="FixRoundRect.html" title="After you create a rectangle, adjust the Roundness value to set the corners to the desired pixel radius.  Then use the Scale tool to freely resize the rectangle, or use the Info panel to change the size numerically.  Finally, run the Fix Rounded Rect Corners command to fix the corner distortion introduced by the Scale tool.">Fix Rounded Rect Corners</a></li>
+<li><a href="FlickrFire.html" title="FlickrFire lets you easily upload the image you're currently working on to Flickr, without ever leaving Fireworks.  Just enter a title and description, click Upload, and a flattened copy of your image will be posted to Flickr.">FlickrFire</a></li>
+<li><a href="FrameLayerUtils.html" title="Working with lots of frames and layers can be tedious, because many frame and layer menu commands that you perform over and over again don't have keyboard shortcuts.  And other actions, like hiding a layer on every frame, aren't supported at all by Fireworks' built-in tools. The scripts in this extension are intended to remedy this situation. ">Frame and Layer Utilities</a></li>
+<li><a href="GenerateWebAssets.html" title="While you can easily export slices from a mockup, it's a pain to create an individual slice for each element that you want to export.  And if the elements overlap, the slices won't output cleanly.  The Generate Web Assets command makes exporting different parts of your document a breeze. ">Generate Web Assets</a></li>
+<li><a href="GreekedText.html" title="When creating wireframes, it's often useful to suggest the presence of text without using actual words, which can distract the viewer from the overall layout.  Even &#34;lorem ipsum&#34; dummy text requires the selection of a typeface and size, which may be too much detail for the mockup.  In hand-drawn mockups (does anyone still draw by hand?) you could use a marker to draw lines of different lengths to suggest text, but this effect has always been a pain to create with software.  The Greeked Text auto shape makes it easy.">Greeked Text</a></li>
+<li><a href="Grids.html" title="The Insert Grids commmand makes it easy to create modular grids for laying out web content.  Select the desired number of columns, their widths, gutters, and so on, then click OK to insert a visual grid to help lay out your page elements.">Grids</a></li>
+<li><a href="GroupCommands.html" title="The commands in this extension make it a little easier to manipulate groups, including the ability to paste elements into a group or ungroup and regroup it without losing any effects that had been applied to it. The &#34;Group Attributes - Copy/Paste&#34; commands let you copy the styles of all the sub-elements of one group to another.">Group Commands</a></li>
+<li><a href="InsertCopies.html" title="The &#34;Insert Copies Between Selection&#34; command takes 2 selected, identical objects and inserts evenly-spaced copies between them.  This can be quite handy when you need to insert a row or column of repeating elements without having to create each one manually.">Insert Copies Between Selection</a></li>
+<li><strong>JSML Library</strong></li>
+<li><a href="KeyboardResize.html" title="This extension makes it easy to resize selected elements in any direction using just the keyboard, which can be much more convenient than dragging the Scale tool with the mouse.  And unlike the Scale tool, text blocks are resized without being distorted.">Keyboard Resize</a></li>
+<li><a href="LevelHorizon.html" title="The &#34;Level Horizon&#34; command helps you, um, level the horizon in crooked photos.  Simply open the photo, draw a straight line along a part of the image that should be perfectly horizontal, and run the command.  The photo will be rotated so that the line is horizontal and the now crooked corners of the image will be cropped to keep it rectangular.">Level Horizon</a></li>
+<li><a href="LinkedImages.html" title="When you import an image into a Fireworks document, Fireworks doesn't maintain any link between the source file and the bitmap element in the document.  If the source file changes, you'll need to find it, re-import it and then delete the previous image in the document.  The Linked Images extension makes this process a little easier, providing a sort of poor-man's smart object for Fireworks.">Linked Images</a></li>
+<li><a href="LoremIpsum.html" title="When designers want to display actual formatted text before the final content is decided upon, they often use some form of &#34;lorem ipsum&#34; as a placeholder.  The Lorem Ipsum auto shape makes inserting any amount of dummy text a breeze.">Lorem Ipsum</a></li>
+<li><a href="MultiBorderRect.html" title="CSS allows a different width and color to be applied to the border on each side of an HTML element, but Fireworks' rectangles are limited to a single border color and thickness.  The Multi-Border Rectangle auto shape addresses this limitation, making it easy to mock up CSS-style borders.">Multi-Border Rectangle</a></li>
+<li><a href="PageCommands.html" title="The commands in this extension make working with pages in Fireworks more efficient and convenient.  The &#34;New Page&#34; dialog makes it easy to create a new page while simultaneously changing its size or background color and giving it a name.  The &#34;Adjust Page Size&#34; command lets you make relative adjustments to the size of multiple pages at once, such as moving the left and right sides in by 10px on each page.  The &#34;Distribute Layers to Pages&#34; command does the same for top-level layers. The &#34;Import Files into Pages&#34; command is useful for combining several existing files as pages in a new document. The &#34;Apply Export Settings to All Pages&#34; command takes the export settings on the current page and applies them to all pages in the document.">Page Commands</a></li>
+<li><a href="PasteInPlace.html" title="&#34;Paste In Place&#34; is an update to a classic Kleanthis Economou command.  It lets you quickly replace a bunch of existing elements with a different element, without having to carefully position each one.  Simply copy the replacement to the clipboard, select the elements you want to replace, and run this command.  The clipboard contents will be inserted at the same XY position, layer, and group level as the selected elements.">Paste In Place</a></li>
+<li><a href="Placeholder.html" title="When creating sketches and early mockups, it's often useful to draw image placeholders instead of including actual photos, icons, ads, etc. in the layout.  The Placeholder auto shape makes this a snap.">Placeholder</a></li>
+<li><a href="QuickClips.html" title="The QuickClips extension makes it easy to quickly insert frequently used elements into your document, such as icons, background graphics, blocks of text, etc.  When you save a new clip, it will become available from the Commands &gt; QuickClips submenu.  Selecting a saved clip will insert it into the current layer of the current document.">QuickClips</a></li>
+<li><a href="QuickFire.html" title="QuickFire is essentially Quicksilver for Fireworks.  While it's easy to add a keyboard shortcut for your most-used commands, accessing the others still requires clicking through the Commands menu.  QuickFire makes accessing these commands much easier: just launch QuickFire (with a keyboard shortcut, of course), start typing part of the command's name, then hit enter to run the matched command.  Quick 'n' easy.  And QuickFire handles more than just commands: you can also quickly access symbols, auto shapes, textures, patterns, panels, layers, states, pages, templates, and recently-opened files.">QuickFire</a></li>
+<li><a href="ResizeObjects.html" title="This panel ships with Fireworks MX, so you should already have it. If I create new versions, though, I'll make them available here. Resize Selected Objects lets you make precise, single-pixel adjustments to the size of a selected object without using the Scale tool. It resizes each selected object independently, which the Scale tool cannot do.">Resize Selected Objects</a></li>
+<li><a href="SVG.html" title="With increasing support for &lt;canvas&gt; and SVG across browsers, many people have been creating vector images in the SVG format.  The SVG extension makes it possible to use these images in your Fireworks documents by parsing the XML and recreating the vectors using Fireworks elements.">SVG</a></li>
+<li><a href="ScriptRunner.html" title="When writing Fireworks extensions, I often find myself writing little snippets of JavaScript code to inspect attributes or run commands on whatever elements are selected.  I usually enter these snippets in the Fireworks Console panel, but having to constantly reload and rerun the code each time the selection changes is awkward.  The Script Runner panel makes it easy to automatically run JavaScript whenever the selection changes.">Script Runner</a></li>
+<li><a href="SelectNextElement.html" title="The Select Next Element commmand makes it easy to naviagate your document via the keyboard.  Each time you run the command, the next element below the currently selected one is selected.  This can be particularly helpful for cycling among the elements underneath the selection, which are otherwise hard to access without going to the Layers panel or using the Select Behind tool.">Select Next Element</a></li>
+<li><a href="SelectPoints.html" title="To manipulate vectors with a high degree of control it's often necessary to subselect individual points on the path.  But selecting lots of individual points on a complicated path can be awkward, especially if it's hard to use a rectangular marquee to select them.  The commands in this extension can reduce the amount of clicking required to select those points.">Select Points</a></li>
+<li><a href="SmartKnife.html" title="The Smart Knife command lets you split one or more shapes in half using an open path.  The built-in knife tool lets you split a path, but only in a straight line, and it doesn't work with text, auto shapes or bitmaps.  Smart Knife lets you cut across multiple paths, bitmaps, auto shapes and text blocks with an arbitrarily complex open path.">Smart Knife</a></li>
+<li><a href="SmartPunch.html" title="The &#34;Smart Punch&#34; command goes far beyond Fireworks' basic punch functionality, letting you punch vector or bitmap objects out of another vector or bitmap. Even text blocks can be used as the &#34;puncher&#34; or the &#34;punchee&#34;.  The possibilities for punching mayhem are endless. ">Smart Punch</a></li>
+<li><a href="SmartResize.html" title="The Smart Resize auto shape helps you automatically adjust the layout of grouped elements to a new size without distorting the elements in the process.  This makes it easy to quickly resize a mock up of a dialog box, for instance.  Just drag the shape's yellow handles to move the grouped elements around to match the shape's size.  See the screencast for an example of how the auto shape works.">Smart Resize</a></li>
+<li><a href="SoloCommand.html" title="The &#34;Solo Selection&#34; command hides everything except the currently selected elements. If all of the visible elements are selected, running the command displays everything. This lets you quickly toggle the solo effect on and off: select one or more elements, run the command, look at the elements by themselves, then run it again to make everything visible.">Solo Command</a></li>
+<li><a href="Spacer.html" title="The Spacer panel makes it easy to arrange rows or columns of elements by adjusting the spacing between them.  When you select some elements, the panel figures out if they're mostly horizontal or mostly vertical.  It then displays the horizontal or vertical space between each element in a series of text fields, which you can edit to easily adjust the spacing.">Spacer</a></li>
+<li><a href="Tables.html" title="The Tables panel enables you to quickly mock up HTML-style tables without having to laboriously position each cell or border.  Although it's relatively straightforward to arrange elements in a grid using Fireworks' alignment and distribution commands, as soon as the table contents change you'll need to reposition everything manually.  The Tables panel automates this tedious process, and will create border and background elements for you.">Tables</a></li>
+<li><a href="TextVariables.html" title="The Text Variables extension enables you to include variables in text elements that can then be automatically updated.  This makes it possible to easily update a text label that displays, say, the current name of the page it's on, or the name of a product you're designing.  The extension can update just the selected elements or every text variable in the document. ">Text Variables</a></li>
+<li><a href="ToggleOpacity.html" title="The &#34;Toggle Opacity&#34; commands simply toggle the selected objects between 50% and 100% opacity, or between 0% and 100%.  If you assign a keyboard shortcut to the commands, you'll have a handy way of quickly seeing behind the selected objects.">Toggle Opacity</a></li>
+<li><a href="EditSymbol.html" title="Annoyingly, Fireworks has never offered a keyboard shortcut for editing a symbol or exiting edit mode once you were in it.  This command does just that: it enters edit mode if you've selected a symbol or exits exit mode if you're already editing a symbol.  Assign a keyboard shortcut to quickly jump in and out of symbol edit mode.">Toggle Symbol Edit Mode</a></li>
+<li><a href="TweetFire.html" title="TweetFire lets you easily tweet the image you're currently working on, without ever leaving Fireworks.  Just enter a short message, click Tweet, and a flattened copy of your image will be posted to Twitter.  The URL to the image is automatically added to your tweet.">TweetFire</a></li>
+<li><a href="UpdateSymbols.html" title="Importing symbols from another file is one of Fireworks' most powerful functions. But if you have a lot of files that use imported symbols, it can be a hassle to update them in every file. The Update Symbols extension lets you batch-update the imported symbols in multiple files with just one step.">Update Symbols</a></li>
+<li><a href="Wedgie.html" title="The (perhaps unfortunately named) Wedgie command breaks the selected object into 2 or more wedges.">Wedgie</a></li>
+</ul>
+            </div>
+        </div>
+    </div>
+    <div id="ft"></div> 
+</div> 
+
+<script type="text/javascript" src="../../../www.google-analytics.com/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+    PT = _gat._getTracker("UA-3380390-1");
+    PT._trackPageview();
+} catch (gaError) {}
+</script>
+
+<script src="../../../platform.twitter.com/widgets.js"></script>
+<script src="../../../connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script src="../../../apis.google.com/js/plusone.js"></script>
+<script src="../../../s7.addthis.com/js/200/addthis_widget.js"></script>
+
+<script> 
+        // work around FB's annoying bug: http://bugs.developers.facebook.net/show_bug.cgi?id=9777
+    try { document.getElementsByTagName('html')[0].style.display = 'block'; } catch(e) {};
+</script> 
+
+</body>
+
+
+<!-- Mirrored from johndunning.com/fireworks/about/JSMLLibrary by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:16:42 GMT -->
+</html>

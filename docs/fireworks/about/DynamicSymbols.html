@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<!-- Mirrored from johndunning.com/fireworks/about/DynamicSymbols by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:10:54 GMT -->
+<head>
+<title>Dynamic Symbols - Adobe Fireworks Extensions, Commands and Panels - johndunning.com</title>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="description" content="Creating the JavaScript code for a rich symbol is a tedious process, even if you're familiar with JS.  Each time you make a change, you need to refresh the Common Library panel, reopen the folder that contains the symbol, drag another instance of the symbol into your document and then test it.  You also end up with a lot of repetitive code to set the default symbol properties and to respond to changes to them.  The Dynamic Symbols panel makes creating rich symbols much simpler and more efficient.">
+
+<meta property="og:site_name" content="johndunning.com/fireworks">
+<meta property="og:title" content="Dynamic Symbols">
+<meta property="og:url" content="DynamicSymbols.html">
+<meta property="og:description" content="Creating the JavaScript code for a rich symbol is a tedious process, even if you're familiar with JS.  Each time you make a change, you need to refresh the Common Library panel, reopen the folder that contains the symbol, drag another instance of the symbol into your document and then test it.  You also end up with a lot of repetitive code to set the default symbol properties and to respond to changes to them.  The Dynamic Symbols panel makes creating rich symbols much simpler and more efficient.">
+<meta property="og:image" content="../inc/DynamicSymbols.png">
+
+<meta itemprop="name" content="Dynamic Symbols" />
+<meta itemprop="description" content="Creating the JavaScript code for a rich symbol is a tedious process, even if you're familiar with JS.  Each time you make a change, you need to refresh the Common Library panel, reopen the folder that contains the symbol, drag another instance of the symbol into your document and then test it.  You also end up with a lot of repetitive code to set the default symbol properties and to respond to changes to them.  The Dynamic Symbols panel makes creating rich symbols much simpler and more efficient." /> 
+<meta itemprop="image" content="../inc/DynamicSymbols.png" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+
+<base >
+
+<!-- <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css"> -->
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+<link rel="alternate" type="application/rss+xml" title="Adobe Fireworks Extensions, Commands and Panels - johndunning.com" href="../feed">
+
+<script type="text/javascript">
+PT = { _trackPageview: function() {} };
+
+function mxpOnClick(inEvent)
+{
+    PT._trackPageview('/fireworks/mxp/DynamicSymbols');
+
+    if (navigator.userAgent.indexOf("Windows NT 6.") > -1) {
+        alert('When you install a Fireworks extension on a Windows Vista or Windows 7 system that has User Account Control enabled, you will need to right-click the "Adobe Extension Manager CS5.exe" application in "C:\\Program Files\\Adobe\\Adobe Extension Manager CS5" and select "Run as Administrator".\n\nStarting the Extension Manager by clicking Commands > Manage Extensions in Fireworks will not work.');
+    }
+}
+
+</script>
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+    rdf:about="http://johndunning.com/fireworks/about/DynamicSymbols"
+    dc:identifier="http://johndunning.com/fireworks/about/DynamicSymbols"
+    dc:title="Dynamic Symbols - Adobe Fireworks Extensions, Commands and Panels - johndunning.com"
+    trackback:ping="http://js-kit.com/trackback/johndunning.com/fireworks/about/DynamicSymbols" />
+</rdf:RDF>
+-->
+
+</head>
+
+<body>
+
+<div id="doc3" class="yui-t2"> 
+    <div id="bd"> 
+        <div id="yui-main" role="main"> 
+            <div class="yui-b"><div class="yui-g"> 
+                <h1 class="Fireworks"><a href="../index.html">fireworks</a></h1>
+
+                <h2 class="CommandName">Dynamic Symbols</h2>
+
+                <div class="Links">
+                    <a href="../dl/index87c5.html"
+                        onclick="mxpOnClick(event)"
+                    >Download 0.1.2.mxp</a>
+                        <a href="../dl/index432a.html"
+                            class="ZipLink"
+                            onclick="javascript: PT._trackPageview('/fireworks/zip/DynamicSymbols');"
+                            title="This .zip version is available in case the Extension Manager can't install the standard .mxp version of this extension"
+                        >Download .zip</a>
+                    <span class="CommandDate">2013-06-01</span>
+                </div>
+
+                <ul class="SharingLinks">
+                    <li class="CommentsLink"><a href="#disqus_thread"
+                        onclick="javascript: PT._trackPageview('/fireworks/comment/DynamicSymbols');"
+                    >Comment</a></li>
+<!--                    <li>
+                        <script type="text/javascript">
+                            var addthis_pub="fwextensions";
+                            var addthis_header_color = "#ffffff";
+                            var addthis_header_background = "#cc3300";
+                            var addthis_options = 'twitter, facebook, buzz, googlebuzz, delicious, digg, email, favorites, more';
+                        </script>
+                        <a class="AddThis"
+                            href="https://www.addthis.com/bookmark.php?v=20" 
+                            onmouseover="return addthis_open(this, '', '[URL]', 'Dynamic Symbols - Adobe Fireworks extension from johndunning.com')" 
+                            onmouseout="addthis_close()" 
+                            onclick="return addthis_sendto()"
+                        ><img src="/fireworks/images/add-this.gif" width="16" height="16" alt="Bookmark and Share" style="border:0"></a>
+                    </li> -->
+                    <li>
+                        <a href="https://twitter.com/share" 
+                            class="twitter-share-button" 
+                            data-count="horizontal" 
+                            data-via="fwextensions"
+                            data-text="Dynamic Symbols - #AdobeFireworks extension"
+                            data-url="DynamicSymbols.html"
+                        ></a>
+                    </li>
+                    <li>
+                        <fb:like 
+                            href="DynamicSymbols.html" 
+                            layout="button_count" 
+                            width="80"
+                        ></fb:like>
+                    </li>
+<!--                    <li>
+                        <g:plusone size="medium" style="vertical-align: middle;"></g:plusone>
+                    </li> -->
+                </ul>
+
+<div class="Include"><img src="../inc/DynamicSymbols.png" width="537" height="406" style="position: absolute;"><div style="height: 406px; visibility: hidden;"></div></div>
+
+<div class="Description Markdown"><p>Creating the JavaScript code for a rich symbol is a tedious process, even if you're familiar with JS.  Each time you make a change, you need to refresh the <em>Common Library</em> panel, reopen the folder that contains the symbol, drag another instance of the symbol into your document and then test it.  You also end up with a lot of repetitive code to set the default symbol properties and to respond to changes to them.  The <em>Dynamic Symbols</em> panel makes creating rich symbols much simpler and more efficient.</p>
+
+<p>The overall process of using this panel looks like this:</p>
+
+<ol>
+<li>Create and name the elements that make up the symbol</li>
+<li>Select them and click <em>New</em> in the <em>Dynamic Symbols</em> panel</li>
+<li>Adjust the 9-slice guides as necessary and save the symbol document</li>
+<li>Drag the newly created symbol from the <em>Common Library</em> panel into a new document and select it</li>
+<li>Open the built-in <em>Symbol Properties</em> panel</li>
+<li>Start entering symbol properties in the <em>Dynamic Symbols</em> panel</li>
+<li>Whenever you edit the properties, click the <em>Apply</em> button to see the changes reflected in the <em>Symbol Properties</em> panel</li>
+<li>When the symbol works the way you want, click <em>Apply to Master</em> to copy the instance back to the master symbol document in the Common Library, making the changes permanent</li>
+</ol>
+
+<p>While this may look a little involved, the test and modify cycle is much faster than the typical process of writing code for a rich symbol.  You can make a change in the panel and immediately see the <em>Symbol Properties</em> panel update.  While you still have to write some syntactically valid JavaScript arrays, it's a lot simpler than writing and debugging a rich symbol script from scratch.  The panel also offers much more power than the <em>Create Symbol Script</em> dialog that comes with Fireworks.</p>
+
+<p>This screencast shows a typical workflow:</p>
+
+<iframe src="http://www.screenr.com/embed/n7l7" width="650" height="396" frameborder="0"></iframe>
+
+<h1>Contents</h1>
+
+<ul>
+<li><a href="#new-symbol">Creating a new rich symbol</a></li>
+<li><a href="#symbol-properties">Creating rich symbol properties</a></li>
+<li><a href="#property-arrays">Property arrays</a></li>
+<li><a href="#types">Property types</a></li>
+<li><a href="#state-properties">Creating state and boolean properties</a></li>
+<li><a href="#state">state properties</a></li>
+<li><a href="#boolean">boolean properties</a></li>
+<li><a href="#at-name">Referring to other properties</a></li>
+<li><a href="#modifying-properties">Modifying the symbol properties</a></li>
+<li><a href="#debugging">Debugging symbol properties</a></li>
+<li><a href="#updating-master">Updating the master symbol in the Common Library</a></li>
+<li><a href="#converting-symbol">Converting an existing symbol</a></li>
+<li><a href="#complex-example">Complex symbol example</a></li>
+</ul>
+
+<h1 id="new-symbol">Creating a new rich symbol</h1>
+
+<p>First create the elements that will be part of your rich symbol.  Let's say you want to create a button with a text label and four different background states: normal, over, pressed and disabled.  You might create four different background elements to show a different visual effect in each state, and then create a text element on top for the label:</p>
+
+<p><img src="../inc/dynamicsymbol/button-layers.png" alt="Button layers" /></p>
+
+<p>Make sure the background elements are all the same size and are stacked on top of one another.  Also look in the <em>Layers</em> panel to make sure that all of the elements have a unique name.  If you don't name an element, you won't be able to manipulate it via the <em>Symbol Properties</em> panel.  Check text elements in particular; by default, they display their text contents in the <em>Layers</em> panel, but that's not a real name that can be used in the symbol.  Any elements that don't have names will be automatically named with their element type and a number when you click the <em>New</em> button.  For instance, the first unnamed text element will be <code>Text1</code>, the first rectangle will be <code>RectanglePrimitive1</code>, and so on.</p>
+
+<p>Once you've created the elements for the symbol, select them all and click the <em>New</em> button in the <em>Dynamic Symbols</em> panel:</p>
+
+<p><img src="../inc/dynamicsymbol/new-dialog.png" alt="New dialog" /></p>
+
+<p>In the upper portion of the dialog, select the folder in which you want to save the symbol.  It defaults to the <em>Custom Symbols</em> sub-folder inside the <em>Common Library</em> folder, but you can select a different sub-folder.  Then enter a name for the symbol in the field below.  You should not include the <code>.graphic.png</code> extension in the name.</p>
+
+<p>In addition to saving the symbol as a <code>.graphic.png</code> file in the selected sub-folder, the panel will create a corresponding <code>.jsf</code> file.  This JavaScript file supplies some of the code needed to implement the rich symbol functionality.</p>
+
+<p>The newly created document is then opened, and the elements that you selected before clicking <em>New</em> are copied into the new symbol.  (You can also create a new empty symbol by making sure nothing is selected when you click <em>New</em>.)  You will probably want to adjust the 9-slice guides at this point.  You can also add more elements to the symbol or modify the ones that were copied in.</p>
+
+<p>At the bottom of the <em>Layers</em> panel, you will notice a locked and hidden layer named <em>[DYNAMIC SYMBOL]</em>.  This layer contains a small, invisible square named <em>[DATA]</em>.  Be sure not to delete this element, since it stores the dynamic properties and logic for the rich symbol.  This is how the layers inside the earlier button example would now look:</p>
+
+<p><img src="../inc/dynamicsymbol/button-symbol-layers.png" alt="Button symbol layers" /></p>
+
+<p>Now that you've created the contents of the rich symbol, you're ready to create the properties that will appear in the <em>Symbol Properties</em> panel when the symbol is selected.</p>
+
+<h1 id="symbol-properties">Creating rich symbol properties</h1>
+
+<p>The properties for a rich symbol are specified as a series of JavaScript arrays that you type into the large text field in the <em>Dynamic Symbols</em> panel.  As such, they follow the standard syntax for JS arrays.  Be sure to include open and close brackets around each property array and put a comma after each one in the list (it's okay if you have an extra comma at the end).</p>
+
+<p>String values should be surrounded by quotes.  Returns outside of a string are fine, but if you want to break up a long string, type a <code>\</code> and then press return to insert a newline.  Anything following <code>//</code> up to the end of the line is treated as a single-line comment.  Everything between <code>/*</code> and <code>*/</code> is treated as a multi-line comment, which is useful for temporarily removing a property from the <em>Symbol Properties</em> panel.</p>
+
+<h2 id="property-arrays">Property arrays</h2>
+
+<p>A property array looks something like this:</p>
+
+<pre><code>["Label", "text", "My Button", "LabelElement.textChars"],
+</code></pre>
+
+<p>Each array should contain at least the first 3 of the following 5 items (except <code>state</code> and <code>boolean</code> properties, which are slightly different and are described in the <a href="#state-properties">Creating state and boolean properties</a> section below):</p>
+
+<dl>
+<dt>name</dt>
+<dd>A string which will be displayed as the property's label in the <em>Symbol Properties</em> panel.</dd>
+
+<dt>type</dt>
+<dd>One of the strings listed in the <a href="#types">Property Types</a> section below, which specifies what kind of UI control is displayed for the property.</dd>
+
+<dt>value</dt>
+<dd>The default value of the property, which is used for new instances of the symbol.</dd>
+
+<dt>changes</dt>
+<dd>
+<p>A string, array of strings, or function that specifies to which elements and to which attributes the property's value applies.  This item can be left out if the property is used only to store a value that is then used by a <code>state</code> or <code>boolean</code> property.  See <a href="#at-name">Referring to other properties</a> for more information.</p>
+
+<p>If you want to apply the value to the properties of multiple elements, just include an array of individual changes as the last item in the array.  For instance, the following property would apply the selected color to both the <code>Label</code> and <code>Sublabel</code> elements:</p>
+
+<pre><code>["Label color", "color", "#000000", 
+    ["Label.pathAttributes.fillColor", 
+    "Sublabel.pathAttributes.fillColor"]
+],
+</code></pre>
+
+<p>Passing a function here instead of a string or array of strings lets you do more complicated processing.  The function is called with a single parameter, an object containing the current values of all the properties, indexed by the name of the property.  This can be used to make changes based on the values of multiple other properties.  The function should return an array of arrays that specify the changes to make.  Each array should contain the name of an element to change, the attribute to change, and the new value.</p>
+
+<p>For instance, this change function adds parentheses to whatever string the user enters for the <code>Label</code> property:</p>
+
+<pre><code>["Label", "text", "Label", function(values) {
+    return [["Label", "textChars", "(" + values.Label + ")"]];
+}],
+</code></pre>
+</dd>
+
+<dt>filter</dt>
+<dd>
+<p>A string representing the state of other properties that must be met for this property to be applied.  For instance, you could apply a color to a button label element only when the symbol's <code>State</code> property is set to <code>Normal</code> or <code>Over</code>:</p>
+
+<pre><code>["Button state", "state", 
+    "Bkg_Normal, Bkg_Over, Bkg_Pressed, Bkg_Disabled { visible: false }",
+    [
+        ["Normal", "Bkg_Normal { visible: true }"],
+        ["Over", "Bkg_Over { visible: true }"],
+        ["Pressed", "Bkg_Pressed { visible: true }"],
+        ["Disabled", "Bkg_Disabled { visible: true }"]
+    ]
+],
+["Label color", "color", "#000000", 
+    "Label.pathAttributes.fillColor",
+    "Button state: Normal, Over"
+],
+</code></pre>
+
+<p>Basic Boolean operators can be used in the filter string, so you can apply the change based on the value of multiple other properties, like <code>"Button state: Normal, Over &amp;&amp; Enabled: true"</code>.</p>
+</dd>
+</dl>
+
+<h2 id="types">Property types</h2>
+
+<p>The following property types are supported, each of which displays a particular interface element in the <em>Symbol Properties</em> panel:</p>
+
+<dl>
+<dt>color</dt>
+<dd>
+<p><img src="../inc/dynamicsymbol/type-color.png" alt="color property" /></p>
+
+<p>Displays a color picker.  The default value should be a CSS color string, like <code>"#ff0000"</code>.</p>
+</dd>
+
+<dt>text</dt>
+<dd>
+<p><img src="../inc/dynamicsymbol/type-text.png" alt="text property" /></p>
+
+<p>Displays a text field.  The default value should be a string.</p>
+</dd>
+
+<dt>number</dt>
+<dd>
+<p><img src="../inc/dynamicsymbol/type-number.png" alt="number property" /></p>
+
+<p>Displays a text field into which only numbers can be entered.  The default value should be a number.</p>
+</dd>
+
+<dt>font</dt>
+<dd>
+<p><img src="../inc/dynamicsymbol/type-font.png" alt="font property" /></p>
+
+<p>Displays a font picker listing the installed fonts.  The default value should be the name of an available font.</p>
+</dd>
+
+<dt>boolean</dt>
+<dd>
+<p><img src="../inc/dynamicsymbol/type-boolean.png" alt="boolean property" /></p>
+
+<p>Displays a checkbox.  The default value should be a Boolean.  The <code>boolean</code> property works a little differently than the others.  See <a href="#state-properties">Creating state and boolean properties</a> for more information.</p>
+</dd>
+
+<dt>state</dt>
+<dd>
+<p><img src="../inc/dynamicsymbol/type-state.png" alt="state property" /></p>
+
+<p>Displays a drop-down menu.  The <code>state</code> property works a little differently than the others.  See <a href="#state-properties">Creating state and boolean properties</a> for more information.</p>
+</dd>
+
+<dt>mxml</dt>
+<dd>
+<p><img src="../inc/dynamicsymbol/type-mxml.png" alt="mxml property" /></p>
+
+<p>Displays a button that copies a string to the clipboard when clicked.  This is used by the rich symbols in the <em>Flex Components</em> folder of the Common Library to enable you to copy the equivalent MXML code to the clipboard and then paste it into Flex to instantiate a similar element.</p>
+
+<p>The third item in this property array should be either a string or a function.  If you include a string, it can contain tokens that are replaced with the current values of other properties in the <em>Symbol Properties</em> panel.  The first property is <code>$0</code>, the second is <code>$1</code>, etc.  The MXML property value for the Flex ComboBox symbol would look like this:</p>
+
+<pre><code>"&lt;mx:ComboBox color='$1' disabledColor='$2' \
+editable='$3' enabled='$4' text='$5' textRollOverColor='$6' \
+textSelectedColor='$7'&gt;&lt;/mx:ComboBox&gt;"
+</code></pre>
+
+<p>Note that there's no reason you have to use this property only for Flex components.  For instance, you could include a snippet of CSS that would produce the same styles as the symbol's properties.</p>
+
+<p>If you include a function as the value instead of a string, the function is called with a single parameter, an object containing the current values of all the properties, indexed by the name of the property.  The return value of this function is used as the string that is copied to the clipboard when the user clicks the button.  This gives you full control over how the string is generated.</p>
+</dd>
+</dl>
+
+<p>A property that controls a button label element in a rich symbol might look like this:</p>
+
+<pre><code>["Label", "text", "My Button", "LabelElement.textChars"],
+</code></pre>
+
+<p>This would show a default label of <code>"My Button"</code>.  When the user changes the property, the entered value would set the <code>textChars</code> attribute of the <code>LabelElement</code> text element in the rich symbol, which would cause the label in the selected symbol instance to update to display the entered text.</p>
+
+<p>Take a look at the Adobe site for <a href="http://help.adobe.com/en_US/fireworks/cs/extend/WS5b3ccc516d4fbf351e63e3d1183c9494b8-7ffb.html">documentation</a> on which element properties can be modified by a rich symbol.  Note that that list contains a number of errors.  For instance, some listed attributes, like <code>element.left</code> or <code>element.width</code>, don't have any effect when set, and where it says <code>element.pathattrs</code> it should actually say <code>element.pathAttributes</code>.  Also note that you do not need to include the <code>element.</code> or <code>text.</code> portions of the listed attributes.  Instead, replace those with the name of your object, like <code>LabelElement.textChars</code>.</p>
+
+<h1 id="state-properties">Creating state and boolean properties</h1>
+
+<p>When you change the state of a rich symbol using a combobox in the <em>Symbol Properties</em> panel, you usually affect multiple elements and attributes at once.  For instance, you might switch a button symbol from a <code>Normal</code> state to <code>Disabled</code>.  In the <code>Disabled</code> state, you might hide all the background elements except the one called <code>Bkg_Disabled</code>, and you might also want to change the color of the <code>Label</code> text element to a light grey.  The <code>state</code> property makes this easy.</p>
+
+<h2 id="state"><code>state</code> properties</h2>
+
+<p>The first two items in the <code>state</code> property's array are the same as those for the other property types.  The third item is an optional string or array that specifies the base changes for the property, which are applied before a state is applied.  The fourth item is an array of arrays that specifies the menu items that appear in the combobox and the changes that are applied to the symbol when the user selects a particular state.  If you don't include a base state, then the array should have only 3 items.</p>
+
+<p>The state changes are specified as strings using a syntax that is somewhat similar to CSS.  The string should start with the names of one or more elements, separated by commas, to which the changes apply.  The attributes that are changed and their new values are listed inside curly braces, separated by semi-colons:</p>
+
+<pre><code>"Title, Subtitle { bold: true; pathAttributes.fillColor: #666666 }"
+</code></pre>
+
+<p>This change string would make the <code>Title</code> and <code>Subtitle</code> text elements bold and give them a grey fill color.  Note that you need to specify the full path to the attribute, so you have to write <code>pathAttributes.fillColor</code>, since <code>fillColor</code> is a property of the <code>pathAttributes</code> object of each element.</p>
+
+<p>To make multiple different changes to multiple elements, you can include one or more additional statements after the closing brace:</p>
+
+<pre><code>"Title, Subtitle { bold: true; pathAttributes.fillColor: #666666 } \
+Title { fontsize: 18; }"
+</code></pre>
+
+<p>The backslash is there just to insert a newline into the middle of the string so it wraps better.  You don't need to insert a backslash to include multiple elements in a single change string.</p>
+
+<p>You can also create an array of strings, with one set of elements to change per string:</p>
+
+<pre><code>["Title, Subtitle { bold: true; pathAttributes.fillColor: #666666 }",
+"Title { fontsize: 18; }"]
+</code></pre>
+
+<p>By including a change string as the third element of the property array, you can "reset" the symbol to a base state before the selected state is applied.  For instance, you might have a separate background element for each of a button's states &mdash; normal, over, pressed and disabled &mdash; but only one of those should be shown in a given state.  Instead of having to hide 3 elements and show 1 in each state, hiding everything in the base state can simplify the changes that you need to specify for the other states:</p>
+
+<pre><code>"Bkg_Normal, Bkg_Over, Bkg_Pressed, Bkg_Disabled { visible: false }",
+</code></pre>
+
+<p>The states specified in the final item of the property array can then set the <code>visible</code> property of the appropriate element to <code>true</code> and make any other needed changes:</p>
+
+<pre><code>["Button state", "state", 
+    "Bkg_Normal, Bkg_Over, Bkg_Pressed, Bkg_Disabled { visible: false }",
+    [
+        ["Normal", "Bkg_Normal { visible: true }"],
+        ["Over", "Bkg_Over { visible: true }"],
+        ["Pressed", "Bkg_Pressed { visible: true }"],
+        ["Disabled", "Bkg_Disabled { visible: true } \
+          Label { pathAttributes.fillColor: #919095 }"]
+    ]
+],
+</code></pre>
+
+<p>The final item is an array of arrays, where the first item in each array is the menu item that's shown in the combobox in the <em>Symbol Properties</em> panel.  The second item is a string containing the changes to apply to the elements in the symbol when the user selects that state, after the base state is applied, if any.  As described above, the string can contain multiple changes or you can use an array of strings that contain one change each.</p>
+
+<p><code>state</code> properties default to the first item in the array when a new instance of the symbol is created, so there's no default value needed.</p>
+
+<h2 id="boolean"><code>boolean</code> properties</h2>
+
+<p><code>boolean</code> properties are similar to <code>state</code> properties, but they contain only two states and don't have a base state.  In the <em>Symbol Properties</em> panel they are represented with a checkbox.  The two states in the property array let you specify the changes that are applied when the checkbox is unchecked and those that are applied when it's checked.</p>
+
+<p>The third item in the property array should be a Boolean value representing the default value of the checkbox.  The fourth item should be an array of two strings.  The first one represents the state shown when the checkbox is unchecked and the second represents the state when it is checked.</p>
+
+<p>The following example would make the text in the rich symbol's <code>Label</code> element bold and red when the <em>Important</em> checkbox is checked:</p>
+
+<pre><code>["Important", "boolean", false, ["Label { bold: false }", 
+ "Label { bold: true; pathAttributes.fillColor: #ff0000 }"]]
+</code></pre>
+
+<p>If you don't want to apply any changes when the checkbox is checked or unchecked, just include an empty string: <code>""</code>.</p>
+
+<h2 id="at-name">Referring to other properties</h2>
+
+<p>In addition to specifying a literal value in the change strings, you can refer to the current value of another property.  For instance, you might want to use a color picker to specify the label color when a button is in the over state.  You can refer to the color property's value by prefixing its name with an <code>@</code> sign:</p>
+
+<pre><code>["Over color", "color", "#000000"],
+["Button state", "state", 
+    [
+        ["Normal", "Label { pathAttributes.fillColor: #000000 }"],
+        ["Over", "Label { pathAttributes.fillColor: @Over color }"]
+    ]
+],
+</code></pre>
+
+<p>The <em>Over color</em> property has no change item in its array, which means selecting a color in its color picker will have no effect unless the <em>Button state</em> property is set to <em>Over</em>.</p>
+
+<h1 id="modifying-properties">Modifying the symbol properties</h1>
+
+<p>Once you have entered some properties into the <em>Dynamic Symbols</em> panel, click <em>Apply</em> to apply the properties to the symbol that you are currently editing or have selected.  While the properties field has keyboard focus, you can also press <em>Ctrl-S</em> to update the symbol.  The <em>Apply</em> button will be disabled if there are no changes to save.</p>
+
+<p>After applying the changes, you'll notice that nothing appears in the <em>Symbol Properties</em> panel when you select it.  This is because the symbol doesn't become "rich" until you drag it in from the <em>Common Library</em> panel.  So save the changes to the current symbol document and close it.  Create a new document, find the symbol you were just editing in the <em>Common Library</em> panel, and drag it to the document.  The <em>Symbol Properties</em> panel should update to display the properties you had specified in the <em>Dynamic Symbols</em> panel.</p>
+
+<p>Now you can enjoy the "dynamic" part of the extension.  With the symbol selected, edit the properties in the <em>Dynamic Symbols</em> panel and click <em>Apply</em>.  For instance, you might change the label of a property or add a new one.  As soon as you click <em>Apply</em>, the <em>Symbol Properties</em> panel should update with the change.  Without the <em>Dynamic Symbols</em> panel, you would need to modify the symbol's <code>.jsf</code> file in a text editor, refresh the <em>Common Library</em>, reopen the folder containing the symbol (since all folders close when you refresh the library), drag a new instance into the document and select <em>Replace existing items</em> in the resulting dialog to see your changes.  With the panel, you can see the changes instantly.  All instances of the symbol in the current document will also be updated with the edited properties.</p>
+
+<h1 id="debugging">Debugging symbol properties</h1>
+
+<p>While you edit the symbol properties, you may see a <em>Syntax error</em> warning appear in the upper-right of the <em>Dynamic Symbols</em> panel:</p>
+
+<p><img src="../inc/dynamicsymbol/syntax-error.png" alt="Syntax error" /></p>
+
+<p>As you type, the panel is constantly evaluating the JavaScript code that you're typing and displays the warning if it doesn't compile.  As long as a syntax error is detected, the <em>Apply</em> button will be disabled to keep you from applying buggy properties to the symbol.</p>
+
+<p>However, just because the properties compile into valid JavaScript arrays doesn't mean the rich symbol syntax is correct.  For instance, an array may refer to a non-existent element or property.  These errors are suppressed in the UI so they don't trigger an error dialog, but they are written out to the <a href="FWConsole.html">Fireworks Console</a> if it's installed.  It's generally a good idea to install the console and have it open while editing symbols so that you can see if there are errors in your property arrays.</p>
+
+<p>Also keep in mind that the properties are applied from first to last, so a later property can override the effects of an earlier one.  Achieving the desired look for the symbol's elements may sometimes require reordering the properties.</p>
+
+<h1 id="updating-master">Updating the master symbol in the Common Library</h1>
+
+<p>When you edit the properties of a selected symbol via the <em>Dynamic Symbols</em> panel, all instances of that symbol in the current document get the changed properties.  But the master symbol file in the Common Library folder isn't updated.  To apply the changes to that file, click the <em>Apply to Master</em> button in the panel.  This will replace the existing <code>.graphic.png</code> file in the symbol's original location with the updated version of the symbol from the current document.  You can then drag the symbol out of the <em>Common Library</em> panel into a new document and get the latest version.</p>
+
+<p>When you click <em>Apply to Master</em>, the selected instance's properties are reset to their defaults, so that dragging the symbol from the <em>Common Library</em> panel will insert a symbol with default values.</p>
+
+<p>Clicking the <em>Apply</em> button doesn't automatically update the master because doing so is a little slow and you may want to tweak the symbol just in the current document without making any changes to the original symbol in the Common Library folder.</p>
+
+<h1 id="converting-symbol">Converting an existing symbol</h1>
+
+<p>In addition to creating a brand new symbol, you can convert an existing symbol to have dynamic properties.  Click the <em>Convert...</em> button and then select the symbol you want to convert in the file selection dialog.  This will open the symbol file and insert the hidden <em>[DATA]</em> element.  After that, you can enter properties for the symbol into the panel as described above.  Note that any existing <code>.jsf</code> file for that symbol is not incorporated into the symbol properties.  You will need to recreate the behavior of the existing <code>.jsf</code> file using the syntax described above.</p>
+
+<h1 id="complex-example">Complex symbol example</h1>
+
+<p>Here is a more complex example of creating a rich symbol with many properties.  The layer structure and <em>Symbol Properties</em> panel for a Flex ComboBox symbol might look like this:</p>
+
+<p><img src="../inc/dynamicsymbol/flex-combobox.png" alt="Flex ComboBox" /></p>
+
+<p>The following dynamic symbol properties would create a symbol with the same behaviors as the one that comes bundled with Fireworks:</p>
+
+<pre><code>["State", "state", "up_fill, up_border, over_border, down_fill,\
+   up_fill_, up_border_, over_border_, down_fill_ { visible: false }",
+[
+  ["Up", "up_fill, up_border, up_fill_, up_border_ { visible: true }\
+    text { pathAttributes.fillColor: @color }"],
+  ["Over", "up_fill, over_border, over_border_ { visible: @enabled }\
+    up_fill_ { visible: @editable } \
+    text { pathAttributes.fillColor: @textRollOverColor }"],
+  ["Down", "down_fill, over_border, down_fill_, over_border_ \
+    { visible: @enabled } up_fill_ { visible: @editable } \
+    text { pathAttributes.fillColor: @textSelectedColor }"]
+]],
+
+["color", "color", "#0b333c"],
+
+["disabledColor", "color", "#aab3b3"],
+
+["enabled", "boolean", true, ["up_fill, up_border { visible: true } \
+  up_border_ { visible: @editable } \
+  text { pathAttributes.fillColor: @disabledColor }", ""]],
+
+["editable", "boolean", [
+  "textbox, up_fill_, up_border_, over_border_, down_fill_ \
+    { visible: false }", 
+  "textbox { visible: true } up_fill, up_border, over_border, \
+    down_fill { visible: false }"
+]],
+
+["text", "text", "Text", "text.textChars"],
+
+["textRollOverColor", "color", "#2b333c"],
+
+["textSelectedColor", "color", "#2b333c"],
+
+["MXML", "mxml", "&lt;mx:ComboBox color='$1' disabledColor='$2' \
+editable='$4' enabled='$3' text='$5' textRollOverColor='$6' \
+textSelectedColor='$7'&gt;&lt;/mx:ComboBox&gt;"],
+</code></pre>
+
+<p>Though somewhat complicated, this still represents only half as many lines of code as the <code>.jsf</code> file that implements the built-in Flex ComboBox component, while still providing the same functionality.</p>
+
+<h1>Release history</h1>
+
+<dl>
+<dt>0.1.2</dt>
+<dd>2013-06-01: Fixed bug that could cause crashes on OS X.  Added a panel icon.</dd>
+
+<dt>0.1.1</dt>
+<dd>2013-02-06: Initial release.</dd>
+</dl>
+</div>
+                <div class="PackageContents">
+                    <h1>Package contents</h1>
+                    <ul>
+                        <li>Dynamic Symbols</li>
+                        <li>symbol</li>
+                        <li>JSMLDialog</li>
+                        <li>New Rich Symbol</li>
+                    </ul>
+                </div>
+                
+                <div class="BottomNav">
+                    <div class="Links">
+                        <a href="../dl/index87c5.html"
+                            onclick="javascript: PT._trackPageview('/fireworks/mxp/DynamicSymbols');"
+                        >Download 0.1.2.mxp</a>
+                            <a href="../dl/index432a.html"
+                                class="ZipLink"
+                                onclick="javascript: PT._trackPageview('/fireworks/zip/DynamicSymbols');"
+                                title="This .zip version is available in case the Extension Manager can't install the standard .mxp version of this extension"
+                            >Download .zip</a>
+                        <span class="CommandDate">2013-06-01</span>
+                    </div>
+
+                <ul class="SharingLinks">
+                    <li class="CommentsLink"><a href="#disqus_thread"
+                        onclick="javascript: PT._trackPageview('/fireworks/comment/DynamicSymbols');"
+                    >Comment</a></li>
+<!--                    <li>
+                        <script type="text/javascript">
+                            var addthis_pub="fwextensions";
+                            var addthis_header_color = "#ffffff";
+                            var addthis_header_background = "#cc3300";
+                            var addthis_options = 'twitter, facebook, buzz, googlebuzz, delicious, digg, email, favorites, more';
+                        </script>
+                        <a class="AddThis"
+                            href="https://www.addthis.com/bookmark.php?v=20" 
+                            onmouseover="return addthis_open(this, '', '[URL]', 'Dynamic Symbols - Adobe Fireworks extension from johndunning.com')" 
+                            onmouseout="addthis_close()" 
+                            onclick="return addthis_sendto()"
+                        ><img src="/fireworks/images/add-this.gif" width="16" height="16" alt="Bookmark and Share" style="border:0"></a>
+                    </li> -->
+                    <li>
+                        <a href="https://twitter.com/share" 
+                            class="twitter-share-button" 
+                            data-count="horizontal" 
+                            data-via="fwextensions"
+                            data-text="Dynamic Symbols - #AdobeFireworks extension"
+                            data-url="DynamicSymbols.html"
+                        ></a>
+                    </li>
+                    <li>
+                        <fb:like 
+                            href="DynamicSymbols.html" 
+                            layout="button_count" 
+                            width="80"
+                        ></fb:like>
+                    </li>
+<!--                    <li>
+                        <g:plusone size="medium" style="vertical-align: middle;"></g:plusone>
+                    </li> -->
+                </ul>
+
+                    <p><a href="../index.html">See all the Adobe Fireworks extensions, commands and panels</a></p>
+                </div>
+
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    var disqus_shortname = 'johndunning',
+                        disqus_url = "DynamicSymbols.html",
+                        disqus_identifier = "/fireworks/about/DynamicSymbols",
+                        disqus_title = "Dynamic Symbols";
+
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+            </div></div> 
+        </div> 
+        <div class="yui-b">
+            <h1 class="SiteName"><a href="../../index.html">john<b>dunning</b>.com/</a></h1>
+
+            <div id="ExtNavLinks" class="LinkList">
+                <ul>
+<li><a href="Adjust9Slice.html" title="Tweaking the 9-slice guides in a symbol can be a pain, since you have to keep going into symbol editing mode to make a change, and then back out to the canvas to see the effect on the symbol instances.  The Adjust 9-Slice panel lets you move the guides while seeing the effects in realtime.">Adjust 9-Slice</a></li>
+<li><a href="AdjPanel.html" title="If you want to make the fill color of an element darker, you can select it, open the Color Mixer panel, switch to HSB mode, and then drag the brightness slider.  But what if you have two differently colored elements and want to make them both slightly darker?  You can't use the Color Mixer panel because it will set both elements to the same color.  The Adjustments panel makes this and other tasks easier.">Adjustments Panel</a></li>
+<li><a href="Bookmarks.html" title="The Bookmarks extension lets you set a bookmark on different pages and states in your document and then quickly jump between them.  This can be handy for exploring the flow through a website or quickly toggling between variations of a design.">Bookmarks</a></li>
+<li><a href="ChangeTextSize.html" title="This package consists of two commands for increasing or decreasing the font size of the selected text block(s).">Change Text Size</a></li>
+<li><a href="Commands.html" title="The Commands panel provides quick access to your favorite Fireworks commands, panels, symbols, auto shapes, textures and patterns.  While keyboard shortcuts are useful, you may not want to create a shortcut for every command you use frequently, and the Common Library and Shapes panels don't provide any shortcuts at all.  With the Commands panel, you can create a set of toolbar buttons for your frequently used commands and assets so that they're always right at hand.">Commands</a></li>
+<li><a href="CopyMerged.html" title="With just one step, the Copy Merged command copies onto the clipboard the entire document as a flattened image.  It even copies the objects on locked layers, without affecting their locked state.  Copy Merged into New Document does the same thing but pastes the flattened image into a new document.  Copy Merged into Selection copies the merged pixels into the selected objects while respecting their alpha channels, which is a quick way to copy a row of icons out of a screenshot and into individual bitmap elements.">Copy Merged</a></li>
+<li><a href="CopyPasteWHXY.html" title="The Paste Attributes command is handy for quickly giving the same appearance to a bunch of objects.  But it would also be helpful to give objects the same size or position.  You can use the Properties panel to do that, but then you have to type in the size or position values each time you want to apply them, and you have to select each element one at a time.  The commands in this extension make that process much more convenient.">Copy Paste WHXY</a></li>
+<li><a href="StateSymbol.html" title="Rich symbols are a powerful feature of Fireworks, but creating them is a fairly complicated process.  The Create Symbol From States command lets you create basic rich symbols containing multiple states in just one step with no scripting.">Create Symbol From States</a></li>
+<li><a href="CustomNudge.html" title="These commands let you nudge the selection by custom amounts, rather than just 1 or 10 pixels.  You can even nudge elements by less than a whole pixel, like .25, in order to tweak an element's anti-aliasing.">Custom Nudge</a></li>
+<li><a href="DocCommands.html" title="These commands make it a little easier to manage your Fireworks documents.">Document Commands</a></li>
+<li><a href="DocTemplates.html" title="This command lets you quickly turn an existing document into a template, which then serves as a starting point for new, untitled documents.  Run &#34;Document Templates - New&#34; and enter a name for the template.  A copy of the current file will be saved out and will then be available in the Commands &gt; Document Templates menu.  You can then make as many copies as you like.">Document Templates</a></li>
+<li><strong>Dynamic Symbols</strong></li>
+<li><a href="EdgeAnimate.html" title="Fireworks is a great tool for building and laying out the elements of an Edge Animate project, but until now you've had to manually export individual images and then recreate your layout in Edge.  The Export to Edge command will do this for you, exporting your Fireworks document as a collection of HTML and JS files that can be opened by Edge Animate.  All of the elements on the first state of the first page of the current document will appear in Edge with the same size, location, color, etc. that they have in Fireworks.">Edge Animate</a></li>
+<li><a href="EdgeReflow.html" title="The Edge Reflow extension lets you export a Fireworks layout to Edge Reflow, where you can test the responsiveness of the design.  All of the elements on the first state of the current page will appear in Reflow with more or less the same size, position, color, etc. that they have in Fireworks.">Edge Reflow</a></li>
+<li><a href="ExportSelection.html" title="If you have a complicated document and want to export individual elements from it, using slices often doesn't work.  The elements you want to export may overlap, or you may want to prevent the background pixels from appearing in the exported images.  Your only choice is to either hide every other element and then export the document, or else copy each element to its own document, and then export that.  The Export Selection commands make this process much more convenient.">Export Selection</a></li>
+<li><a href="FWXHR.html" title="Since Fireworks is used so heavily for web graphics production, it's quite likely that there'll be times when you developers out there would like your JSF commands to interact with a web service.  Unlike a browser's JS environment, unfortunately, Fireworks doesn't offer any XmlHttpRequest functionality.  Flash panels can make HTTP calls, but there hasn't been easy way to integrate Flash with JSF commands.  Until now.
+
+This extension will be of interest only to developers of Fireworks extensions. ">FWXHR</a></li>
+<li><a href="FakeUnderline.html" title="The commands in this extension help make it a little easier to create styled underlines like those available in web browsers.  The standard underline style in Fireworks always draws the line in the same color as the text, which may not always be what you want.  The Fake Underline commands will automatically draw an underline for you, creating a line that can be styled like any other.">Fake Underline</a></li>
+<li><a href="ExportAsFavicon.html" title="The &#34;Export as Favicon&#34; command creates a favicon file from the current document, which must be 16px by 16px.  Using multiple pages, the favicon can also include a 32px or 64px version of the icon.  From Fireworks CS5 onwards, the command now works on both Windows and Mac.">Favicon</a></li>
+<li><a href="FillWithBackground.html" title="When creating mockups, you may need to take a screenshot of an existing dialog or webpage and then modify it for a new design.  You'll probably also have to paint over an existing element in the screenshot, like a button label, to replace it with new text.  So you select a portion of the background pixels in the screenshot, copy them, paste them, stretch them over the element you want to replace, and then flatten the pixels with the original image.  The Fill With Background command does all of this in just one step.">Fill With Background</a></li>
+<li><a href="FillAndStroke.html" title="Have you ever wanted to select several objects, each with a different stroke color, and change all of their stroke widths to a new value? If you try this with the Properties panel, you'll find that all of the selected objects get the same stroke width, but also that their other stroke properties are changed to identical values as well. The commands in this extension help you avoid this problem.">Fill and Stroke</a></li>
+<li><a href="FWConsole.html" title="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels. 
+
+This panel will be of interest only to developers of Fireworks extensions.">Fireworks Console</a></li>
+<li><a href="FixRoundRect.html" title="After you create a rectangle, adjust the Roundness value to set the corners to the desired pixel radius.  Then use the Scale tool to freely resize the rectangle, or use the Info panel to change the size numerically.  Finally, run the Fix Rounded Rect Corners command to fix the corner distortion introduced by the Scale tool.">Fix Rounded Rect Corners</a></li>
+<li><a href="FlickrFire.html" title="FlickrFire lets you easily upload the image you're currently working on to Flickr, without ever leaving Fireworks.  Just enter a title and description, click Upload, and a flattened copy of your image will be posted to Flickr.">FlickrFire</a></li>
+<li><a href="FrameLayerUtils.html" title="Working with lots of frames and layers can be tedious, because many frame and layer menu commands that you perform over and over again don't have keyboard shortcuts.  And other actions, like hiding a layer on every frame, aren't supported at all by Fireworks' built-in tools. The scripts in this extension are intended to remedy this situation. ">Frame and Layer Utilities</a></li>
+<li><a href="GenerateWebAssets.html" title="While you can easily export slices from a mockup, it's a pain to create an individual slice for each element that you want to export.  And if the elements overlap, the slices won't output cleanly.  The Generate Web Assets command makes exporting different parts of your document a breeze. ">Generate Web Assets</a></li>
+<li><a href="GreekedText.html" title="When creating wireframes, it's often useful to suggest the presence of text without using actual words, which can distract the viewer from the overall layout.  Even &#34;lorem ipsum&#34; dummy text requires the selection of a typeface and size, which may be too much detail for the mockup.  In hand-drawn mockups (does anyone still draw by hand?) you could use a marker to draw lines of different lengths to suggest text, but this effect has always been a pain to create with software.  The Greeked Text auto shape makes it easy.">Greeked Text</a></li>
+<li><a href="Grids.html" title="The Insert Grids commmand makes it easy to create modular grids for laying out web content.  Select the desired number of columns, their widths, gutters, and so on, then click OK to insert a visual grid to help lay out your page elements.">Grids</a></li>
+<li><a href="GroupCommands.html" title="The commands in this extension make it a little easier to manipulate groups, including the ability to paste elements into a group or ungroup and regroup it without losing any effects that had been applied to it. The &#34;Group Attributes - Copy/Paste&#34; commands let you copy the styles of all the sub-elements of one group to another.">Group Commands</a></li>
+<li><a href="InsertCopies.html" title="The &#34;Insert Copies Between Selection&#34; command takes 2 selected, identical objects and inserts evenly-spaced copies between them.  This can be quite handy when you need to insert a row or column of repeating elements without having to create each one manually.">Insert Copies Between Selection</a></li>
+<li><a href="JSMLLibrary.html" title="For you Fireworks developers out there who like to sling JavaScript but aren't down with Flash, or just don't want to deal with the overhead of building a whole SWF for a simple panel or dialog, the JSML Panel and Dialog Library can help.  JavaScript Markup Language (JSML) is a combination of JS and Flex 3 that lets you create a Flash panel or dialog using just JavaScript, so you can build a fully functional Fireworks UI for your commands with nothing more than a text editor.  For non-developers, this extension won't be very useful.">JSML Library</a></li>
+<li><a href="KeyboardResize.html" title="This extension makes it easy to resize selected elements in any direction using just the keyboard, which can be much more convenient than dragging the Scale tool with the mouse.  And unlike the Scale tool, text blocks are resized without being distorted.">Keyboard Resize</a></li>
+<li><a href="LevelHorizon.html" title="The &#34;Level Horizon&#34; command helps you, um, level the horizon in crooked photos.  Simply open the photo, draw a straight line along a part of the image that should be perfectly horizontal, and run the command.  The photo will be rotated so that the line is horizontal and the now crooked corners of the image will be cropped to keep it rectangular.">Level Horizon</a></li>
+<li><a href="LinkedImages.html" title="When you import an image into a Fireworks document, Fireworks doesn't maintain any link between the source file and the bitmap element in the document.  If the source file changes, you'll need to find it, re-import it and then delete the previous image in the document.  The Linked Images extension makes this process a little easier, providing a sort of poor-man's smart object for Fireworks.">Linked Images</a></li>
+<li><a href="LoremIpsum.html" title="When designers want to display actual formatted text before the final content is decided upon, they often use some form of &#34;lorem ipsum&#34; as a placeholder.  The Lorem Ipsum auto shape makes inserting any amount of dummy text a breeze.">Lorem Ipsum</a></li>
+<li><a href="MultiBorderRect.html" title="CSS allows a different width and color to be applied to the border on each side of an HTML element, but Fireworks' rectangles are limited to a single border color and thickness.  The Multi-Border Rectangle auto shape addresses this limitation, making it easy to mock up CSS-style borders.">Multi-Border Rectangle</a></li>
+<li><a href="PageCommands.html" title="The commands in this extension make working with pages in Fireworks more efficient and convenient.  The &#34;New Page&#34; dialog makes it easy to create a new page while simultaneously changing its size or background color and giving it a name.  The &#34;Adjust Page Size&#34; command lets you make relative adjustments to the size of multiple pages at once, such as moving the left and right sides in by 10px on each page.  The &#34;Distribute Layers to Pages&#34; command does the same for top-level layers. The &#34;Import Files into Pages&#34; command is useful for combining several existing files as pages in a new document. The &#34;Apply Export Settings to All Pages&#34; command takes the export settings on the current page and applies them to all pages in the document.">Page Commands</a></li>
+<li><a href="PasteInPlace.html" title="&#34;Paste In Place&#34; is an update to a classic Kleanthis Economou command.  It lets you quickly replace a bunch of existing elements with a different element, without having to carefully position each one.  Simply copy the replacement to the clipboard, select the elements you want to replace, and run this command.  The clipboard contents will be inserted at the same XY position, layer, and group level as the selected elements.">Paste In Place</a></li>
+<li><a href="Placeholder.html" title="When creating sketches and early mockups, it's often useful to draw image placeholders instead of including actual photos, icons, ads, etc. in the layout.  The Placeholder auto shape makes this a snap.">Placeholder</a></li>
+<li><a href="QuickClips.html" title="The QuickClips extension makes it easy to quickly insert frequently used elements into your document, such as icons, background graphics, blocks of text, etc.  When you save a new clip, it will become available from the Commands &gt; QuickClips submenu.  Selecting a saved clip will insert it into the current layer of the current document.">QuickClips</a></li>
+<li><a href="QuickFire.html" title="QuickFire is essentially Quicksilver for Fireworks.  While it's easy to add a keyboard shortcut for your most-used commands, accessing the others still requires clicking through the Commands menu.  QuickFire makes accessing these commands much easier: just launch QuickFire (with a keyboard shortcut, of course), start typing part of the command's name, then hit enter to run the matched command.  Quick 'n' easy.  And QuickFire handles more than just commands: you can also quickly access symbols, auto shapes, textures, patterns, panels, layers, states, pages, templates, and recently-opened files.">QuickFire</a></li>
+<li><a href="ResizeObjects.html" title="This panel ships with Fireworks MX, so you should already have it. If I create new versions, though, I'll make them available here. Resize Selected Objects lets you make precise, single-pixel adjustments to the size of a selected object without using the Scale tool. It resizes each selected object independently, which the Scale tool cannot do.">Resize Selected Objects</a></li>
+<li><a href="SVG.html" title="With increasing support for &lt;canvas&gt; and SVG across browsers, many people have been creating vector images in the SVG format.  The SVG extension makes it possible to use these images in your Fireworks documents by parsing the XML and recreating the vectors using Fireworks elements.">SVG</a></li>
+<li><a href="ScriptRunner.html" title="When writing Fireworks extensions, I often find myself writing little snippets of JavaScript code to inspect attributes or run commands on whatever elements are selected.  I usually enter these snippets in the Fireworks Console panel, but having to constantly reload and rerun the code each time the selection changes is awkward.  The Script Runner panel makes it easy to automatically run JavaScript whenever the selection changes.">Script Runner</a></li>
+<li><a href="SelectNextElement.html" title="The Select Next Element commmand makes it easy to naviagate your document via the keyboard.  Each time you run the command, the next element below the currently selected one is selected.  This can be particularly helpful for cycling among the elements underneath the selection, which are otherwise hard to access without going to the Layers panel or using the Select Behind tool.">Select Next Element</a></li>
+<li><a href="SelectPoints.html" title="To manipulate vectors with a high degree of control it's often necessary to subselect individual points on the path.  But selecting lots of individual points on a complicated path can be awkward, especially if it's hard to use a rectangular marquee to select them.  The commands in this extension can reduce the amount of clicking required to select those points.">Select Points</a></li>
+<li><a href="SmartKnife.html" title="The Smart Knife command lets you split one or more shapes in half using an open path.  The built-in knife tool lets you split a path, but only in a straight line, and it doesn't work with text, auto shapes or bitmaps.  Smart Knife lets you cut across multiple paths, bitmaps, auto shapes and text blocks with an arbitrarily complex open path.">Smart Knife</a></li>
+<li><a href="SmartPunch.html" title="The &#34;Smart Punch&#34; command goes far beyond Fireworks' basic punch functionality, letting you punch vector or bitmap objects out of another vector or bitmap. Even text blocks can be used as the &#34;puncher&#34; or the &#34;punchee&#34;.  The possibilities for punching mayhem are endless. ">Smart Punch</a></li>
+<li><a href="SmartResize.html" title="The Smart Resize auto shape helps you automatically adjust the layout of grouped elements to a new size without distorting the elements in the process.  This makes it easy to quickly resize a mock up of a dialog box, for instance.  Just drag the shape's yellow handles to move the grouped elements around to match the shape's size.  See the screencast for an example of how the auto shape works.">Smart Resize</a></li>
+<li><a href="SoloCommand.html" title="The &#34;Solo Selection&#34; command hides everything except the currently selected elements. If all of the visible elements are selected, running the command displays everything. This lets you quickly toggle the solo effect on and off: select one or more elements, run the command, look at the elements by themselves, then run it again to make everything visible.">Solo Command</a></li>
+<li><a href="Spacer.html" title="The Spacer panel makes it easy to arrange rows or columns of elements by adjusting the spacing between them.  When you select some elements, the panel figures out if they're mostly horizontal or mostly vertical.  It then displays the horizontal or vertical space between each element in a series of text fields, which you can edit to easily adjust the spacing.">Spacer</a></li>
+<li><a href="Tables.html" title="The Tables panel enables you to quickly mock up HTML-style tables without having to laboriously position each cell or border.  Although it's relatively straightforward to arrange elements in a grid using Fireworks' alignment and distribution commands, as soon as the table contents change you'll need to reposition everything manually.  The Tables panel automates this tedious process, and will create border and background elements for you.">Tables</a></li>
+<li><a href="TextVariables.html" title="The Text Variables extension enables you to include variables in text elements that can then be automatically updated.  This makes it possible to easily update a text label that displays, say, the current name of the page it's on, or the name of a product you're designing.  The extension can update just the selected elements or every text variable in the document. ">Text Variables</a></li>
+<li><a href="ToggleOpacity.html" title="The &#34;Toggle Opacity&#34; commands simply toggle the selected objects between 50% and 100% opacity, or between 0% and 100%.  If you assign a keyboard shortcut to the commands, you'll have a handy way of quickly seeing behind the selected objects.">Toggle Opacity</a></li>
+<li><a href="EditSymbol.html" title="Annoyingly, Fireworks has never offered a keyboard shortcut for editing a symbol or exiting edit mode once you were in it.  This command does just that: it enters edit mode if you've selected a symbol or exits exit mode if you're already editing a symbol.  Assign a keyboard shortcut to quickly jump in and out of symbol edit mode.">Toggle Symbol Edit Mode</a></li>
+<li><a href="TweetFire.html" title="TweetFire lets you easily tweet the image you're currently working on, without ever leaving Fireworks.  Just enter a short message, click Tweet, and a flattened copy of your image will be posted to Twitter.  The URL to the image is automatically added to your tweet.">TweetFire</a></li>
+<li><a href="UpdateSymbols.html" title="Importing symbols from another file is one of Fireworks' most powerful functions. But if you have a lot of files that use imported symbols, it can be a hassle to update them in every file. The Update Symbols extension lets you batch-update the imported symbols in multiple files with just one step.">Update Symbols</a></li>
+<li><a href="Wedgie.html" title="The (perhaps unfortunately named) Wedgie command breaks the selected object into 2 or more wedges.">Wedgie</a></li>
+</ul>
+            </div>
+        </div>
+    </div>
+    <div id="ft"></div> 
+</div> 
+
+<script type="text/javascript" src="../../../www.google-analytics.com/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+    PT = _gat._getTracker("UA-3380390-1");
+    PT._trackPageview();
+} catch (gaError) {}
+</script>
+
+<script src="../../../platform.twitter.com/widgets.js"></script>
+<script src="../../../connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script src="../../../apis.google.com/js/plusone.js"></script>
+<script src="../../../s7.addthis.com/js/200/addthis_widget.js"></script>
+
+<script> 
+        // work around FB's annoying bug: http://bugs.developers.facebook.net/show_bug.cgi?id=9777
+    try { document.getElementsByTagName('html')[0].style.display = 'block'; } catch(e) {};
+</script> 
+
+</body>
+
+
+<!-- Mirrored from johndunning.com/fireworks/about/DynamicSymbols by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:11:15 GMT -->
+</html>
