@@ -1,12 +1,10 @@
 <html>
-
-<!-- Mirrored from johndunning.com/navbar.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:27:28 GMT -->
 <head>
 <title>NavBar</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" type="text/css" href="navbar.css">
 <script language="JavaScript1.2">
-<!-- 
+<!--
 
 function Initialize()
 {
@@ -64,12 +62,12 @@ function Arrow_Click(inDirection)
         if (destinationIndex < gPages.length && destinationIndex >= 0) {
             top.GotoPage(destinationIndex);
                 // there is a next or previous page, so navigate to it
-            if (gPages[destinationIndex].loadAsTop) {    
+            if (gPages[destinationIndex].loadAsTop) {
                 top.location.href = gPages[destinationIndex].url;
             } else {
                 Content.location.href = gPages[destinationIndex].url;
             }
-        } 
+        }
 */
 //    }
 
@@ -122,35 +120,33 @@ function SubArrow_Click(inDirection)
 
 </head>
 
-<body bgcolor="#000000" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF" 
+<body bgcolor="#000000" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF"
     style="margin-right: 16px;"
     onload="Initialize()">
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr> 
-        <td width="50%" valign="middle" bgcolor="#ffffff"> 
-            <div align="right"><a id="PreviousPage" href="javascript: void(0)" 
-                onMouseOver="return Arrow_MouseOver(-1)" onMouseOut="return Arrow_MouseOut()" 
-                onClick="this.blur(); return Arrow_Click(-1);" title=""><img src="images/left-arrow.gif" width="26" height="26" border="0"></a><a 
-                id="PreviousSubPage" href="javascript: void(0)" onMouseOver="return SubArrow_MouseOver(-1)" onMouseOut="return SubArrow_MouseOut()" 
-                onClick="this.blur(); return SubArrow_Click(-1);" title=""><img src="images/previous-subpage.gif" title="Previous Page" width="26" height="26" border="0"></a><a 
-                id="NextSubPage" href="javascript: void(0)" onMouseOver="return SubArrow_MouseOver(1)" onMouseOut="return SubArrow_MouseOut()" 
-                onClick="this.blur(); return SubArrow_Click(1);" title=""><img src="images/next-subpage.gif" title="Next Page" width="26" height="26" border="0"></a><a 
-                id="NextPage" href="javascript: void(0)" onMouseOver="return Arrow_MouseOver(1)" onMouseOut="return Arrow_MouseOut()" 
+    <tr>
+        <td width="50%" valign="middle" bgcolor="#ffffff">
+            <div align="right"><a id="PreviousPage" href="javascript: void(0)"
+                onMouseOver="return Arrow_MouseOver(-1)" onMouseOut="return Arrow_MouseOut()"
+                onClick="this.blur(); return Arrow_Click(-1);" title=""><img src="images/left-arrow.gif" width="26" height="26" border="0"></a><a
+                id="PreviousSubPage" href="javascript: void(0)" onMouseOver="return SubArrow_MouseOver(-1)" onMouseOut="return SubArrow_MouseOut()"
+                onClick="this.blur(); return SubArrow_Click(-1);" title=""><img src="images/previous-subpage.gif" title="Previous Page" width="26" height="26" border="0"></a><a
+                id="NextSubPage" href="javascript: void(0)" onMouseOver="return SubArrow_MouseOver(1)" onMouseOut="return SubArrow_MouseOut()"
+                onClick="this.blur(); return SubArrow_Click(1);" title=""><img src="images/next-subpage.gif" title="Next Page" width="26" height="26" border="0"></a><a
+                id="NextPage" href="javascript: void(0)" onMouseOver="return Arrow_MouseOver(1)" onMouseOut="return Arrow_MouseOut()"
                 onClick="this.blur(); return Arrow_Click(1);" title=""><img src="images/right-arrow.gif" width="26" height="26" border="0"></a></div>
         </td>
         <td width="25">
             <div align="right"><img src="images/black-dot-26.gif" width="26" height="26"></div>
         </td>
-        <td width="50%" bgcolor="#000000"> <span class="NavBarLink"> <a class="NavBarLink" href="index.html" target="_top" onMouseOver="return NavBarLink_MouseOver('Home')" onMouseOut="return NavBarLink_MouseOut()">Home</a> 
-            &nbsp;|&nbsp; <a class="NavBarLink" href="resume/index.html" target="Content" onMouseOver="return NavBarLink_MouseOver('Resume')" onMouseOut="return NavBarLink_MouseOut()">R&eacute;sum&eacute;</a> 
-            &nbsp;|&nbsp; <a class="NavBarLink" href="portfolio/index.html" target="Content" onMouseOver="return NavBarLink_MouseOver('Portfolio')" onMouseOut="return NavBarLink_MouseOut()">Portfolio</a> 
+        <td width="50%" bgcolor="#000000"> <span class="NavBarLink"> <a class="NavBarLink" href="index.html" target="_top" onMouseOver="return NavBarLink_MouseOver('Home')" onMouseOut="return NavBarLink_MouseOut()">Home</a>
+            &nbsp;|&nbsp; <a class="NavBarLink" href="resume/index.html" target="Content" onMouseOver="return NavBarLink_MouseOver('Resume')" onMouseOut="return NavBarLink_MouseOut()">R&eacute;sum&eacute;</a>
+            &nbsp;|&nbsp; <a class="NavBarLink" href="portfolio/index.html" target="Content" onMouseOver="return NavBarLink_MouseOver('Portfolio')" onMouseOut="return NavBarLink_MouseOut()">Portfolio</a>
             </span> </td>
     </tr>
 </table>
 
 </body>
 
-
-<!-- Mirrored from johndunning.com/navbar.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:27:29 GMT -->
 </html>

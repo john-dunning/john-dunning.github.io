@@ -1,7 +1,5 @@
 <html xmlns:v="urn:schemas-microsoft-com:vml">
 
-
-<!-- Mirrored from johndunning.com/portfolio/brokerage-prototype/brokerage-prototype.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:35:33 GMT -->
 <head>
 
 <title>Brokerage Application Prototype</title>
@@ -75,7 +73,7 @@ function HandleKeyPress(
 </head>
 
 
-<body bgcolor="#FFFFFF" background="resources/images/background.gif" 
+<body bgcolor="#FFFFFF" background="resources/images/background.gif"
 	style="background-repeat: no-repeat; background-position: 0px -20px"
 	scroll="no"
 	onload="this.focus()"
@@ -94,7 +92,7 @@ function HandleKeyPress(
 
 
 <input id="MinChange" name="MinChange" type="text" maxlength="3" value="1"
-	style="position: absolute; left: 448; top: 84px; width: 35" 
+	style="position: absolute; left: 448; top: 84px; width: 35"
 	onkeypress="if (event.keyCode == 13) this.onchange()"
 	onchange="gResultsArea.SetMinChange(this.value)">
 
@@ -104,43 +102,43 @@ function HandleKeyPress(
 <table id="RowTable" border="0" cellpadding="0" cellspacing="0" nowrap style="position: absolute; left: 59; top: 122px; ">
 	<tr valign="middle">
 		<td nowrap width="9" align="left"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
-		<td nowrap align="left" width="40">Symbol</td> 
+		<td nowrap align="left" width="40">Symbol</td>
 		<td nowrap width="15" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
 
-		<td nowrap width="73" align="center" style="color:  black">Last</td> 
+		<td nowrap width="73" align="center" style="color:  black">Last</td>
 		<td nowrap width="2" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px; margin-right: 5px" src="resources/images/column-divider-top.gif"></td>
 
-		<td nowrap width="114" align="center" style="color: black">Change</td> 
+		<td nowrap width="114" align="center" style="color: black">Change</td>
 		<td nowrap width="2" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
 
-		<td nowrap width="133" align="center" valign="middle">Volume</td> 
+		<td nowrap width="133" align="center" valign="middle">Volume</td>
 		<td nowrap width="4" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
 
-		<td nowrap width="65" align="right" valign="middle">Day Low</td> 
+		<td nowrap width="65" align="right" valign="middle">Day Low</td>
 		<td nowrap width="10" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
-		<td nowrap width="73" align="right">Day Range&nbsp;</td> 
+		<td nowrap width="73" align="right">Day Range&nbsp;</td>
 		<td nowrap width="2" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
 
-		<td nowrap width="65" align="right" valign="middle">Day High</td> 
+		<td nowrap width="65" align="right" valign="middle">Day High</td>
 		<td nowrap width="10" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
 
-		<td nowrap width="65" align="right" valign="middle">52-wk Lo</td> 
+		<td nowrap width="65" align="right" valign="middle">52-wk Lo</td>
 		<td nowrap width="10" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
-		<td nowrap width="73" align="right">52-wk Rng&nbsp;</td> 
+		<td nowrap width="73" align="right">52-wk Rng&nbsp;</td>
 		<td nowrap width="2" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
 
-		<td nowrap width="65" align="right" valign="middle">52-wk Hi</td> 
+		<td nowrap width="65" align="right" valign="middle">52-wk Hi</td>
 		<td nowrap width="10" align="right"><img style="position: absolute; top: -1px; width: 2px; height: 22px;" src="resources/images/column-divider-top.gif"></td>
 	</tr>
 </table>
 
-<div id="DisconnectNowButton" style="position: absolute; left: 286px; top: 4px; 
+<div id="DisconnectNowButton" style="position: absolute; left: 286px; top: 4px;
 		width: 115px; height: 22px; cursor: default;"
 		onclick="location.reload()"
 	<img width="1" height="1" src="resources/images/dot-clear.gif">
 </div>
 
-<div id="AddSecurityButton" style="position: absolute; left: 989px; top: 73px; 
+<div id="AddSecurityButton" style="position: absolute; left: 989px; top: 73px;
 		width: 20px; height: 20px; cursor: default; "
 		title="Add a security"
 		onmousedown="this.children[0].style.visibility = 'visible'; document.mouseDownElement = this;"
@@ -151,7 +149,7 @@ function HandleKeyPress(
 	<img width="20" height="20" src="resources/images/add-security-down.gif" style="visibility: hidden; ">
 </div>
 
-<div id="RemoveSecurityButton" style="position: absolute; left: 989px; top: 95px; 
+<div id="RemoveSecurityButton" style="position: absolute; left: 989px; top: 95px;
 		width: 20px; height: 20px; cursor: default; "
 		title="Delete selected security"
 		onmousedown="this.children[0].style.visibility = 'visible'; document.mouseDownElement = this;"
@@ -162,7 +160,7 @@ function HandleKeyPress(
 	<img width="20" height="20" src="resources/images/remove-security-down.gif" style="visibility: hidden; ">
 </div>
 
-<div id="DetailerSummary" style="position: absolute; left: 17px; top: 437px; 
+<div id="DetailerSummary" style="position: absolute; left: 17px; top: 437px;
 		width: 180px; height: 50px; cursor: default;"
 		onclick="document.all.AddSecurityLine.scrollIntoView(false); document.all.SymbolEntry.focus();">
 	<table width="100%" border="0">
@@ -180,7 +178,7 @@ function HandleKeyPress(
 	</div>
 
 	<div id="DetailerSummaryChartBackground" style="position: absolute; left: -7px; top: 110px; ">
-		<img id="DetailerSummaryChart" src="http://ichart.yahoo.com/t?s=qqq" width="192" height="96" border="0" 
+		<img id="DetailerSummaryChart" src="http://ichart.yahoo.com/t?s=qqq" width="192" height="96" border="0"
 			style="position: absolute; z-index: 1500;" onload="this.style.visibility = 'visible'">
 		<div style="position: absolute; left: 135px; top: -2px; width: 55px; height: 8px; z-index: 2000; background-color: white">
 			<img src="resources/images/dot-clear.gif" height="1" width="1">
@@ -196,7 +194,7 @@ function HandleKeyPress(
 </div>
 
 
-<div id="ResultsArea" style="position: absolute; overflow-x: hidden; overflow-y: scroll; left: 10px; top: 143px; 
+<div id="ResultsArea" style="position: absolute; overflow-x: hidden; overflow-y: scroll; left: 10px; top: 143px;
 	width: 1003; height: 283; background-color: white">
 	<img width="1" height="1" src="resources/images/dot-clear.gif">
 
@@ -211,14 +209,14 @@ function HandleKeyPress(
 					onkeypress="if (event.keyCode == ''.charCodeAt(0)) document.all.AddButton.onclick()">
 -->
 
-	<div id="AddSecurityLine" 
+	<div id="AddSecurityLine"
 			style="position: absolute; left: 0px; top: 0px; height: 35px; width: 987; background-color: rgb(75% 75% 75%);">
 		<span style="position: relative; left: 50px; top: 4px">
-			<input id="SymbolEntry" type="text" 
+			<input id="SymbolEntry" type="text"
 					onkeypress="if (event.keyCode == 13) document.all.AddButton.onclick()">
 			&nbsp;
 			<input id="AddButton" type="button" value="Add" style="background-color: #C4C4D3; "
-					onclick="gResultsArea.AddSecurity(document.all.SymbolEntry.value); 
+					onclick="gResultsArea.AddSecurity(document.all.SymbolEntry.value);
 					document.all.AddSecurityMessage.innerText = 'Checking symbol: ' + document.all.SymbolEntry.value + '...';
 					document.all.SymbolEntry.value = ''; document.all.SymbolEntry.focus()">
 			&nbsp;
@@ -240,6 +238,4 @@ Initialize();
 
 </body>
 
-
-<!-- Mirrored from johndunning.com/portfolio/brokerage-prototype/brokerage-prototype.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:35:49 GMT -->
 </html>

@@ -1,7 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
-
-<!-- Mirrored from johndunning.com/fireworks/about/DynamicSymbols by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:10:54 GMT -->
 <head>
 <title>Dynamic Symbols - Adobe Fireworks Extensions, Commands and Panels - johndunning.com</title>
 
@@ -15,7 +13,7 @@
 <meta property="og:image" content="../inc/DynamicSymbols.png">
 
 <meta itemprop="name" content="Dynamic Symbols" />
-<meta itemprop="description" content="Creating the JavaScript code for a rich symbol is a tedious process, even if you're familiar with JS.  Each time you make a change, you need to refresh the Common Library panel, reopen the folder that contains the symbol, drag another instance of the symbol into your document and then test it.  You also end up with a lot of repetitive code to set the default symbol properties and to respond to changes to them.  The Dynamic Symbols panel makes creating rich symbols much simpler and more efficient." /> 
+<meta itemprop="description" content="Creating the JavaScript code for a rich symbol is a tedious process, even if you're familiar with JS.  Each time you make a change, you need to refresh the Common Library panel, reopen the folder that contains the symbol, drag another instance of the symbol into your document and then test it.  You also end up with a lot of repetitive code to set the default symbol properties and to respond to changes to them.  The Dynamic Symbols panel makes creating rich symbols much simpler and more efficient." />
 <meta itemprop="image" content="../inc/DynamicSymbols.png" />
 
 <link rel="icon" href="../../favicon.ico" type="image/x-icon">
@@ -58,10 +56,10 @@ function mxpOnClick(inEvent)
 
 <body>
 
-<div id="doc3" class="yui-t2"> 
-    <div id="bd"> 
-        <div id="yui-main" role="main"> 
-            <div class="yui-b"><div class="yui-g"> 
+<div id="doc3" class="yui-t2">
+    <div id="bd">
+        <div id="yui-main" role="main">
+            <div class="yui-b"><div class="yui-g">
                 <h1 class="Fireworks"><a href="../index.html">fireworks</a></h1>
 
                 <h2 class="CommandName">Dynamic Symbols</h2>
@@ -90,25 +88,25 @@ function mxpOnClick(inEvent)
                             var addthis_options = 'twitter, facebook, buzz, googlebuzz, delicious, digg, email, favorites, more';
                         </script>
                         <a class="AddThis"
-                            href="https://www.addthis.com/bookmark.php?v=20" 
-                            onmouseover="return addthis_open(this, '', '[URL]', 'Dynamic Symbols - Adobe Fireworks extension from johndunning.com')" 
-                            onmouseout="addthis_close()" 
+                            href="https://www.addthis.com/bookmark.php?v=20"
+                            onmouseover="return addthis_open(this, '', '[URL]', 'Dynamic Symbols - Adobe Fireworks extension from johndunning.com')"
+                            onmouseout="addthis_close()"
                             onclick="return addthis_sendto()"
                         ><img src="/fireworks/images/add-this.gif" width="16" height="16" alt="Bookmark and Share" style="border:0"></a>
                     </li> -->
                     <li>
-                        <a href="https://twitter.com/share" 
-                            class="twitter-share-button" 
-                            data-count="horizontal" 
+                        <a href="https://twitter.com/share"
+                            class="twitter-share-button"
+                            data-count="horizontal"
                             data-via="fwextensions"
                             data-text="Dynamic Symbols - #AdobeFireworks extension"
                             data-url="DynamicSymbols.html"
                         ></a>
                     </li>
                     <li>
-                        <fb:like 
-                            href="DynamicSymbols.html" 
-                            layout="button_count" 
+                        <fb:like
+                            href="DynamicSymbols.html"
+                            layout="button_count"
                             width="80"
                         ></fb:like>
                     </li>
@@ -213,8 +211,8 @@ function mxpOnClick(inEvent)
 
 <p>If you want to apply the value to the properties of multiple elements, just include an array of individual changes as the last item in the array.  For instance, the following property would apply the selected color to both the <code>Label</code> and <code>Sublabel</code> elements:</p>
 
-<pre><code>["Label color", "color", "#000000", 
-    ["Label.pathAttributes.fillColor", 
+<pre><code>["Label color", "color", "#000000",
+    ["Label.pathAttributes.fillColor",
     "Sublabel.pathAttributes.fillColor"]
 ],
 </code></pre>
@@ -233,7 +231,7 @@ function mxpOnClick(inEvent)
 <dd>
 <p>A string representing the state of other properties that must be met for this property to be applied.  For instance, you could apply a color to a button label element only when the symbol's <code>State</code> property is set to <code>Normal</code> or <code>Over</code>:</p>
 
-<pre><code>["Button state", "state", 
+<pre><code>["Button state", "state",
     "Bkg_Normal, Bkg_Over, Bkg_Pressed, Bkg_Disabled { visible: false }",
     [
         ["Normal", "Bkg_Normal { visible: true }"],
@@ -242,7 +240,7 @@ function mxpOnClick(inEvent)
         ["Disabled", "Bkg_Disabled { visible: true }"]
     ]
 ],
-["Label color", "color", "#000000", 
+["Label color", "color", "#000000",
     "Label.pathAttributes.fillColor",
     "Button state: Normal, Over"
 ],
@@ -363,7 +361,7 @@ Title { fontsize: 18; }"
 
 <p>The states specified in the final item of the property array can then set the <code>visible</code> property of the appropriate element to <code>true</code> and make any other needed changes:</p>
 
-<pre><code>["Button state", "state", 
+<pre><code>["Button state", "state",
     "Bkg_Normal, Bkg_Over, Bkg_Pressed, Bkg_Disabled { visible: false }",
     [
         ["Normal", "Bkg_Normal { visible: true }"],
@@ -387,7 +385,7 @@ Title { fontsize: 18; }"
 
 <p>The following example would make the text in the rich symbol's <code>Label</code> element bold and red when the <em>Important</em> checkbox is checked:</p>
 
-<pre><code>["Important", "boolean", false, ["Label { bold: false }", 
+<pre><code>["Important", "boolean", false, ["Label { bold: false }",
  "Label { bold: true; pathAttributes.fillColor: #ff0000 }"]]
 </code></pre>
 
@@ -398,7 +396,7 @@ Title { fontsize: 18; }"
 <p>In addition to specifying a literal value in the change strings, you can refer to the current value of another property.  For instance, you might want to use a color picker to specify the label color when a button is in the over state.  You can refer to the color property's value by prefixing its name with an <code>@</code> sign:</p>
 
 <pre><code>["Over color", "color", "#000000"],
-["Button state", "state", 
+["Button state", "state",
     [
         ["Normal", "Label { pathAttributes.fillColor: #000000 }"],
         ["Over", "Label { pathAttributes.fillColor: @Over color }"]
@@ -471,7 +469,7 @@ Title { fontsize: 18; }"
 
 ["editable", "boolean", [
   "textbox, up_fill_, up_border_, over_border_, down_fill_ \
-    { visible: false }", 
+    { visible: false }",
   "textbox { visible: true } up_fill, up_border, over_border, \
     down_fill { visible: false }"
 ]],
@@ -508,7 +506,7 @@ textSelectedColor='$7'&gt;&lt;/mx:ComboBox&gt;"],
                         <li>New Rich Symbol</li>
                     </ul>
                 </div>
-                
+
                 <div class="BottomNav">
                     <div class="Links">
                         <a href="../dl/index87c5.html"
@@ -534,25 +532,25 @@ textSelectedColor='$7'&gt;&lt;/mx:ComboBox&gt;"],
                             var addthis_options = 'twitter, facebook, buzz, googlebuzz, delicious, digg, email, favorites, more';
                         </script>
                         <a class="AddThis"
-                            href="https://www.addthis.com/bookmark.php?v=20" 
-                            onmouseover="return addthis_open(this, '', '[URL]', 'Dynamic Symbols - Adobe Fireworks extension from johndunning.com')" 
-                            onmouseout="addthis_close()" 
+                            href="https://www.addthis.com/bookmark.php?v=20"
+                            onmouseover="return addthis_open(this, '', '[URL]', 'Dynamic Symbols - Adobe Fireworks extension from johndunning.com')"
+                            onmouseout="addthis_close()"
                             onclick="return addthis_sendto()"
                         ><img src="/fireworks/images/add-this.gif" width="16" height="16" alt="Bookmark and Share" style="border:0"></a>
                     </li> -->
                     <li>
-                        <a href="https://twitter.com/share" 
-                            class="twitter-share-button" 
-                            data-count="horizontal" 
+                        <a href="https://twitter.com/share"
+                            class="twitter-share-button"
+                            data-count="horizontal"
                             data-via="fwextensions"
                             data-text="Dynamic Symbols - #AdobeFireworks extension"
                             data-url="DynamicSymbols.html"
                         ></a>
                     </li>
                     <li>
-                        <fb:like 
-                            href="DynamicSymbols.html" 
-                            layout="button_count" 
+                        <fb:like
+                            href="DynamicSymbols.html"
+                            layout="button_count"
                             width="80"
                         ></fb:like>
                     </li>
@@ -580,8 +578,8 @@ textSelectedColor='$7'&gt;&lt;/mx:ComboBox&gt;"],
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                 <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-            </div></div> 
-        </div> 
+            </div></div>
+        </div>
         <div class="yui-b">
             <h1 class="SiteName"><a href="../../index.html">john<b>dunning</b>.com/</a></h1>
 
@@ -609,7 +607,7 @@ This extension will be of interest only to developers of Fireworks extensions. "
 <li><a href="ExportAsFavicon.html" title="The &#34;Export as Favicon&#34; command creates a favicon file from the current document, which must be 16px by 16px.  Using multiple pages, the favicon can also include a 32px or 64px version of the icon.  From Fireworks CS5 onwards, the command now works on both Windows and Mac.">Favicon</a></li>
 <li><a href="FillWithBackground.html" title="When creating mockups, you may need to take a screenshot of an existing dialog or webpage and then modify it for a new design.  You'll probably also have to paint over an existing element in the screenshot, like a button label, to replace it with new text.  So you select a portion of the background pixels in the screenshot, copy them, paste them, stretch them over the element you want to replace, and then flatten the pixels with the original image.  The Fill With Background command does all of this in just one step.">Fill With Background</a></li>
 <li><a href="FillAndStroke.html" title="Have you ever wanted to select several objects, each with a different stroke color, and change all of their stroke widths to a new value? If you try this with the Properties panel, you'll find that all of the selected objects get the same stroke width, but also that their other stroke properties are changed to identical values as well. The commands in this extension help you avoid this problem.">Fill and Stroke</a></li>
-<li><a href="FWConsole.html" title="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels. 
+<li><a href="FWConsole.html" title="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels.
 
 This panel will be of interest only to developers of Fireworks extensions.">Fireworks Console</a></li>
 <li><a href="FixRoundRect.html" title="After you create a rectangle, adjust the Roundness value to set the corners to the desired pixel radius.  Then use the Scale tool to freely resize the rectangle, or use the Info panel to change the size numerically.  Finally, run the Fix Rounded Rect Corners command to fix the corner distortion introduced by the Scale tool.">Fix Rounded Rect Corners</a></li>
@@ -652,8 +650,8 @@ This panel will be of interest only to developers of Fireworks extensions.">Fire
             </div>
         </div>
     </div>
-    <div id="ft"></div> 
-</div> 
+    <div id="ft"></div>
+</div>
 
 <script type="text/javascript" src="../../../www.google-analytics.com/ga.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -668,13 +666,11 @@ try {
 <script src="../../../apis.google.com/js/plusone.js"></script>
 <script src="../../../s7.addthis.com/js/200/addthis_widget.js"></script>
 
-<script> 
+<script>
         // work around FB's annoying bug: http://bugs.developers.facebook.net/show_bug.cgi?id=9777
     try { document.getElementsByTagName('html')[0].style.display = 'block'; } catch(e) {};
-</script> 
+</script>
 
 </body>
 
-
-<!-- Mirrored from johndunning.com/fireworks/about/DynamicSymbols by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:11:15 GMT -->
 </html>

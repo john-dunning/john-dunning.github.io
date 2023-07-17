@@ -1,27 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
-
-<!-- Mirrored from johndunning.com/fireworks/about/FWConsole by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:13:03 GMT -->
 <head>
 <title>Fireworks Console - Adobe Fireworks Extensions, Commands and Panels - johndunning.com</title>
 
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<meta name="description" content="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels. 
+<meta name="description" content="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels.
 
 This panel will be of interest only to developers of Fireworks extensions.">
 
 <meta property="og:site_name" content="johndunning.com/fireworks">
 <meta property="og:title" content="Fireworks Console">
 <meta property="og:url" content="FWConsole.html">
-<meta property="og:description" content="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels. 
+<meta property="og:description" content="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels.
 
 This panel will be of interest only to developers of Fireworks extensions.">
 <meta property="og:image" content="../inc/FWConsole.png">
 
 <meta itemprop="name" content="Fireworks Console" />
-<meta itemprop="description" content="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels. 
+<meta itemprop="description" content="The Fireworks Console simplifies the process of learning the JavaScript API considerably.  Instead of writing and running an entire command, you can simply type code snippets into a panel and immediately see the output.  It's a little like having a command line prompt for Fireworks.  You can also use the console to debug and trace your own .jsf commands and Flash panels.
 
-This panel will be of interest only to developers of Fireworks extensions." /> 
+This panel will be of interest only to developers of Fireworks extensions." />
 <meta itemprop="image" content="../inc/FWConsole.png" />
 
 <link rel="icon" href="../../favicon.ico" type="image/x-icon">
@@ -64,10 +62,10 @@ function mxpOnClick(inEvent)
 
 <body>
 
-<div id="doc3" class="yui-t2"> 
-    <div id="bd"> 
-        <div id="yui-main" role="main"> 
-            <div class="yui-b"><div class="yui-g"> 
+<div id="doc3" class="yui-t2">
+    <div id="bd">
+        <div id="yui-main" role="main">
+            <div class="yui-b"><div class="yui-g">
                 <h1 class="Fireworks"><a href="../index.html">fireworks</a></h1>
 
                 <h2 class="CommandName">Fireworks Console</h2>
@@ -96,25 +94,25 @@ function mxpOnClick(inEvent)
                             var addthis_options = 'twitter, facebook, buzz, googlebuzz, delicious, digg, email, favorites, more';
                         </script>
                         <a class="AddThis"
-                            href="https://www.addthis.com/bookmark.php?v=20" 
-                            onmouseover="return addthis_open(this, '', '[URL]', 'Fireworks Console - Adobe Fireworks extension from johndunning.com')" 
-                            onmouseout="addthis_close()" 
+                            href="https://www.addthis.com/bookmark.php?v=20"
+                            onmouseover="return addthis_open(this, '', '[URL]', 'Fireworks Console - Adobe Fireworks extension from johndunning.com')"
+                            onmouseout="addthis_close()"
                             onclick="return addthis_sendto()"
                         ><img src="/fireworks/images/add-this.gif" width="16" height="16" alt="Bookmark and Share" style="border:0"></a>
                     </li> -->
                     <li>
-                        <a href="https://twitter.com/share" 
-                            class="twitter-share-button" 
-                            data-count="horizontal" 
+                        <a href="https://twitter.com/share"
+                            class="twitter-share-button"
+                            data-count="horizontal"
                             data-via="fwextensions"
                             data-text="Fireworks Console - #AdobeFireworks extension"
                             data-url="FWConsole.html"
                         ></a>
                     </li>
                     <li>
-                        <fb:like 
-                            href="FWConsole.html" 
-                            layout="button_count" 
+                        <fb:like
+                            href="FWConsole.html"
+                            layout="button_count"
                             width="80"
                         ></fb:like>
                     </li>
@@ -312,18 +310,18 @@ function mxpOnClick(inEvent)
 
 <p>A few of these functions are worth highlighting.  Calling <code>keys(el)</code> is handy for dumping just the property names of the first selected Fireworks element:</p>
 
-<pre><code>&gt;&gt;&gt; keys(el): ["blendMode", "customData", "effectList", "height", "isLayer", 
-"isSmartShape", "javascriptString", "left", "locked", "mask", "mode", 
-"name", "opacity", "originalSides", "pathAttributes", "pathOperation", 
+<pre><code>&gt;&gt;&gt; keys(el): ["blendMode", "customData", "effectList", "height", "isLayer",
+"isSmartShape", "javascriptString", "left", "locked", "mask", "mode",
+"name", "opacity", "originalSides", "pathAttributes", "pathOperation",
 "pixelRect", "roundness", "top", "transform", "visible", "width"]
 </code></pre>
 
 <p>By default, <code>keys()</code> will return the keys in sorted order.  You can pass <code>true</code> as the second element to return them in the same order that a <code>for in</code> loop does (this is different behavior than the standard <code>keys()</code> method in Underscore):</p>
 
-<pre><code>&gt;&gt;&gt; keys(el, true): ["pathOperation", "transform", "originalSides", 
-"pathAttributes", "mode", "roundness", "isSmartShape", "customData", 
-"effectList", "locked", "mask", "name", "blendMode", "opacity", "visible", 
-"pixelRect", "height", "left", "width", "top", "isLayer", 
+<pre><code>&gt;&gt;&gt; keys(el, true): ["pathOperation", "transform", "originalSides",
+"pathAttributes", "mode", "roundness", "isSmartShape", "customData",
+"effectList", "locked", "mask", "name", "blendMode", "opacity", "visible",
+"pixelRect", "height", "left", "width", "top", "isLayer",
 "javascriptString"]
 </code></pre>
 
@@ -559,7 +557,7 @@ console.timeEnd("loop"); // prints "loop: 3.2 sec"
 
 <p>This code watches for changes to any properties on <code>foo</code>:</p>
 
-<pre><code>var foo = { 
+<pre><code>var foo = {
     bar: 0,
     baz: 42
 };
@@ -629,7 +627,7 @@ f();
 <p>Displays the current call stack along with the values of each function call's parameters.  An optional message can be displayed with the call stack.  For example, this code:</p>
 
 <pre><code>(function() {
-    var o = { 
+    var o = {
         g: function(x) { console.showStack("in o.g()"); }
     };
 
@@ -796,7 +794,7 @@ myBuggyFunc();
                         <li>Fireworks Console</li>
                     </ul>
                 </div>
-                
+
                 <div class="BottomNav">
                     <div class="Links">
                         <a href="../dl/index9595.html"
@@ -822,25 +820,25 @@ myBuggyFunc();
                             var addthis_options = 'twitter, facebook, buzz, googlebuzz, delicious, digg, email, favorites, more';
                         </script>
                         <a class="AddThis"
-                            href="https://www.addthis.com/bookmark.php?v=20" 
-                            onmouseover="return addthis_open(this, '', '[URL]', 'Fireworks Console - Adobe Fireworks extension from johndunning.com')" 
-                            onmouseout="addthis_close()" 
+                            href="https://www.addthis.com/bookmark.php?v=20"
+                            onmouseover="return addthis_open(this, '', '[URL]', 'Fireworks Console - Adobe Fireworks extension from johndunning.com')"
+                            onmouseout="addthis_close()"
                             onclick="return addthis_sendto()"
                         ><img src="/fireworks/images/add-this.gif" width="16" height="16" alt="Bookmark and Share" style="border:0"></a>
                     </li> -->
                     <li>
-                        <a href="https://twitter.com/share" 
-                            class="twitter-share-button" 
-                            data-count="horizontal" 
+                        <a href="https://twitter.com/share"
+                            class="twitter-share-button"
+                            data-count="horizontal"
                             data-via="fwextensions"
                             data-text="Fireworks Console - #AdobeFireworks extension"
                             data-url="FWConsole.html"
                         ></a>
                     </li>
                     <li>
-                        <fb:like 
-                            href="FWConsole.html" 
-                            layout="button_count" 
+                        <fb:like
+                            href="FWConsole.html"
+                            layout="button_count"
                             width="80"
                         ></fb:like>
                     </li>
@@ -868,8 +866,8 @@ myBuggyFunc();
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                 <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-            </div></div> 
-        </div> 
+            </div></div>
+        </div>
         <div class="yui-b">
             <h1 class="SiteName"><a href="../../index.html">john<b>dunning</b>.com/</a></h1>
 
@@ -938,8 +936,8 @@ This extension will be of interest only to developers of Fireworks extensions. "
             </div>
         </div>
     </div>
-    <div id="ft"></div> 
-</div> 
+    <div id="ft"></div>
+</div>
 
 <script type="text/javascript" src="../../../www.google-analytics.com/ga.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -954,13 +952,11 @@ try {
 <script src="../../../apis.google.com/js/plusone.js"></script>
 <script src="../../../s7.addthis.com/js/200/addthis_widget.js"></script>
 
-<script> 
+<script>
         // work around FB's annoying bug: http://bugs.developers.facebook.net/show_bug.cgi?id=9777
     try { document.getElementsByTagName('html')[0].style.display = 'block'; } catch(e) {};
-</script> 
+</script>
 
 </body>
 
-
-<!-- Mirrored from johndunning.com/fireworks/about/FWConsole by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:13:08 GMT -->
 </html>
