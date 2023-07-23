@@ -49,7 +49,7 @@ function Page(
 }
 
 var gPages = new Array(
-    new Page("index-2.html", "Home", 0, "", "", true),
+    new Page("index.html", "Home", 0, "", "", true),
     new Page("resume/index.html", "Resume"),
     new Page("portfolio/index.html", "Portfolio"),
     new Page("portfolio/cid-1.html", "Cooper", 3, "portfolio", "cid"),
@@ -147,10 +147,10 @@ function PageController_Write(inDocument, inTitle)
         var onFirstPage = (currentPageNumber == 1);
         var onLastPage = (currentPageNumber == gPagesByTitle[inTitle].subPageCount);
 
-        var nextPageURL = gPagesByTitle[inTitle].url.split("index.html")[1];
+        var nextPageURL = gPagesByTitle[inTitle].url.split("/")[1];
         nextPageURL = nextPageURL.substring(0, nextPageURL.indexOf("-") + 1) + (currentPageNumber + 1) + ".html";
 
-        var previousPageURL = gPagesByTitle[inTitle].url.split("index.html")[1];
+        var previousPageURL = gPagesByTitle[inTitle].url.split("/")[1];
         previousPageURL = previousPageURL.substring(0, previousPageURL.indexOf("-") + 1) + (currentPageNumber - 1) + ".html";
 
         inDocument.write("<td width=14 align='center' title='Previous Page' " +
@@ -179,7 +179,7 @@ function PageController_Write(inDocument, inTitle)
                 // the urls have the form aaa-X.html, so we're on the current page if "X" == i
             var onCurrentPage = (inDocument.location.pathname.charAt(inDocument.location.pathname.length - 6) == String(i));
             var subPageURL = gPagesByTitle[inTitle].url;
-            subPageURL = subPageURL.substring(subPageURL.indexOf("index.html") + 1);
+            subPageURL = subPageURL.substring(subPageURL.indexOf("/") + 1);
             subPageURL = subPageURL.substring(0, subPageURL.indexOf("-") + 1) + String(i) + ".html";
 
             inDocument.write("<td width=14 align='center' style='cursor: hand;' " + (onCurrentPage ? "bgcolor='#000000'" : "") +
@@ -217,7 +217,7 @@ function RedirectPage()
                 if (gPagesByTitle[originalPageTitle].subPageCount > 0) {
                         // the original page may have been one of the subpages like do-1.html, so replace the filename
                         // in the page's url with the one passed in the search string
-                    originalURL = originalURL.substr(0, originalURL.lastIndexOf("index.html") + 1) +
+                    originalURL = originalURL.substr(0, originalURL.lastIndexOf("/") + 1) + 
                             searchString.split(",")[1];
                 }
 

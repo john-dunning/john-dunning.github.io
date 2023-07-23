@@ -9,19 +9,19 @@ A:hover {  text-decoration: underline; color: #999999 }
 .PortfolioNumber A:hover {  text-decoration: none; color: #999999 }
 .PortfolioNumber A:active { text-decoration: none; color: #000000 }
 
-BODY { font-size: small; line-height: 150%; font-family: "trebuchet ms", helvetica, arial, sans-serif }
+BODY { line-height: 150%; font-family: "trebuchet ms", helvetica, arial, sans-serif }
 
-P { font-size: small; line-height: 150%; font-family: "trebuchet ms", helvetica, arial, sans-serif }
+P { line-height: 150%; font-family: "trebuchet ms", helvetica, arial, sans-serif }
 
 H2 { margin-top: 24px; font-size: small; font-weight: bold; font-family: "trebuchet ms", trebuchet, helvetica, arial, sans-serif }
-LI { font-size: small; line-height: 150%; font-family: "trebuchet ms", trebuchet, helvetica, arial, sans-serif }
-UL { margin-top: -2em; font-size: small; line-height: 150%; font-family: "trebuchet ms", trebuchet, helvetica, arial, sans-serif }
+LI { line-height: 150%; font-family: "trebuchet ms", trebuchet, helvetica, arial, sans-serif }
+UL { margin-top: -2em; line-height: 150%; font-family: "trebuchet ms", trebuchet, helvetica, arial, sans-serif }
 
 P.InitialPara { }
 P.BodyPara { margin-top: -1em; text-indent: 2em }
 P.Footnote { font-size: x-small; }
 
-.PortfolioCompany { font-size: medium; font-weight: bold;
+.PortfolioCompany { font-size: large; font-weight: bold;
         font-family: "trebuchet ms", helvetica, arial, sans-serif }
 .PortfolioNumber { font-size: 11px; line-height: 11px; font-weight: bold; cursor: hand;
         font-family: "trebuchet ms", helvetica, arial, sans-serif }
@@ -51,5 +51,5 @@ P.Footnote { font-size: x-small; }
 .Company { font-weight: bold }
 
 .JobTitle { font-weight: bold; color: #666666; font-style: italic }
-.WorkDate { font-size: x-small; color: #666666; line-height: 200%; }
-
+.WorkDate { font-size: smaller; color: #666666; line-height: 200%; }
+O
