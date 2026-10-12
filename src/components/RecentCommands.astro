@@ -18,7 +18,7 @@ const commands = await getCommands("dateDescending")
 		recent ones include:
 	</p>
 
-	{commands.slice(0, 3).map(({ slug, data: { name, summary } }) => (
+	{commands.slice(0, 3).map(({ id: slug, data: { name, summary } }) => (
 		<SectionItem
 			title={name}
 			href={base(`/fireworks/about/${slug}`)}

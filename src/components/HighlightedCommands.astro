@@ -27,7 +27,7 @@ const highlights = Highlights.map((highlightName) => commands.find(({ data: { na
 		Fireworks</a> using JavaScript, ActionScript and Flex. Some highlights include:
 	</p>
 
-	{highlights.map(({ slug, data: { name, summary } }) => (
+	{highlights.map(({ id: slug, data: { name, summary } }) => (
 		<SectionItem
 			title={name}
 			href={base(`/fireworks/about/${slug}`)}

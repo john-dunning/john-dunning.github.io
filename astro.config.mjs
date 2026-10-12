@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
+import { unified } from "@astrojs/markdown-remark";
 
 export default defineConfig({
 	site: "https://www.johndunning.com",
@@ -7,10 +8,12 @@ export default defineConfig({
 	compressHTML: false,
 
 	markdown: {
-		remarkPlugins: [
-			"remark-heading-id",
-			"remark-deflist",
-		],
+		processor: unified({
+			remarkPlugins: [
+				"remark-heading-id",
+				"remark-deflist",
+			],
+		}),
 		shikiConfig: {
 			experimentalThemes: {
 				light: "github-light",

@@ -1,7 +1,9 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const commands = defineCollection({
-	type: "content", // v2.5.0 and later
+	loader: glob({ pattern: "*.md", base: "./src/content/commands" }),
 	schema: z.object({
 		fileVersion: z.string(),
 		name: z.string(),

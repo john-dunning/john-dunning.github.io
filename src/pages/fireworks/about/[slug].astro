@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import FireworksCommandLayout from "@/layouts/FireworksCommandLayout.astro";
 import FireworksArticle from "@/components/FireworksArticle.astro";
 import FireworksLinksBar from "@/components/FireworksLinksBar.astro";
@@ -15,7 +15,7 @@ export async function getStaticPaths()
 
 	return commands.map((entry) => ({
 		params: {
-			slug: entry.slug
+			slug: entry.id
 		},
 		props: {
 			entry
@@ -24,13 +24,13 @@ export async function getStaticPaths()
 }
 
 const {
+	entry,
 	entry: {
-		render,
-		slug,
+		id: slug,
 		data: { name, files, fileVersion, version, date, summary }
 	}
 } = Astro.props;
-const { Content } = await render();
+const { Content } = await render(entry);
 const imageData = !!slug && await getIncImage(`${slug}.png`);
 const mxpLinks = await getMxpLinks();
 const downloadLink = mxpLinks.get(fileVersion);
