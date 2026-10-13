@@ -44,7 +44,7 @@ const items = Requested
 			including:</p>
 
 		<ul>
-			{items.map(({ slug, data: { name } }) =>
+			{items.map(({ id: slug, data: { name } }) =>
 				<li>
 					<a href={base(`/fireworks/about/${slug}`)}>{name}</a>
 				</li>

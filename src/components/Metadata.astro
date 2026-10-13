@@ -45,13 +45,13 @@ const { meta: { url, image } } = Astro.props;
 const ogData = {
 	...meta,
 		// make sure the image metadata is an absolute URL, not just a relative path,
-	image: image && new URL(image as string, import.meta.env.SITE),
+	image: image && new URL(image as string, import.meta.env.SITE).href,
 };
 const twitterData = {
 	domain,
 	card: image ? "summary_large_image" : "summary",
 	...meta,
-	image: image && new URL(image as string, import.meta.env.SITE),
+	image: image && new URL(image as string, import.meta.env.SITE).href,
 };
 
 const tags = createTags(meta, metaTag, BaseKeys);

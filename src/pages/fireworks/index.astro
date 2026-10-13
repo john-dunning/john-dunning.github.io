@@ -33,7 +33,7 @@ const meta: MetadataProp = {
 	</p>
 
 	<ul role="list">
-		{commands.map(({ slug, data: { name, summary, date, fileVersion, version } }) => (
+		{commands.map(({ id: slug, data: { name, summary, date, fileVersion, version } }) => (
 			<li>
 				<h2>
 					<a href={link(slug)}>{name}</a>
