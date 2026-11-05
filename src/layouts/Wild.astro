@@ -1,0 +1,41 @@
+---
+import "../styles/reset.css";
+import "../styles/wild.css";
+import Metadata, { type MetadataProp } from "@/components/Metadata.astro";
+import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
+import { base } from "@/utils/urls.ts";
+
+interface Props {
+	meta?: MetadataProp;
+}
+
+const { meta: propMeta } = Astro.props;
+const meta: MetadataProp = {
+	title: "John Dunning",
+	description: "John Dunning's rest stop on the information superhighway.",
+	url: Astro.url.href,
+	type: "website",
+	...propMeta,
+};
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href={base("/favicon.ico")} type="image/x-icon">
+	<meta name="color-scheme" content="dark light" />
+	<title>{meta.title}</title>
+	<Metadata meta={meta} />
+	<GoogleAnalytics />
+</head>
+
+<body>
+	<div class="page">
+		<slot />
+	</div>
+</body>
+
+</html>

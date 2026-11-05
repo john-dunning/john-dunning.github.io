@@ -1,131 +1,269 @@
 ---
 import { Image } from "astro:assets";
-import Layout from "@/layouts/Layout.astro";
-import Section from "@/components/Section.astro";
-import SectionItem from "@/components/SectionItem.astro";
-import HomeSidebar from "@/components/HomeSidebar.astro";
-import HighlightedCommands from "@/components/HighlightedCommands.astro";
-import quickeyThumb from "@/assets/home/quickey.png";
-import yalpfThumb from "@/assets/yalpf/md/frame-in-london.jpg";
+import Wild from "@/layouts/Wild.astro";
+import { getCommands } from "@/utils/getCommands";
+import { base } from "@/utils/urls";
+import { githubProjects } from "@/data/github";
+import yalpfHero from "@/assets/yalpf/md/frame-in-london.jpg";
 
-const sections = [
-	{ title: "github", href: "https://github.com/fwextensions" },
-	{ title: "yalpf", href: "/yalpf/" },
-	{ title: "fireworks", href: "/fireworks/" },
-	{ title: "archive", href: "/archive/core-frames.html?Portfolio" },
+const Highlights = ["JSML Library", "Tables", "SVG", "Spacer", "Dynamic Symbols"];
+
+const commands = await getCommands();
+const highlights = Highlights.map((name) => commands.find(({ data }) => data.name === name)!);
+const commandHref = (slug: string) => base(`/fireworks/about/${slug}`);
+
+	// the summaries contain a little HTML, which the search index doesn't want
+const plain = (html: string) => html
+	.replace(/<br\s*\/?>/g, " ")
+	.replace(/<[^>]+>/g, "")
+	.replace(/&lt;/g, "<")
+	.replace(/&gt;/g, ">")
+	.replace(/&amp;/g, "&")
+	.replace(/&nbsp;/g, " ")
+	.replace(/\s+/g, " ")
+	.trim();
+
+const yalpfSummary = "Yet another laptop picture frame build log. An old Dell, a custom frame, and software that pulled new photos down for five years until Hurricane Sandy got to it.";
+const archiveSummary = "Some really old stuff. Framesets old. Special handling for Netscape Navigator old.";
+
+const searchIndex = [
+	...githubProjects.map(({ name, href, summary }) => ({ kind: "github", name, href, summary })),
+	{ kind: "page", name: "yalpf", href: base("/yalpf/"), summary: yalpfSummary },
+	...commands.map(({ slug, data: { name, summary, version } }) => ({
+		kind: "fireworks",
+		name,
+		href: commandHref(slug),
+		summary: `${plain(summary)} (v${version})`,
+	})),
+	{ kind: "page", name: "archive", href: base("/archive/core-frames.html?Portfolio"), summary: archiveSummary },
 ];
 ---
 
-<Layout>
-	<HomeSidebar slot="sidebar" sections={sections} />
+<Wild>
+	<header class="mast">
+		<a class="wordmark" href={base("/")}>john<span class="dim">dunning</span>.com/<span class="cursor" aria-hidden="true"></span></a>
 
-	<Section
-		title="github"
-		href="https://github.com/fwextensions"
-	>
-		<p slot="description">
-			Coding side projects in various states of completion.
-		</p>
+		<form class="search" role="search" autocomplete="off">
+			<span class="prompt" aria-hidden="true">$</span>
+			<input
+				id="q"
+				name="q"
+				type="search"
+				placeholder={`search ${searchIndex.length} things  (press /)`}
+				aria-label="Search this site"
+				spellcheck="false"
+			/>
+			<output class="status" for="q" aria-live="polite"></output>
+		</form>
+	</header>
 
-		<SectionItem
-			title="QuicKey"
-			href="https://github.com/fwextensions/QuicKey"
-		>
-			<Image slot="thumb" src={quickeyThumb} width="240" alt="" />
-			A 5-star-rated <a href="https://chrome.google.com/webstore/detail/quickey-%E2%80%93-the-quick-tab-s/ldlghkoiihaelfnggonhjnfiabmaficg">Chrome extension</a> for
-			switching tabs with a Quicksilver-style search or a most recently used menu.
+	<p class="tagline">
+		<b>John Dunning</b> writes software. Chrome extensions, Figma plugins,
+		a fuzzy-matching library, and a long tail of tools for an image editor
+		that no longer exists. This is where they live.
+	</p>
 
-			<Fragment slot="extra">
-				<a href="https://fwextensions.github.io/QuicKey/">Homepage</a>
-				<a href="https://chrome.google.com/webstore/detail/quickey-%E2%80%93-the-quick-tab-s/ldlghkoiihaelfnggonhjnfiabmaficg">Chrome Web Store</a>
-			</Fragment>
-		</SectionItem>
+	<ol class="results" id="results" hidden></ol>
 
-		<SectionItem
-			title="wagtail-mcp"
-			href="https://github.com/fwextensions/wagtail-mcp"
-		>
-			A basic MCP server that provides an LLM with read-only access to a Wagtail CMS instance.
+	<main id="sections">
+		<section id="github">
+			<p class="kicker">// coding side projects in various states of completion</p>
+			<h2><a href="https://github.com/fwextensions">github</a></h2>
 
-			<Fragment slot="extra">
-				<a href="https://www.npmjs.com/package/wagtail-mcp"><code>npm i wagtail-mcp</code></a>
-			</Fragment>
-		</SectionItem>
+			<ol class="items">
+				{githubProjects.map(({ name, href, summary, links = [], npm }) => (
+					<li class="item">
+						<a class="name" href={href}>{name}</a>
+						<p class="desc">{summary}</p>
+						<p class="meta">
+							{npm && <a href={`https://www.npmjs.com/package/${npm}`}><code>npm i {npm}</code></a>}
+							{links.map(({ label, href }) => <a href={href}>{label}</a>)}
+						</p>
+					</li>
+				))}
+			</ol>
 
-		<SectionItem
-			title="fwidgets"
-			href="https://github.com/fwextensions/fwidgets"
-		>
-			A library for adding basic UI functionality to a Figma plugin without
-			writing any UI code. Think of it like adding a series of interactive
-			prompts to a command line tool, similar to the wizard structure of
-			something like <code>create-react-app</code>. fwidgets lets you show one
-			UI element at a time to the user, awaiting their input and then responding
-			to it, while keeping all of your code in the main thread.
+			<p class="more"><a href="https://github.com/fwextensions?tab=repositories">all the repos →</a></p>
+		</section>
 
-			<Fragment slot="extra">
-				<a href="https://www.npmjs.com/package/fwidgets"><code>npm i fwidgets</code></a>
-			</Fragment>
-		</SectionItem>
+		<section id="yalpf">
+			<p class="kicker">// a build log, 2007 to 2012</p>
+			<h2><a href={base("/yalpf/")}>yalpf</a></h2>
 
-		<SectionItem
-			title="figma-await-ipc"
-			href="https://github.com/fwextensions/figma-await-ipc"
-		>
-			A simple <code>await</code>-able replacement for <code>postMessage()</code> in Figma plugins.
+			<div class="yalpf">
+				<div>
+					<p class="desc">{yalpfSummary}</p>
+					<p class="more"><a href={base("/yalpf/")}>read the whole thing →</a></p>
+				</div>
 
-			<Fragment slot="extra">
-				<a href="https://www.npmjs.com/package/figma-await-ipc"><code>npm i figma-await-ipc</code></a>
-			</Fragment>
-		</SectionItem>
+				<figure>
+					<Image src={yalpfHero} width="720" alt="The picture frame on a side table in London" />
+					<figcaption>Dell Latitude CSx, 1999. Picture frame, 2007.</figcaption>
+				</figure>
+			</div>
+		</section>
 
-		<SectionItem
-			title="quick-score"
-			href="https://github.com/fwextensions/quick-score"
-		>
-			A string-scoring and fuzzy-matching library. It's based on the algorithm
-			used in the Quicksilver macOS utility and is designed for smart
-			auto-complete. It improves on the original algorithm by tuning the scoring
-			for long strings, such as webpage titles or URLs, so that the order of the
-			results makes more sense for a given search string.
+		<section id="fireworks">
+			<p class="kicker">// {commands.length} free extensions for Adobe Fireworks, in JavaScript, ActionScript and Flex</p>
+			<h2><a href={base("/fireworks/")}>fireworks</a></h2>
 
-			<Fragment slot="extra">
-				<a href="https://fwextensions.github.io/quick-score-demo/">Demo</a>
-				<a href="https://www.npmjs.com/package/quick-score"><code>npm i quick-score</code></a>
-			</Fragment>
-		</SectionItem>
+			<ol class="items">
+				{highlights.map(({ slug, data: { name, summary, version } }) => (
+					<li class="item">
+						<a class="name" href={commandHref(slug)}>{name}</a>
+						<p class="desc" set:html={summary} />
+						<p class="meta">
+							<span>v{version}</span>
+							<a href={commandHref(slug)}>more</a>
+						</p>
+					</li>
+				))}
+			</ol>
 
-		<li class="see-all ui">
-			<a href="https://github.com/fwextensions?tab=repositories">See all the repos &rarr;</a>
-		</li>
-	</Section>
+			<p class="more"><a href={base("/fireworks/")}>all {commands.length} extensions →</a></p>
+		</section>
 
-	<Section
-		title="yalpf"
-		href="/yalpf/"
-	>
-		<Image slot="thumb" src={yalpfThumb} width="240" alt="" />
-		<p slot="description">
-			Yet another laptop picture frame build log. An old Dell, a custom
-			frame, and software that pulled new photos down for five years until
-			Hurricane Sandy got to it.
-		</p>
-	</Section>
+		<section id="archive">
+			<p class="kicker">// the late nineties, preserved</p>
+			<h2><a href={base("/archive/core-frames.html?Portfolio")}>archive</a></h2>
 
-	<HighlightedCommands />
+			<p class="desc tagline">
+				Some really old stuff. (Like, <em>framesets</em> old. Like, special
+				handling for <em>Netscape Navigator</em> old.)
+			</p>
+		</section>
+	</main>
 
-	<Section
-		title="archive"
-		href="/archive/core-frames.html?Portfolio"
-	>
-		<p slot="description">
-			Some really old stuff.  (Like, <em>framesets</em> old.  Like, special handling for <em>Netscape Navigator</em> old.)
-		</p>
-	</Section>
-</Layout>
+	<footer>
+		<span>built with astro</span>
+		<span>set in <a href="https://www.recursive.design/">recursive</a></span>
+		<span>searched with <a href="https://github.com/fwextensions/quick-score">quick-score</a></span>
+		<a href="https://github.com/john-dunning/john-dunning.github.io">source</a>
+	</footer>
 
-<style>
-	.see-all {
-		margin-top: var(--spacing-sm);
+	<script type="application/json" id="search-index" set:html={JSON.stringify(searchIndex)} />
+</Wild>
+
+<script>
+	import { QuickScore } from "quick-score";
+
+	interface Entry {
+		kind: string;
+		name: string;
+		href: string;
+		summary: string;
 	}
-</style>
+
+	type Range = [number, number];
+
+	const MaxResults = 24;
+
+	const index: Entry[] = JSON.parse(document.getElementById("search-index")!.textContent!);
+	const scorer = new QuickScore(index, { keys: ["name", "summary"] });
+	const input = document.getElementById("q") as HTMLInputElement;
+	const status = document.querySelector<HTMLOutputElement>(".search .status")!;
+	const results = document.getElementById("results")!;
+	const sections = document.getElementById("sections")!;
+
+		// wrap each matched range in a <mark>
+	function highlighted(
+		string: string,
+		matches: Range[] = [])
+	{
+		const fragment = document.createDocumentFragment();
+		let previousEnd = 0;
+
+		for (const [start, end] of matches) {
+			fragment.append(string.slice(previousEnd, start));
+
+			const mark = document.createElement("mark");
+
+			mark.textContent = string.slice(start, end);
+			fragment.append(mark);
+			previousEnd = end;
+		}
+
+		fragment.append(string.slice(previousEnd));
+
+		return fragment;
+	}
+
+	function render(
+		query: string)
+	{
+		if (!query.trim()) {
+			results.hidden = true;
+			sections.hidden = false;
+			status.value = "";
+
+			return;
+		}
+
+		const started = performance.now();
+		const hits = scorer.search(query).slice(0, MaxResults);
+		const elapsed = performance.now() - started;
+
+		results.replaceChildren(...hits.map(({ item, matches }) => {
+			const li = document.createElement("li");
+			const kind = document.createElement("span");
+			const title = document.createElement("a");
+			const snippet = document.createElement("p");
+
+			kind.className = "kind";
+			kind.textContent = item.kind;
+			title.className = "title";
+			title.href = item.href;
+			title.append(highlighted(item.name, matches.name));
+			snippet.className = "snippet";
+			snippet.append(highlighted(item.summary, matches.summary));
+			li.append(kind, title, snippet);
+
+			return li;
+		}));
+
+		if (!hits.length) {
+			const empty = document.createElement("li");
+
+			empty.className = "empty";
+			empty.textContent = `nothing matches "${query}"`;
+			results.append(empty);
+		}
+
+		status.value = `${hits.length} match${hits.length === 1 ? "" : "es"} · ${elapsed.toFixed(1)}ms`;
+		results.hidden = false;
+		sections.hidden = true;
+	}
+
+	input.addEventListener("input", () => render(input.value));
+	input.form!.addEventListener("submit", (event) => {
+		event.preventDefault();
+
+		const first = results.querySelector<HTMLAnchorElement>("a.title");
+
+		if (first && !results.hidden) {
+			location.href = first.href;
+		}
+	});
+
+	document.addEventListener("keydown", (event) => {
+		const typing = (event.target as HTMLElement).matches("input, textarea");
+
+		if (event.key === "/" && !typing) {
+			event.preventDefault();
+			input.focus();
+			input.select();
+		} else if (event.key === "Escape" && typing) {
+			input.value = "";
+			render("");
+			input.blur();
+		}
+	});
+
+		// restore a query from the URL, so searches are shareable
+	const initial = new URLSearchParams(location.search).get("q");
+
+	if (initial) {
+		input.value = initial;
+		render(initial);
+	}
+</script>
