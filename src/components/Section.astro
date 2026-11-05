@@ -77,8 +77,10 @@ const { title, href } = Astro.props;
 		top: var(--header-pad-top);
 		z-index: 3;
 		justify-self: start;
-		margin: 0 0 .75rem 0;
-		padding-bottom: .25rem;
+			/* leave at least the header's bottom padding below the title, so
+			   the section content is still clear of the header band at the
+			   moment the title docks */
+		margin: 0 0 calc(var(--header-pad-bottom) + var(--spacing-sm)) 0;
 		transition: color .2s;
 	}
 
