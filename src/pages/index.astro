@@ -1,12 +1,26 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import Section from "@/components/Section.astro";
 import SectionItem from "@/components/SectionItem.astro";
+import HomeSidebar from "@/components/HomeSidebar.astro";
 import HighlightedCommands from "@/components/HighlightedCommands.astro";
+import quickeyThumb from "@/assets/home/quickey.png";
+import yalpfThumb from "@/assets/yalpf/md/frame-in-london.jpg";
+
+const sections = [
+	{ title: "github", href: "https://github.com/fwextensions" },
+	{ title: "yalpf", href: "/yalpf/" },
+	{ title: "fireworks", href: "/fireworks/" },
+	{ title: "archive", href: "/archive/core-frames.html?Portfolio" },
+];
 ---
 
 <Layout>
+	<HomeSidebar slot="sidebar" sections={sections} />
+
 	<Section
+		index={1}
 		title="github"
 		href="https://github.com/fwextensions"
 	>
@@ -18,12 +32,14 @@ import HighlightedCommands from "@/components/HighlightedCommands.astro";
 			title="QuicKey"
 			href="https://github.com/fwextensions/QuicKey"
 		>
-			A 5-star-rated a <a href="https://chrome.google.com/webstore/detail/quickey-%E2%80%93-the-quick-tab-s/ldlghkoiihaelfnggonhjnfiabmaficg">Chrome extension</a> for
+			<Image slot="thumb" src={quickeyThumb} width="240" alt="" />
+			A 5-star-rated <a href="https://chrome.google.com/webstore/detail/quickey-%E2%80%93-the-quick-tab-s/ldlghkoiihaelfnggonhjnfiabmaficg">Chrome extension</a> for
 			switching tabs with a Quicksilver-style search or a most recently used menu.
 
-			<span slot="extra">
-			  <a href="https://fwextensions.github.io/QuicKey/">Homepage</a>
-			</span>
+			<Fragment slot="extra">
+				<a href="https://fwextensions.github.io/QuicKey/">Homepage</a>
+				<a href="https://chrome.google.com/webstore/detail/quickey-%E2%80%93-the-quick-tab-s/ldlghkoiihaelfnggonhjnfiabmaficg">Chrome Web Store</a>
+			</Fragment>
 		</SectionItem>
 
 		<SectionItem
@@ -32,9 +48,9 @@ import HighlightedCommands from "@/components/HighlightedCommands.astro";
 		>
 			A basic MCP server that provides an LLM with read-only access to a Wagtail CMS instance.
 
-			<span slot="extra">
-				<a href="https://www.npmjs.com/package/wagtail-mcp">npm package</a>
-			</span>
+			<Fragment slot="extra">
+				<a href="https://www.npmjs.com/package/wagtail-mcp"><code>npm i wagtail-mcp</code></a>
+			</Fragment>
 		</SectionItem>
 
 		<SectionItem
@@ -48,9 +64,9 @@ import HighlightedCommands from "@/components/HighlightedCommands.astro";
 			UI element at a time to the user, awaiting their input and then responding
 			to it, while keeping all of your code in the main thread.
 
-			<span slot="extra">
-				<a href="https://www.npmjs.com/package/fwidgets">npm package</a>
-			</span>
+			<Fragment slot="extra">
+				<a href="https://www.npmjs.com/package/fwidgets"><code>npm i fwidgets</code></a>
+			</Fragment>
 		</SectionItem>
 
 		<SectionItem
@@ -59,9 +75,9 @@ import HighlightedCommands from "@/components/HighlightedCommands.astro";
 		>
 			A simple <code>await</code>-able replacement for <code>postMessage()</code> in Figma plugins.
 
-			<span slot="extra">
-				<a href="https://www.npmjs.com/package/figma-await-ipc">npm package</a>
-			</span>
+			<Fragment slot="extra">
+				<a href="https://www.npmjs.com/package/figma-await-ipc"><code>npm i figma-await-ipc</code></a>
+			</Fragment>
 		</SectionItem>
 
 		<SectionItem
@@ -74,30 +90,34 @@ import HighlightedCommands from "@/components/HighlightedCommands.astro";
 			for long strings, such as webpage titles or URLs, so that the order of the
 			results makes more sense for a given search string.
 
-			<span slot="extra">
+			<Fragment slot="extra">
 				<a href="https://fwextensions.github.io/quick-score-demo/">Demo</a>
-				&nbsp;&nbsp;&nbsp;
-				<a href="https://www.npmjs.com/package/quick-score">npm package</a>
-			</span>
+				<a href="https://www.npmjs.com/package/quick-score"><code>npm i quick-score</code></a>
+			</Fragment>
 		</SectionItem>
 
-		<li>
-			<a href="https://github.com/fwextensions?tab=repositories">See all the repos</a>
+		<li class="see-all ui">
+			<a href="https://github.com/fwextensions?tab=repositories">See all the repos &rarr;</a>
 		</li>
 	</Section>
 
 	<Section
+		index={2}
 		title="yalpf"
 		href="/yalpf/"
 	>
+		<Image slot="thumb" src={yalpfThumb} width="240" alt="" />
 		<p slot="description">
-			Yet another laptop picture frame build log.
+			Yet another laptop picture frame build log. An old Dell, a custom
+			frame, and software that pulled new photos down for five years until
+			Hurricane Sandy got to it.
 		</p>
 	</Section>
 
-	<HighlightedCommands />
+	<HighlightedCommands index={3} />
 
 	<Section
+		index={4}
 		title="archive"
 		href="/archive/core-frames.html?Portfolio"
 	>
@@ -106,3 +126,9 @@ import HighlightedCommands from "@/components/HighlightedCommands.astro";
 		</p>
 	</Section>
 </Layout>
+
+<style>
+	.see-all {
+		margin-top: var(--spacing-sm);
+	}
+</style>

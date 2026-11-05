@@ -1,23 +1,39 @@
 ---
+import { Image } from "astro:assets";
 import SectionItem from "@/components/SectionItem.astro";
 import Section from "@/components/Section.astro";
 import { getCommands } from "@/utils/getCommands";
 import { base } from "@/utils/urls";
+import jsmlThumb from "@/assets/inc/JSMLLibrary.png";
+import tablesThumb from "@/assets/inc/tables/col-row-tab.png";
+import svgThumb from "@/assets/inc/SVG.png";
+import spacerThumb from "@/assets/inc/Spacer.png";
+import dynamicSymbolsThumb from "@/assets/inc/DynamicSymbols.png";
 
-const Highlights = [
-	"JSML Library",
-	"Tables",
-	"SVG",
-	"Spacer",
-	"Dynamic Symbols",
-];
+interface Props {
+	index?: number;
+}
+
+const { index } = Astro.props;
+
+const Highlights = {
+	"JSML Library": jsmlThumb,
+	"Tables": tablesThumb,
+	"SVG": svgThumb,
+	"Spacer": spacerThumb,
+	"Dynamic Symbols": dynamicSymbolsThumb,
+};
 
 const commands = await getCommands()
-const highlights = Highlights.map((highlightName) => commands.find(({ data: { name } }) => name === highlightName));
+const highlights = Object.entries(Highlights).map(([highlightName, thumb]) => ({
+	thumb,
+	command: commands.find(({ data: { name } }) => name === highlightName),
+}));
 // use set:html below so that HTML entities are not escaped, like in the SVG command
 ---
 
 <Section
+	index={index}
 	title="fireworks"
 	href="/fireworks/"
 >
@@ -27,16 +43,24 @@ const highlights = Highlights.map((highlightName) => commands.find(({ data: { na
 		Fireworks</a> using JavaScript, ActionScript and Flex. Some highlights include:
 	</p>
 
-	{highlights.map(({ slug, data: { name, summary } }) => (
+	{highlights.map(({ thumb, command: { slug, data: { name, summary } } }) => (
 		<SectionItem
 			title={name}
 			href={base(`/fireworks/about/${slug}`)}
 			addMore={true}
-			set:html={summary}
-		/>
+		>
+			<Image slot="thumb" src={thumb} width="240" alt="" />
+			<Fragment set:html={summary} />
+		</SectionItem>
 	))}
 
-	<li>
-		<a href="fireworks/">See all the extensions</a>
+	<li class="see-all ui">
+		<a href="fireworks/">See all the extensions &rarr;</a>
 	</li>
 </Section>
+
+<style>
+	.see-all {
+		margin-top: var(--spacing-sm);
+	}
+</style>

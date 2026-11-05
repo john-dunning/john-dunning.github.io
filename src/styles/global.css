@@ -1,13 +1,18 @@
+@import "@fontsource-variable/archivo/wdth.css";
+@import "@fontsource-variable/source-serif-4/opsz.css";
+@import "@fontsource-variable/source-serif-4/opsz-italic.css";
+
 :root {
 	color-scheme: light dark;
 
 	--text-color-accent: #cc3300;
-	--text-color-primary: #000;
+	--text-color-primary: #1a1a1a;
 	--text-color-secondary: #666;
 	--text-color-muted: #333;
 	--color-background: #fff;
 	--color-surface: #f3f3f3;
 	--color-border: #ccc;
+	--color-rule: #e2e2e2;
 	--color-link-hover: #999999;
 	--color-link-visited: #883300;
 	--color-code-bg: #f3f3f3;
@@ -16,46 +21,66 @@
 	--header-primary: #000;
 	--header-secondary: #666;
 
-	font-size: 16px;
+	--font-display: "Archivo Variable", "Trebuchet MS", system-ui, sans-serif;
+	--font-body: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
+	--font-mono: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono",
+		"DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+
+		/* type scale, roughly a major third */
+	--text-xs: .8125rem;
+	--text-sm: .9375rem;
+	--text-md: 1.0625rem;
+	--text-lg: 1.25rem;
+	--text-xl: 1.75rem;
+	--text-2xl: 2.25rem;
+
+	font-size: 17px;
 	--spacing-sm: 0.75rem;
 	--spacing-md: 1.5rem;
 	--spacing-lg: 2.5rem;
 	--spacing-xl: 5rem;
-	--content-w: 60rem;
+	--content-w: 62rem;
+	--sidebar-w: 14rem;
+	--gutter-w: 8rem;
 
 	@media (max-width: 1100px) {
 		--content-w: 52rem;
+		--sidebar-w: 12rem;
+		--gutter-w: 7rem;
 	}
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		color-scheme: dark;
-		--text-color-accent: #ee3300;
-		--text-color-primary: #f5f5f6;
-		--text-color-secondary: #b6b7bc;
+		--text-color-accent: #f0633a;
+		--text-color-primary: #f0f0f1;
+		--text-color-secondary: #a9aab0;
 		--text-color-muted: #d6d7dc;
-		--color-background: #202020;
+		--color-background: #1f1f20;
 		--color-surface: #303030;
 		--color-border: #555;
+		--color-rule: #3a3a3b;
 		--color-link-hover: #ffb48a;
 		--color-link-visited: #d2694b;
 		--color-code-bg: #3a3a3a;
 		--color-code-text: #f2f2f2;
 		--color-inline-code: #f2f2f2;
-		--header-primary: #eee;
-		--header-secondary: #aaa;
+		--header-primary: #f4f4f4;
+		--header-secondary: #9a9a9e;
 	}
 }
 
 html {
-	font-family: "Trebuchet MS", system-ui, sans-serif;
+	font-family: var(--font-body);
+	font-size: 17px;
 	color: var(--text-color-primary);
 	background-color: var(--color-background);
+	font-feature-settings: "kern", "liga", "onum";
 }
 
 body {
-	line-height: 1.25;
+	line-height: 1.5;
 	padding: 0 max(var(--spacing-md), (100vw - var(--content-w)) / 2);
 	margin: auto;
 }
@@ -66,11 +91,13 @@ body > .content {
 	grid-template-areas:
 		"site-name header"
 		"sidebar main";
-	grid-template-columns: min-content 1fr;
+	grid-template-columns: var(--sidebar-w) 1fr;
+	column-gap: var(--spacing-md);
 
 	@media (max-width: 720px) {
 		grid-template-areas:
 			"site-name header"
+			"sidebar sidebar"
 			"main main";
 		grid-template-columns: auto 1fr;
 	}
@@ -81,17 +108,20 @@ main {
 }
 
 h1, h2, h3, h4 {
-	font-weight: bold;
-	color: var(--text-color-secondary);
+	font-family: var(--font-display);
+	font-weight: 600;
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+	color: var(--text-color-primary);
 }
 
 h1 {
-	font-size: 1.5rem;
+	font-size: var(--text-2xl);
 	margin: 3rem 0 0.75rem 0;
 }
 
 h2 {
-	font-size: 1rem;
+	font-size: var(--text-lg);
 	margin: 1rem 0 0.25rem 0;
 }
 
@@ -105,6 +135,8 @@ p:last-of-type {
 
 a {
 	text-decoration: none;
+	text-underline-offset: .15em;
+	text-decoration-thickness: 1px;
 }
 
 a:hover {
@@ -118,6 +150,17 @@ a, a:link, a:hover, a:active {
 
 a:visited {
 	color: var(--color-link-visited);
+}
+
+	/* headings are links to their own subject; keep them in the text color
+	   so the accent is reserved for links inside running text */
+:is(h1, h2, h3) a:is(:link, :visited) {
+	color: inherit;
+}
+
+:is(h1, h2, h3) a:is(:hover, :active) {
+	color: var(--text-color-accent);
+	text-decoration: none;
 }
 
 strong {
@@ -139,7 +182,7 @@ ol, ul {
 	padding-inline-start: 1.5em;
 }
 
-ol li {
+ol:not([role="list"]) li {
 	list-style: decimal outside;
 }
 
@@ -158,11 +201,17 @@ sup {
 }
 
 code {
-	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-	Bitstream Vera Sans Mono, Courier New, monospace;
+	font-family: var(--font-mono);
 	font-size: .85em;
 	background-color: var(--color-code-bg);
 	color: var(--color-code-text);
 	padding: .15em .3em;
 	border-radius: .25rem;
+}
+
+	/* small secondary text set in the display face: dates, meta lines, nav */
+.ui {
+	font-family: var(--font-display);
+	font-size: var(--text-sm);
+	line-height: 1.4;
 }

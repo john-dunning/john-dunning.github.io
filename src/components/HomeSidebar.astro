@@ -1,0 +1,129 @@
+---
+import { base } from "@/utils/urls.ts";
+
+interface Props {
+	sections: { title: string; href: string; }[];
+}
+
+const { sections } = Astro.props;
+---
+
+<aside class="ui">
+	<p class="intro">
+		Software engineer. Chrome extensions, Figma plugins, and&nbsp;a long tail of
+		tools for an image editor that no longer exists.
+	</p>
+
+	<nav aria-label="Sections">
+		<ol role="list">
+			{sections.map(({ title, href }, i) => (
+				<li>
+					<a href={href.startsWith("http") ? href : base(href)}>
+						<span class="num">{String(i + 1).padStart(2, "0")}</span>
+						{title}
+					</a>
+				</li>
+			))}
+		</ol>
+	</nav>
+
+	<p class="contact">
+		<a href="https://github.com/fwextensions">github.com/fwextensions</a><br>
+		<a href="#">john at johndunning dot com</a>
+	</p>
+</aside>
+
+<style lang="scss">
+	aside {
+		grid-area: sidebar;
+		position: sticky;
+		top: 2rem;
+		align-self: start;
+		padding-right: var(--spacing-md);
+		color: var(--text-color-secondary);
+	}
+
+	.intro {
+		font-family: var(--font-body);
+		font-size: var(--text-md);
+		font-style: italic;
+		line-height: 1.4;
+		color: var(--text-color-muted);
+		margin: 0 0 var(--spacing-lg) 0;
+		text-wrap: pretty;
+	}
+
+	nav ol {
+		margin: 0;
+		padding: 0;
+		border-top: 1px solid var(--color-rule);
+	}
+
+	nav li {
+		border-bottom: 1px solid var(--color-rule);
+	}
+
+	nav a {
+		display: flex;
+		gap: .75rem;
+		padding: .45rem 0;
+		color: var(--text-color-primary);
+		font-weight: 500;
+
+		&:hover {
+			text-decoration: none;
+			color: var(--text-color-accent);
+
+			.num {
+				color: var(--text-color-accent);
+			}
+		}
+
+		&:visited {
+			color: var(--text-color-primary);
+		}
+	}
+
+	.num {
+		font-variant-numeric: tabular-nums;
+		color: var(--text-color-secondary);
+		font-weight: 400;
+	}
+
+	.contact {
+		margin-top: var(--spacing-lg);
+		font-size: var(--text-xs);
+		line-height: 1.7;
+
+		a {
+			color: var(--text-color-secondary);
+
+			&:hover {
+				color: var(--text-color-accent);
+			}
+		}
+	}
+
+	@media (max-width: 720px) {
+		aside {
+			position: static;
+			padding-right: 0;
+			margin-bottom: var(--spacing-md);
+		}
+
+		nav ol {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0 1.25rem;
+			border-top: none;
+		}
+
+		nav li {
+			border-bottom: none;
+		}
+
+		.contact {
+			display: none;
+		}
+	}
+</style>

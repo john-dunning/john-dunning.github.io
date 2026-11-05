@@ -10,49 +10,58 @@ const [section, ...restOfPath] = Astro.url.pathname
 	.filter(Boolean);
 ---
 
-<div class="site-name">
-	<a href={base("/")} aria-current={section ? undefined : "page"}>
-		john<strong>dunning</strong>.com/
-	</a>
-</div>
-
 <header>
+	<a class="site-name" href={base("/")} aria-current={section ? undefined : "page"}>
+		john<strong>dunning</strong>.com<span class="slash">/</span>
+	</a>
 	{section &&
-		<a href={base(`/${section}/`)} aria-current={restOfPath.length ? undefined : "page"}>{section}</a>
+		<a class="section" href={base(`/${section}/`)} aria-current={restOfPath.length ? undefined : "page"}>{section}</a>
 	}
 </header>
 
 <style lang="scss">
-	header, .site-name {
+	header {
+		grid-column: 1 / -1;
+		grid-row: 1;
+		font-family: var(--font-display);
+		font-stretch: 90%;
+		font-size: var(--text-xl);
+		font-weight: 500;
+		letter-spacing: -0.02em;
+		line-height: 1;
 		color: var(--header-secondary);
-		font-size: 1.75rem;
-		font-weight: bold;
-		margin: 1.25rem 0 2rem 0;
-		position: relative;
+		margin: 1.5rem 0 2.5rem 0;
+		white-space: nowrap;
 
 		& a[aria-current] {
 			pointer-events: none;
 		}
-	}
 
-	.site-name {
-		grid-area: site-name;
-
-		& a {
-			color: var(--header-secondary);
-
-			& strong {
-				color: var(--header-primary);
-			}
+		& a:hover {
+			text-decoration: none;
 		}
 	}
 
-	header {
-		color: var(--text-color-accent);
-		grid-area: header;
+	.site-name {
+		color: var(--header-secondary);
 
-		& a:visited {
-			color: inherit;
+		& strong {
+			color: var(--header-primary);
+			font-weight: 800;
+		}
+
+		& .slash {
+			color: var(--color-border);
+			font-weight: 300;
+			margin-left: .05em;
+		}
+	}
+
+	.section {
+		color: var(--text-color-accent);
+
+		&:visited {
+			color: var(--text-color-accent);
 		}
 	}
 </style>

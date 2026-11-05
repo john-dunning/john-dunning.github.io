@@ -4,40 +4,116 @@ import { base } from "@/utils/urls.ts";
 interface Props {
 	title: string;
 	href: string;
+	index?: number;
 }
 
-const { title, href } = Astro.props;
+const { title, href, index } = Astro.props;
 ---
 
 <article>
+	<div class="gutter ui">
+		{index !== undefined && <span class="num">{String(index).padStart(2, "0")}</span>}
+		{Astro.slots.has("thumb") &&
+			<a class="thumb" href={base(href)} tabindex="-1" aria-hidden="true">
+				<slot name="thumb" />
+			</a>
+		}
+	</div>
+
 	<h2>
 		<a href={base(href)}>{title}</a>
 	</h2>
 
-	<div class="container">
+	<div class="description">
 		<slot name="description" />
-
-		<ul role="list">
-			<slot />
-		</ul>
 	</div>
+
+	<ul role="list">
+		<slot />
+	</ul>
 </article>
 
 <style>
 	article {
-		margin-top: 6rem;
+		display: grid;
+		grid-template-columns: var(--gutter-w) minmax(0, 1fr);
+		grid-template-areas:
+			"gutter title"
+			"gutter description"
+			"gutter items";
+		column-gap: 0;
+		margin-top: var(--spacing-xl);
+		padding-top: var(--spacing-md);
+		border-top: 1px solid var(--color-rule);
 	}
 
-	h2 {
-		font-size: 1.75rem;
-		margin-bottom: .75rem;
+	article:first-of-type {
+		margin-top: 0;
 	}
 
-	h2 a:visited {
+	.gutter {
+		grid-area: gutter;
+		padding-top: .35rem;
+	}
+
+	.num {
+		font-variant-numeric: tabular-nums;
 		color: var(--text-color-accent);
 	}
 
+	.thumb {
+		display: block;
+		width: calc(var(--gutter-w) - 1.25rem);
+		margin-top: .75rem;
+		border: 1px solid var(--color-border);
+		border-radius: 3px;
+		overflow: hidden;
+		background: var(--color-surface);
+		line-height: 0;
+	}
+
+	.thumb :global(img) {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	h2 {
+		grid-area: title;
+		font-size: var(--text-xl);
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		margin: 0 0 .5rem 0;
+	}
+
+	.description {
+		grid-area: description;
+		font-size: var(--text-md);
+		color: var(--text-color-muted);
+		max-width: 38rem;
+	}
+
 	ul {
-		margin-top: 1.5rem;
+		grid-area: items;
+		margin: var(--spacing-md) 0 0 0;
+		padding: 0;
+	}
+
+	ul:empty {
+		display: none;
+	}
+
+	@media (max-width: 720px) {
+		article {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"title"
+				"description"
+				"items";
+		}
+
+		.gutter {
+			display: none;
+		}
 	}
 </style>

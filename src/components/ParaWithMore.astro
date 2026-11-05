@@ -8,7 +8,7 @@ const { href } = Astro.props;
 
 <p>
 	<slot />
-	{ href && <a class="more-info" href={href}>more&hellip;</a> }
+	{ href && <a class="more-info ui" href={href}>more&hellip;</a> }
 </p>
 
 <style>
@@ -17,7 +17,8 @@ const { href } = Astro.props;
 	}
 
 	a.more-info {
-		font-size: smaller;
-		padding-left: .25rem;
+		font-size: var(--text-xs);
+		padding-left: .35rem;
+		white-space: nowrap;
 	}
 </style>
