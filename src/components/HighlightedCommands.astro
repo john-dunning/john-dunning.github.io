@@ -10,12 +10,6 @@ import svgThumb from "@/assets/inc/SVG.png";
 import spacerThumb from "@/assets/inc/Spacer.png";
 import dynamicSymbolsThumb from "@/assets/inc/DynamicSymbols.png";
 
-interface Props {
-	index?: number;
-}
-
-const { index } = Astro.props;
-
 const Highlights = {
 	"JSML Library": jsmlThumb,
 	"Tables": tablesThumb,
@@ -33,7 +27,6 @@ const highlights = Object.entries(Highlights).map(([highlightName, thumb]) => ({
 ---
 
 <Section
-	index={index}
 	title="fireworks"
 	href="/fireworks/"
 >

@@ -39,13 +39,16 @@
 	--spacing-lg: 2.5rem;
 	--spacing-xl: 5rem;
 	--content-w: 62rem;
-	--sidebar-w: 14rem;
-	--gutter-w: 8rem;
+	--gutter-w: 7rem;
+
+		/* the sticky header; section titles dock at --header-pad-top */
+	--header-pad-top: 1.5rem;
+	--header-pad-bottom: 1rem;
+	--header-h: calc(var(--header-pad-top) + var(--text-xl) + var(--header-pad-bottom));
 
 	@media (max-width: 1100px) {
 		--content-w: 52rem;
-		--sidebar-w: 12rem;
-		--gutter-w: 7rem;
+		--gutter-w: 6rem;
 	}
 }
 
@@ -86,24 +89,15 @@ body {
 
 body > .content {
 	max-width: var(--content-w);
-	display: grid;
-	grid-template-areas:
-		"site-name header"
-		"sidebar main";
-	grid-template-columns: var(--sidebar-w) 1fr;
-	column-gap: var(--spacing-md);
-
-	@media (max-width: 720px) {
-		grid-template-areas:
-			"site-name header"
-			"sidebar sidebar"
-			"main main";
-		grid-template-columns: auto 1fr;
-	}
 }
 
-main {
-	position: relative;
+	/* the wordmark, and anything that needs to line up with it */
+.wordmark {
+	font-family: var(--font-display);
+	font-size: var(--text-xl);
+	font-weight: bold;
+	line-height: 1;
+	white-space: nowrap;
 }
 
 h1, h2, h3, h4 {

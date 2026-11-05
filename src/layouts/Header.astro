@@ -11,27 +11,24 @@ const [section, ...restOfPath] = Astro.url.pathname
 ---
 
 <header>
-	<a class="site-name" href={base("/")} aria-current={section ? undefined : "page"}>
-		john<strong>dunning</strong>.com<span class="slash">/</span>
+	<a class="site-name wordmark" href={base("/")} aria-current={section ? undefined : "page"}>
+		john<strong>dunning</strong>.com/
 	</a>
 	{section &&
-		<a class="section" href={base(`/${section}/`)} aria-current={restOfPath.length ? undefined : "page"}>{section}</a>
+		<a class="section wordmark" href={base(`/${section}/`)} aria-current={restOfPath.length ? undefined : "page"}>{section}</a>
 	}
 </header>
 
 <style lang="scss">
 	header {
-		grid-column: 1 / -1;
-		grid-row: 1;
+		position: sticky;
+		top: 0;
+		z-index: 2;
 		display: flex;
 		align-items: baseline;
-		font-family: var(--font-display);
-		font-size: var(--text-xl);
-		font-weight: bold;
-		line-height: 1;
+		padding: var(--header-pad-top) 0 var(--header-pad-bottom) 0;
+		background: var(--color-background);
 		color: var(--header-secondary);
-		margin: 1.5rem 0 2.5rem 0;
-		white-space: nowrap;
 
 		& a[aria-current] {
 			pointer-events: none;
@@ -48,10 +45,6 @@ const [section, ...restOfPath] = Astro.url.pathname
 		& strong {
 			color: var(--header-primary);
 		}
-
-		& .slash {
-			color: var(--header-secondary);
-		}
 	}
 
 	.section {
@@ -59,6 +52,12 @@ const [section, ...restOfPath] = Astro.url.pathname
 
 		&:visited {
 			color: var(--text-color-accent);
+		}
+	}
+
+	@media (max-width: 720px) {
+		header {
+			position: static;
 		}
 	}
 </style>

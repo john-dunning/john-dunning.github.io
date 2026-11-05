@@ -16,12 +16,9 @@ const { sections } = Astro.props;
 
 	<nav aria-label="Sections">
 		<ol role="list">
-			{sections.map(({ title, href }, i) => (
+			{sections.map(({ title, href }) => (
 				<li>
-					<a href={href.startsWith("http") ? href : base(href)}>
-						<span class="num">{i + 1}</span>
-						{title}
-					</a>
+					<a href={href.startsWith("http") ? href : base(href)}>{title}</a>
 				</li>
 			))}
 		</ol>
@@ -37,8 +34,9 @@ const { sections } = Astro.props;
 	aside {
 		grid-area: sidebar;
 		position: sticky;
-		top: 2rem;
+		top: var(--header-h);
 		align-self: start;
+		padding-top: var(--spacing-sm);
 		padding-right: var(--spacing-md);
 		color: var(--text-color-secondary);
 	}
@@ -64,8 +62,7 @@ const { sections } = Astro.props;
 	}
 
 	nav a {
-		display: flex;
-		gap: .75rem;
+		display: block;
 		padding: .45rem 0;
 		color: var(--text-color-primary);
 		font-weight: 500;
@@ -74,20 +71,11 @@ const { sections } = Astro.props;
 			text-decoration: none;
 			color: var(--text-color-accent);
 
-			.num {
-				color: var(--text-color-accent);
-			}
 		}
 
 		&:visited {
 			color: var(--text-color-primary);
 		}
-	}
-
-	.num {
-		width: 1.1rem;
-		color: var(--text-color-secondary);
-		font-weight: normal;
 	}
 
 	.contact {

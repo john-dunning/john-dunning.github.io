@@ -4,25 +4,23 @@ import { base } from "@/utils/urls.ts";
 interface Props {
 	title: string;
 	href: string;
-	index?: number;
 }
 
-const { title, href, index } = Astro.props;
+const { title, href } = Astro.props;
 ---
 
 <article>
-	<div class="gutter ui">
-		{index !== undefined && <span class="num">{index}</span>}
+	<h2 class="wordmark" data-docking-title>
+		<a href={base(href)}>{title}</a>
+	</h2>
+
+	<div class="gutter">
 		{Astro.slots.has("thumb") &&
 			<a class="thumb" href={base(href)} tabindex="-1" aria-hidden="true">
 				<slot name="thumb" />
 			</a>
 		}
 	</div>
-
-	<h2>
-		<a href={base(href)}>{title}</a>
-	</h2>
 
 	<div class="description">
 		<slot name="description" />
@@ -33,15 +31,35 @@ const { title, href, index } = Astro.props;
 	</ul>
 </article>
 
+<script>
+		// section titles are sticky, and dock just after the slash in the
+		// wordmark.  there's no CSS :stuck state, so watch each title with an
+		// observer whose root is inset by the docking offset: once the title is
+		// pinned there, it's partially outside the inset root
+	const titles = document.querySelectorAll<HTMLElement>("[data-docking-title]");
+
+	if (titles.length) {
+		const top = parseFloat(getComputedStyle(titles[0]).top) || 0;
+		const observer = new IntersectionObserver(
+			(entries) => entries.forEach(({ target, intersectionRatio, boundingClientRect }) => {
+				target.classList.toggle("docked", intersectionRatio < 1 && boundingClientRect.top <= top + 1);
+			}),
+			{ threshold: [1], rootMargin: `-${top + 1}px 0px 0px 0px` }
+		);
+
+		titles.forEach((title) => observer.observe(title));
+	}
+</script>
+
 <style>
 	article {
+		position: relative;
 		display: grid;
 		grid-template-columns: var(--gutter-w) minmax(0, 1fr);
 		grid-template-areas:
-			"gutter title"
+			"title title"
 			"gutter description"
 			"gutter items";
-		column-gap: 0;
 		margin-top: var(--spacing-xl);
 		padding-top: var(--spacing-md);
 		border-top: 1px solid var(--color-rule);
@@ -49,34 +67,34 @@ const { title, href, index } = Astro.props;
 
 	article:first-of-type {
 		margin-top: 0;
+		padding-top: var(--spacing-sm);
+		border-top: none;
+	}
+
+	h2 {
+		grid-area: title;
+		position: sticky;
+		top: var(--header-pad-top);
+		z-index: 3;
+		justify-self: start;
+		margin: 0 0 .75rem 0;
+		padding-bottom: .25rem;
+		transition: color .2s;
+	}
+
+	h2.docked {
+		color: var(--text-color-accent);
 	}
 
 	.gutter {
 		grid-area: gutter;
-		padding-top: .45rem;
+		padding-top: .35rem;
 		padding-right: 1.25rem;
-	}
-
-		/* a plain numeral with a sideline running out to the title */
-	.num {
-		display: flex;
-		align-items: center;
-		gap: .6rem;
-		font-weight: bold;
-		color: var(--text-color-accent);
-	}
-
-	.num::after {
-		content: "";
-		flex: 1;
-		height: 1px;
-		background: var(--color-border);
 	}
 
 	.thumb {
 		display: block;
 		width: calc(var(--gutter-w) - 1.25rem);
-		margin-top: .75rem;
 		border: 1px solid var(--color-border);
 		border-radius: 3px;
 		overflow: hidden;
@@ -88,13 +106,6 @@ const { title, href, index } = Astro.props;
 		width: 100%;
 		height: auto;
 		display: block;
-	}
-
-	h2 {
-		grid-area: title;
-		font-size: var(--text-xl);
-		font-weight: bold;
-		margin: 0 0 .5rem 0;
 	}
 
 	.description {
@@ -121,6 +132,10 @@ const { title, href, index } = Astro.props;
 				"title"
 				"description"
 				"items";
+		}
+
+		h2 {
+			position: static;
 		}
 
 		.gutter {

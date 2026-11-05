@@ -17,17 +17,51 @@ const { title, meta } = Astro.props;
 >
 	<div class="content">
 		<Header title={title} />
-		<main>
-			<slot />
-		</main>
-		<slot name="sidebar" />
+		<div class="columns">
+				{/* an invisible copy of the wordmark that makes the sidebar column
+				    exactly as wide as the wordmark in the sticky header above, so
+				    the main column starts right after the slash */}
+			<div class="column-sizer wordmark" aria-hidden="true">john<strong>dunning</strong>.com/</div>
+			<main>
+				<slot />
+			</main>
+			<slot name="sidebar" />
+		</div>
 	</div>
 </Page>
 
 <style>
+	.columns {
+		display: grid;
+		grid-template-areas:
+			"sizer main"
+			"sidebar main";
+		grid-template-columns: min-content minmax(0, 1fr);
+		grid-template-rows: 0 auto;
+	}
+
+	.column-sizer {
+		grid-area: sizer;
+		visibility: hidden;
+		height: 0;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
 	main {
 		margin-bottom: 5rem;
 		grid-area: main;
 		min-width: 0;
+	}
+
+	@media (max-width: 720px) {
+		.columns {
+			grid-template-areas:
+				"sizer"
+				"sidebar"
+				"main";
+			grid-template-columns: minmax(0, 1fr);
+			grid-template-rows: 0 auto auto;
+		}
 	}
 </style>
