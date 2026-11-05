@@ -23,11 +23,11 @@ const [section, ...restOfPath] = Astro.url.pathname
 	header {
 		grid-column: 1 / -1;
 		grid-row: 1;
+		display: flex;
+		align-items: baseline;
 		font-family: var(--font-display);
-		font-stretch: 90%;
 		font-size: var(--text-xl);
-		font-weight: 500;
-		letter-spacing: -0.02em;
+		font-weight: bold;
 		line-height: 1;
 		color: var(--header-secondary);
 		margin: 1.5rem 0 2.5rem 0;
@@ -47,13 +47,10 @@ const [section, ...restOfPath] = Astro.url.pathname
 
 		& strong {
 			color: var(--header-primary);
-			font-weight: 800;
 		}
 
 		& .slash {
-			color: var(--color-border);
-			font-weight: 300;
-			margin-left: .05em;
+			color: var(--header-secondary);
 		}
 	}
 

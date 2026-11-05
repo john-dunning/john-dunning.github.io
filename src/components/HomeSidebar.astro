@@ -19,7 +19,7 @@ const { sections } = Astro.props;
 			{sections.map(({ title, href }, i) => (
 				<li>
 					<a href={href.startsWith("http") ? href : base(href)}>
-						<span class="num">{String(i + 1).padStart(2, "0")}</span>
+						<span class="num">{i + 1}</span>
 						{title}
 					</a>
 				</li>
@@ -85,9 +85,9 @@ const { sections } = Astro.props;
 	}
 
 	.num {
-		font-variant-numeric: tabular-nums;
+		width: 1.1rem;
 		color: var(--text-color-secondary);
-		font-weight: 400;
+		font-weight: normal;
 	}
 
 	.contact {

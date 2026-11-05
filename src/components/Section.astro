@@ -12,7 +12,7 @@ const { title, href, index } = Astro.props;
 
 <article>
 	<div class="gutter ui">
-		{index !== undefined && <span class="num">{String(index).padStart(2, "0")}</span>}
+		{index !== undefined && <span class="num">{index}</span>}
 		{Astro.slots.has("thumb") &&
 			<a class="thumb" href={base(href)} tabindex="-1" aria-hidden="true">
 				<slot name="thumb" />
@@ -53,12 +53,24 @@ const { title, href, index } = Astro.props;
 
 	.gutter {
 		grid-area: gutter;
-		padding-top: .35rem;
+		padding-top: .45rem;
+		padding-right: 1.25rem;
 	}
 
+		/* a plain numeral with a sideline running out to the title */
 	.num {
-		font-variant-numeric: tabular-nums;
+		display: flex;
+		align-items: center;
+		gap: .6rem;
+		font-weight: bold;
 		color: var(--text-color-accent);
+	}
+
+	.num::after {
+		content: "";
+		flex: 1;
+		height: 1px;
+		background: var(--color-border);
 	}
 
 	.thumb {
@@ -81,8 +93,7 @@ const { title, href, index } = Astro.props;
 	h2 {
 		grid-area: title;
 		font-size: var(--text-xl);
-		font-weight: 600;
-		letter-spacing: -0.02em;
+		font-weight: bold;
 		margin: 0 0 .5rem 0;
 	}
 
